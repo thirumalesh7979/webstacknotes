@@ -158,8 +158,18 @@ pre{
   width: 500px;
 }
 @media screen and (max-width:1000px) {
+  
+  .img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .img img{
+    width: 280px;
+    height: 150px;
+    
+  }
   #content-img{
- 
     height: 250px;
     padding: 9px;
     width: 300px;
