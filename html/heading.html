@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-24NDPV43R1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-24NDPV43R1');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="HTML headings are used to define the structure and hierarchy of content on a web page. They range from <h1> (the highest level) to <h6> (the lowest level). In this complete tutorial, I'll explain how to use HTML headings effectively.">
@@ -55,7 +65,7 @@
 &lt;h5>Heading 5&lt;/h5>
 &lt;h6>Heading 6&lt;/h6>
 </code></pre>
-<!--Image-->
+<img src="../assets/images/html-images/html-headings.PNG" alt="HTML Headings h1 to h6">
 <!--****************************************************-->
 
 <h2>Semantic Meaning</h2>
@@ -87,19 +97,18 @@
    
 </ol>
 <pre><code class="language-html">&lt;style>
-    h1 {
+    h1,h5,h6 {
       font-size: 28px;
-      color: #333;
+      color: rgb(249, 37, 37);
     }
-    h2 {
+    h2,h3,h4 {
       font-size: 24px;
-      color: #666;
+      color: rgb(31, 121, 11);
     }
-    /* Add styles for other headings as needed */
 &lt;/style>
   
 </code></pre>
-<!--Image-->
+<img src="../assets/images/html-images/html-styling-headings.PNG" alt="Styling Headings in HTML">
 <!--****************************************************-->
 
 <h2>Accessibility Consideration</h2>

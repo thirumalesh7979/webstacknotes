@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-24NDPV43R1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-24NDPV43R1');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Redux is a predictable state container for managing the state of a JavaScript application. It's often used with React but can be integrated into any JavaScript framework or library.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>React Redux Tutorial</title>
+</head>
+<body>
+   <!--Navigation-->
+   <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+  
+    </div>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+         <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+        <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+        <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+        <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+  
+      </ul>
+    </div>
+  </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>React Redux Tutorial</h1>
+<p>In this tutorial, you will learn how to use Redux library in your react application, So, let's get started.</p>
+ 
+<h2>What is Redux?</h2>
+<ol>
+    <li>Redux is a predictable state container for managing the state of a JavaScript application.
+    </li>
+    <li>It's often used with React but can be integrated into any JavaScript framework or library.
+    </li>
+</ol>
+ 
+<!--*****************************************-->
+
+<h2>How does Redux work?</h2>
+<ol>
+    <li>Redux works by storing application state in a single store.</li>
+    <li>The store is an object that holds all of the data that the application needs to run. </li>
+    <li>The only way to change the state in the store is to dispatch an action.</li>
+<li>An action is an object that describes what happened in the application. </li>
+<li>For example, an action might be dispatched when the user clicks a button or when data is fetched from an API.
+</li>
+<li>Reducers are functions that handle actions and update the state in the store.</li>
+<li> When an action is dispatched, all of the reducers in the application are called. </li>
+<li>Each reducer can update the state in the store however it needs to.</li>
+  </ol>
+ 
+<!--*****************************************-->
+
+<h2>Getting started with Redux</h2>
+<ol>
+    <li>To get started with Redux, you will need to install the Redux and React Redux packages.</li>
+    <li><strong>npm install redux react-redux</strong></li>
+    <li>Once you have installed the Redux and React Redux packages, you can create a Redux store. You can do this by creating a <strong>store.js</strong> file and adding the following code.</li>
+</ol>
+<pre><code class="language-js">import { createStore } from 'redux';
+
+const reducer = () => {
+  return {};
+};
+
+const store = createStore(reducer);
+
+export default store;
+  </code></pre>
+<!--*****************************************-->
+
+<h2>Redux Actions</h2>
+<ol>
+    <li>Actions are plain JavaScript objects describing what happened.
+    </li>
+    <li>They are dispatched to the store using the <strong>dispatch</strong> method.
+    </li>
+</ol>
+<pre><code class="language-js">const increment = () => {
+  return {
+    type: 'INCREMENT',
+  };
+};
+
+store.dispatch(increment()); // Dispatch the action
+</code></pre>
+<!--*****************************************-->
+
+<h2>Redux Reducers</h2>
+<ol>
+    <li>Reducers specify how the application's state changes in response to actions.
+    </li>
+    <li>They are pure functions that take the previous state and an action and return a new state.
+    </li>
+</ol>
+<pre><code class="language-js">const initialState = 0; // Initial state
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return state + 1;
+    default:
+      return state;
+  }
+};
+  </code></pre>
+<!--*****************************************-->
+
+<h2>Connecting Redux to React</h2>
+<ol>
+  <li>To connect Redux to a React application, use the <strong>Provider</strong> component from <strong>react-redux </strong>to wrap your app.
+  </li>
+ 
+</ol>
+<pre><code class="language-js">import React from 'react';
+import { Provider } from 'react-redux';
+import store from './store'; // Your Redux store
+
+function App() {
+  return (
+    &lt;Provider store={store}>
+      {/* Your app components */}
+    &lt;/Provider>
+  );
+}
+  </code></pre>
+
+  <h2>Using Redux in React Components</h2>
+  <ol><li>Connect Redux store to your React components using the <strong>connect</strong> function from <strong>react-redux</strong>.
+  </li></ol>
+  <pre><code class="language-js">import { connect } from 'react-redux';
+
+  function Counter({ count, increment }) {
+    return (
+      &lt;div>
+        &lt;p>Count: {count}&lt;/p>
+        &lt;button onClick={increment}>Increment&lt;/button>
+      &lt;/div>
+    );
+  }
+  
+  const mapStateToProps = (state) => {
+    return {
+      count: state,
+    };
+  };
+  
+  const mapDispatchToProps = (dispatch) => {
+    return {
+      increment: () => dispatch(increment()),
+    };
+  };
+  
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+    </code></pre>
+
+<h2> Redux Middleware</h2>
+<ol>
+<li>Middleware in Redux allows you to add extra functionality to the dispatch process.
+</li>
+<li>Popular middleware includes <strong>redux-thunk</strong> for handling async actions and <strong>redux-logger</strong> for logging.
+</li>
+</ol>
+<pre><code class="language-js">import { applyMiddleware, createStore } from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from './reducers';
+
+const store = createStore(rootReducer, applyMiddleware(thunk));
+</code></pre>
+
+
+
+
+
+
+
+
+
+        <div class="next-prev">
+          <a href="./react-hooks.html" id="prev">Previous</a>
+        </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-24NDPV43R1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-24NDPV43R1');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="React Table is a flexible and customizable library for creating data tables in React applications. It offers features like sorting, filtering, pagination, and more to handle large datasets efficiently.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>React Table Tutorial</title>
+</head>
+<body>
+   <!--Navigation-->
+   <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+  
+    </div>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+         <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+        <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+        <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+        <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+  
+      </ul>
+    </div>
+  </nav>
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>React Table Tutorial</h1>
+<p>React Table is a flexible and customizable library for creating data tables in React applications.
+</p>
+<p>It offers features like sorting, filtering, pagination, and more to handle large datasets efficiently.
+</p>
+ 
+<h2>Installing React Table</h2>
+<ol>
+    <li>You can install React Table via npm or yarn.
+    </li>
+   
+</ol>
+<pre><code class="language-js">npm install react-table
+</code></pre>
+<!--*****************************************-->
+
+<h2>Creating a Basic React Table</h2>
+<ol>
+    <li>To create a basic table, import the necessary components from React Table.
+    </li>
+    <li>Define columns and data for your table.
+    </li>
+</ol>
+<pre><code class="language-js">import { useTable } from 'react-table';
+
+function BasicTable({ columns, data }) {
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow,
+  } = useTable({
+    columns,
+    data,
+  });
+
+  return (
+    &lt;table {...getTableProps()}>
+    &lt;thead>
+        {headerGroups.map(headerGroup => (
+          &lt;tr {...headerGroup.getHeaderGroupProps()}>
+            {headerGroup.headers.map(column => (
+              &lt;th {...column.getHeaderProps()}>{column.render('Header')}&lt;/th>
+            ))}
+            &lt;/tr>
+        ))}
+        &lt;/thead>
+      &lt;tbody {...getTableBodyProps()}>
+        {rows.map(row => {
+          prepareRow(row);
+          return (
+            &lt;tr {...row.getRowProps()}>
+              {row.cells.map(cell => {
+                return &lt;td {...cell.getCellProps()}>{cell.render('Cell')}&lt;/td>;
+              })}
+              &lt;/tr>
+          );
+        })}
+        &lt;/tbody>
+    &lt;/table>
+  );
+}
+  </code></pre>
+  <!--Image-->
+<!--*****************************************-->
+
+<h2>Data and Columns Configuration</h2>
+<ol>
+    <li>Define the columns and data for your table. You can customize column headers, cell renderers, and more.
+    </li>
+ 
+</ol>
+<pre><code class="language-js">const columns = [
+{
+  Header: 'Name',
+  accessor: 'name',
+},
+{
+  Header: 'Age',
+  accessor: 'age',
+},
+];
+
+const data = [
+{ name: 'Alice', age: 30 },
+{ name: 'Bob', age: 25 },
+];
+</code></pre>
+<!--*****************************************-->
+
+<h2>Sorting and Filtering</h2>
+<ol>
+    <li>React Table provides built-in support for column sorting and filtering.
+    </li>
+    <li>Enable sorting by setting the 'sortable' property on columns.
+    </li>
+</ol>
+<pre><code class="language-js">const columns = [
+{
+  Header: 'Name',
+  accessor: 'name',
+  sortable: true,
+},
+{
+  Header: 'Age',
+  accessor: 'age',
+  sortable: true,
+},
+];
+</code></pre>
+<!--*****************************************-->
+
+<h2>React Pagination</h2>
+<ol>
+    <li>Implementing pagination is a pretty straightforward in React Table.
+    </li>
+    <li>Add a pagination component and configure the number of rows per page.
+    </li>
+</ol>
+<pre><code class="language-js">import { usePagination } from 'react-table';
+
+  // Inside the table setup
+  const {
+    // ...
+    page,
+    pageOptions,
+    state: { pageIndex, pageSize },
+    gotoPage,
+    previousPage,
+    nextPage,
+    setPageSize,
+  } = useTable(
+    // ...
+    usePagination
+  );
+  
+  // Add pagination controls
+  &lt;div>
+    &lt;button onClick={() => gotoPage(0)}>{'<<'}&lt;/button>
+    &lt;button onClick={() => previousPage()}>{'<'}&lt;/button>
+    &lt;button onClick={() => nextPage()}>{'>'}&lt;/button>
+    &lt;button onClick={() => gotoPage(pageOptions.length - 1)}>{'>>'}&lt;/button>
+    &lt;span>
+      Page{' '}
+      &lt;strong>
+        {pageIndex + 1} of {pageOptions.length}
+      &lt;/strong>{' '}
+    &lt;/span>
+    &lt;span>
+      | Go to page:{' '}
+      &lt;input
+        type="number"
+        defaultValue={pageIndex + 1}
+        onChange={(e) => {
+          const page = e.target.value ? Number(e.target.value) - 1 : 0;
+          gotoPage(page);
+        }}
+        style={{ width: '50px' }}
+      />
+    &lt;/span>
+    &lt;select
+      value={pageSize}
+      onChange={(e) => {
+        setPageSize(Number(e.target.value));
+      }}
+    >
+      {[10, 20, 30, 40, 50].map((pageSize) => (
+      &lt;option key={pageSize} value={pageSize}>
+          Show {pageSize}
+      &lt;/option>
+      ))}
+    &lt;/select>
+  &lt;/div>
+  </code></pre>
+  <!--Image-->
+<!--*****************************************-->
+
+ 
+
+
+
+
+
+
+
+
+
+
+        <div class="next-prev">
+          <a href="./react-bootstrap.html" id="prev">Previous</a>
+          <a href="./react-hooks.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

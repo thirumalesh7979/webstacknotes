@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-24NDPV43R1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'G-24NDPV43R1');
+      </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="React Router is a routing library for React applications. It allows you to navigate between different views in your application without having to reload the page.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>React Routers Tutorial</title>
+</head>
+<body>
+   <!--Navigation-->
+   <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+  
+    </div>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+         <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+        <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+        <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+        <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+  
+      </ul>
+    </div>
+  </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>React Routers Tutorial</h1>
+<p>Learn React Routers with this tutorial. We will teach you the basics of React Routers with examples here. So, that you can understand the fundamentals of Routing in React.</p>
+
+<h2>What is React Router?</h2>
+<ol>
+    <li>React Router is a routing library for React applications.</li>
+    <li>It allows you to navigate between different views in your application without having to reload the page.
+    </li>
+    <li>React Router works by creating a history stack of the pages that the user has visited.</li>
+    <li>When the user clicks on a link or enters a URL in the address bar, React Router updates the history stack and renders the corresponding view.</li>
+    <li>Let's start by setting up React Router in your project.
+    </li>
+</ol>
+<pre><code class="language-js">npm install react-router-dom
+</code></pre>
+<!--*****************************************-->
+
+<h2>Basic Routing Setup</h2>
+<ol>
+    <li>To set up routing in your React application, wrap your components with <strong>&lt;BrowserRouter></BrowserRouter></strong>.
+    </li>
+    <li>Define routes using the <strong>&lt;Route></strong> component.
+    </li>
+  
+</ol>
+<pre><code class="language-js">import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+function App() {
+    return (
+    &lt;Router>
+        &lt;Route path="/" exact component={Home} />
+        &lt;Route path="/about" component={About} />
+        &lt;/Router>
+    );
+}
+    </code></pre>
+<!--*****************************************-->
+
+
+<h2>Route Parameters</h2>
+<ol>
+    <li>You can define route parameters to capture dynamic parts of the URL.
+    </li>
+    <li>Access these parameters using the <strong>props.match</strong> object.
+    </li>
+ </ol>
+<pre><code class="language-js">&lt;Route path="/user/:id" component={UserDetail} />
+
+// Inside UserDetail component
+const userId = this.props.match.params.id;
+    </code></pre>
+<!--*****************************************-->
+
+
+<h2>Navigation with Link
+</h2>
+<ol>
+    <li>Use the &lt;Link> component to navigate between different routes.
+    </li>
+    <li>It ensures that your app remains a single-page application.
+    </li>
+    
+</ol>
+<pre><code class="language-js">import { Link } from 'react-router-dom';
+
+&lt;Link to="/about">Go to About&lt;/Link>
+</code></pre>
+<!--*****************************************-->
+
+
+<h2>Redirects and Not Found Pages</h2>
+<ol>
+    <li>Use <strong>&lt;Redirect></strong> to redirect users to a specific route.
+    </li>
+    <li>Create a "Not Found" page to handle routes that don't exist.
+    </li>
+     
+</ol>
+<pre><code class="language-js">&lt;Route path="/old-route">
+    &lt;Redirect to="/new-route" />
+&lt;/Route>
+&lt;Route path="*" component={NotFound} />
+  </code></pre>
+<!--*****************************************-->
+
+
+<h2>Programmatic Navigation</h2>
+<ol>
+    <li>You can also navigate programmatically by using the <strong>history</strong> object.
+    </li>
+    <li>Access it using the <strong>useHistory</strong> hook or via <strong>this.props.history</strong> in class components.
+    </li>
+ 
+</ol>
+<pre><code class="language-js">import { useHistory } from 'react-router-dom';
+
+const MyComponent = () => {
+    const history = useHistory();
+    history.push('/new-route');
+}
+    </code></pre>
+<!--*****************************************-->
+<h2> Route Guards</h2>
+<ol>
+    <li>Implement route guards by rendering or not rendering components based on conditions.
+    </li>
+    <li>For example, protect routes by checking if the user is authenticated.
+    </li>
+</ol>
+<pre><code class="language-js">&lt;Route path="/admin" render={() => isAuthenticated ? &lt;AdminPanel /> : &lt;Redirect to="/login" />} />
+</code></pre>
+<!--*****************************************-->
+
+<h2> Route Animations</h2>
+<ol>
+    <li>You can add route transition animations with CSS or libraries like React Transition Group.
+    </li>
+    <li>Animate the mounting and unmounting of route components.
+    </li>
+</ol>
+<pre><code class="language-js">import { CSSTransition } from 'react-transition-group';
+
+&lt;CSSTransition in={match != null} timeout={300} classNames="fade" unmountOnExit>
+    &lt;Component />
+&lt;/CSSTransition>
+    </code></pre>
+<!--*****************************************-->
+
+<h2>Complete Example</h2>
+<ol>
+    <li>Create a new React app using Create React App or your preferred setup.
+    </li>
+<pre><code class="language-js">npx create-react-app react-router-example
+cd react-router-example
+</code></pre>
+    <li>Install React Router Dom.
+    </li>
+<pre><code class="language-js">npm install react-router-dom
+</code></pre>
+<li>Create the component files for Home.js and About.js in the src folder:
+</li>
+<strong>src/Home.js</strong><pre><code class="language-js">import React from 'react';
+
+const Home = () => {
+    return (
+    &lt;div>
+        &lt;h2>Home Page&lt;/h2>
+        &lt;p>Welcome to the Home page!&lt;/p>
+    &lt;&lt;/div>
+    );
+};
+
+export default Home;
+    </code></pre>
+<strong>src/About.js</strong>
+<pre><code class="language-js">import React from 'react';
+
+const About = () => {
+    return (
+    &lt;div>
+        &lt;h2>About Page&lt;/h2>
+        &lt;p>Learn more about us on the About page.&lt;/p>
+    &lt;/div>
+    );
+};
+
+export default About;
+    </code></pre>
+    <li>Create the main application component (App.js) with routing.
+    </li>
+    <strong>src/App.js    </strong>
+    <pre><code class="language-js">import React from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import Home from './Home';
+import About from './About';
+
+function App() {
+    return (
+  &lt;Router>
+        &lt;div>
+        &lt;nav>
+        &lt;ul>
+        &lt;li>
+        &lt;Link to="/">Home&lt;/Link>
+        &lt;/li>
+        &lt;li>
+        &lt;Link to="/about">About</Link>
+        &lt;/li>
+        &lt;/ul>
+        &lt;/nav>
+
+        &lt;Switch>
+            <Route path="/about" component={About} />
+            <Route path="/" component={Home} />
+            &lt;/Switch>
+            &lt;/div>
+            &lt;/Router>
+    );
+}
+
+export default App;
+        </code></pre>
+<li>When you start this application you will notice the changes in your browser.</li>
+</ol>
+ 
+<!--*****************************************-->
+
+
+
+
+
+
+
+
+
+        <div class="next-prev">
+          <a href="./react-forms.html" id="prev">Previous</a>
+          <a href="./react-css-styling.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

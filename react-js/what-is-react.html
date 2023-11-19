@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-24NDPV43R1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-24NDPV43R1');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="React or React.js is a JavaScript library used for building user interfaces (UIs) on websites and web applications. React was developed and is maintained by Facebook, and it's used by many other companies and developers worldwide.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>React Introduction Tutorial</title>
+</head>
+<body>
+   <!--Navigation-->
+   <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+  
+    </div>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+         <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+        <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+        <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+        <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+  
+      </ul>
+    </div>
+  </nav>
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>React Introduction</h1>
+<p>React or React.js is a JavaScript library used for building user interfaces (UIs) on websites and web applications. React was developed and is maintained by Facebook, and it's used by many other companies and developers worldwide.
+</p>
+<p>In this React Introduction Tutorial, you will learn some basic terminologies of react. Let's get started.</p>
+
+<h2>Why we use React instead of HTML?</h2>
+<p>HTML is a markup language for creating static web pages. React is a JavaScript library for creating dynamic web pages. React has a number of advantages over HTML, including:
+</p>
+<ol>
+    <li><strong>Declarative programming: </strong> React uses a declarative programming paradigm, which means that you tell React what you want to see on the screen, and React takes care of the rest. This makes it easier to write and maintain complex UIs.
+    </li>
+    <li><strong>Component-based architecture: </strong>React is based on a component-based architecture, which means that you can break down your UI into smaller, reusable pieces. This makes it easier to create and maintain large UIs.
+    </li>
+    <li><strong>Virtual DOM: </strong>React uses a virtual DOM to efficiently update the UI. The virtual DOM is a lightweight representation of the real DOM. React compares the virtual DOM to the real DOM and only updates the real DOM when necessary. This makes React UIs very fast and responsive.
+    </li>
+</ol>
+<!--*****************************************-->
+
+<h2>How exactly React works?</h2>
+<ol>
+    <li>React works by rendering components to the DOM. A component is a reusable piece of code that defines a part of the UI. Components can be nested inside other components to create complex UIs.
+    </li>
+    <li>When a component changes, React updates the DOM in an efficient way.</li>
+    <li> React uses a virtual DOM to compare the previous state of the component to the current state of the component. React only updates the real DOM when there are actual changes.</li>
+
+</ol>
+<!--*****************************************-->
+
+
+<h2>How React updates the DOM</h2>
+<ol>
+    <li>React creates a virtual DOM, which is a lightweight representation of the real DOM.
+    </li>
+    <li>React compares the virtual DOM to the real DOM and identifies the changes that need to be made.
+    </li>
+    <li>React updates the real DOM in the most efficient way possible.
+    </li>
+    <li>For example, if a component only changes a small part of the UI, React will only update that small part of the real DOM. This makes React UIs very fast and responsive.
+    </li>
+</ol>
+<!--*****************************************-->
+
+
+<h2>Advantages  of React</h2>
+<ol>
+    <li><strong>Reusability:</strong> React's component-based architecture encourages code reuse, reducing development time and effort.
+    </li>
+    <li><strong>Efficiency:</strong> The virtual DOM minimizes unnecessary updates, leading to faster rendering and a smoother user experience.
+    </li>
+    <li><strong>Declarative Syntax:</strong> React allows developers to describe the desired UI state, and it takes care of updating the actual DOM.
+    </li>
+    <li><strong>Community and Ecosystem: </strong>React has a vast community and a rich ecosystem of libraries and tools, making it easy to find support and extensions.</li>
+    <li><strong>SEO-Friendly: </strong>React can be rendered on the server-side (server-side rendering) to improve search engine optimization (SEO) and initial page load times.
+    </li>
+</ol>
+<!--*****************************************-->
+
+
+<h2>Exmaple</h2>
+<ol>
+    <li>Let's say,  you are building a web application for a restaurant. The web application should allow customers to browse the menu, place orders, and pay for their meals.</li>
+    <li>You could build this web application using traditional HTML, CSS, and JavaScript. However, this would be a lot of work, and the code would be difficult to maintain.
+    </li>
+    <li>Instead, you could use React to build the web application. React would allow you to break down the web application into smaller, reusable pieces called components.
+    </li>
+    <li>For example, you could create a <strong>component</strong> for the menu, a <strong>component</strong> for the order form, and a component for the payment form. You could then nest these components inside other components to create the complete web application.
+    </li>
+    <li>When a customer changes their order, React would only update the components that are affected. This would make the web application very fast and responsive.
+    </li>
+    <li>Imagine that the customer adds a new item to their order. React would first update the component for the order form.</li>
+    <li>Then, React would compare the virtual DOM to the real DOM and update the real DOM only if necessary.</li>
+    <li>This would mean that only the relevant part of the web application would be updated. </li>
+    <li>The customer would see their new order item added to the order form, but the rest of the web application would remain the same.
+    </li>
+
+</ol>
+<!--*****************************************-->
+
+
+<h2>React Common Terminology</h2>
+<ol>
+    <li><strong>Components: </strong>These are the building blocks of a React application. Components are reusable, self-contained units that define the structure and behavior of parts of the user interface.
+    </li>
+    <li><strong>Props (Properties): </strong>Props are a way to pass data from a parent component to a child component. They are read-only and help in making components dynamic.
+
+    </li>
+    <li><strong>State: </strong>State represents the internal data and state of a component. When state changes, React re-renders the component to reflect those changes in the user interface.
+
+    </li>
+    <li><strong>Virtual DOM (VDOM): </strong>React uses a virtual representation of the actual DOM to optimize and manage updates efficiently. It checks the differences between the virtual DOM and the real DOM to minimize DOM manipulation.
+
+    </li>
+    <li><strong>JSX (JavaScript XML): </strong>JSX is a syntax extension for JavaScript that allows you to write HTML-like code within your JavaScript files. It's used to describe what the UI should look like.
+
+    </li>
+    <li><strong>Lifecycle Methods: </strong>React components go through various lifecycle phases, such as mounting, updating, and unmounting. Lifecycle methods are special functions that can be defined to run at specific points in a component's lifecycle.
+
+    </li>
+    <li><strong>Hooks: </strong>Introduced in React 16.8, hooks are functions that allow you to use state and other React features in functional components. Common hooks include useState, useEffect, and useContext.
+
+    </li>
+    <li><strong>Component Lifecycle: </strong>This refers to the series of phases a component goes through from creation to rendering and unmounting. Understanding these phases helps you manage component behavior effectively.
+
+    </li>
+    <li><strong>Event Handling: </strong>React allows you to define and handle events, such as button clicks or form submissions, within your components.
+
+    </li>
+    <li><strong>Conditional Rendering: </strong>You can use conditional statements in React components to determine when and what content is rendered based on certain conditions.
+
+    </li>
+    <li><strong>Key: </strong>Keys are used in lists of elements to help React identify which items have changed, been added, or removed, improving performance during updates.
+
+    </li>
+    <li><strong>Context: </strong>React Context provides a way to pass data through the component tree without explicitly passing props at every level. It's often used for global state management.
+
+    </li>
+    <li><strong>Router (React Router): </strong>React Router is a library that enables client-side routing in React applications, allowing you to navigate between different components/pages without a full page reload.
+
+    </li>
+    <li><strong>Redux: </strong>Redux is a state management library often used in larger React applications to manage the global state and make it easier to handle data flow and interactions between components.
+
+    </li>
+    <li><strong>React Native: </strong>React Native is a framework for building mobile applications using React. It allows developers to write mobile apps in JavaScript and render them using native components.
+</li>
+    
+</ol>
+<!--*****************************************-->
+
+
+
+
+
+
+
+
+
+
+        <div class="next-prev">
+         
+          <a href="./react-es6-revision.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
