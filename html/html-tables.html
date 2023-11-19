@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HTML tables are used to structure tabular data on web pages. They are made up of rows and columns, with each cell containing a piece of data.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>Learn HTML Tables Tutorial</title>
+</head>
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+        <div class="container">
+          <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+      
+        </div>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+             <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+            <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+            <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+            <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+      
+          </ul>
+        </div>
+      </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>HTML Tables Tutorial</h1>
+<p></p>
+
+<h2>What are the HTML Tables?</h2>
+<ol>
+    <li>HTML tables are used to structure tabular data on web pages. </li>
+    <li>They are made up of rows and columns, with each cell containing a piece of data.</li>
+    <li>Tables can be used to display any type of tabular data, such as product catalogs, price lists, or contact information.
+    </li>
+</ol>
+ 
+<!--****************************************************-->
+
+<h2>Table Structure</h2>
+<ol>
+    <li><strong>&lt;table>: </strong>This element defines the entire table.    </li>
+    <li><strong>&lt;tr> (Table Row): </strong>Each row in the table is defined using this element.
+    </li>
+    <li><strong>&lt;td> (Table Data): </strong>This element represents individual cells within the table. Each &lt;td> element should be placed inside a &lt;tr>.
+    </li>
+    <li><strong>&lt;th> (Table Header): </strong>Similar to &lt;td>, but used for header cells. Header cells are typically bold and centered.
+    </li>
+</ol>
+ 
+ 
+<pre><code class="language-html">&lt;table>
+    &lt;tr>
+      &lt;th>Header 1&lt;/th>
+      &lt;th>Header 2&lt;/th>
+    &lt;/tr>
+    &lt;tr>
+      &lt;td>Data 1, Row 1&lt;/td>
+      &lt;td>Data 2, Row 1&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+      &lt;td>Data 1, Row 2&lt;/td>
+      &lt;td>Data 2, Row 2&lt;/td>
+    &lt;/tr>
+  &lt;/table>
+  
+</code></pre>
+<!--Image-->
+
+<!--****************************************************-->
+
+<h2>Table Attributes</h2>
+<ol>
+    <li>You can use various attributes to modify the appearance and behavior of tables.</li>
+    <li><strong>border: </strong>Specifies the border width around the table. (Deprecated; use CSS for styling instead.)
+    </li>
+    <li><strong>cellpadding: </strong>Defines the space between the cell content and cell border.
+    </li>
+    <li><strong>cellspacing: </strong>Specifies the space between cells.
+    </li>
+    <li><strong>width and height: </strong>Sets the width and height of the table.
+    </li>
+</ol>
+ 
+<!--****************************************************-->
+
+<h2>Styling Tables with CSS</h2>
+<ol>
+    <li>To style tables, use CSS. You can apply CSS rules to the table, rows, cells, or headers as needed. </li>
+ 
+</ol>
+<pre><code class="language-html">&lt;style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #000;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #333;
+      color: #fff;
+    }
+&lt;/style>
+  
+</code></pre>
+<!--Image-->
+<!--****************************************************-->
+ 
+<h2>Spanning Rows and Columns</h2>
+<ol>
+    <li>You can use the <strong>colspan</strong> and <strong>rowspan</strong> attributes to make cells span multiple rows or columns.</li>
+ 
+</ol>
+<pre><code class="language-js">
+<&lt;table>
+    &lt;tr>
+        &lt;th>Header 1&lt;/th>
+        &lt;th>Header 2&lt;/th>
+    &lt;/tr>
+    &lt;tr>
+        &lt;td>Data 1, Row 1&lt;/td>
+        &lt;td>Data 2, Row 1&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+        &lt;td colspan="2">Spanned Cell&lt;/td>
+    &lt;/tr>
+&lt;/table>
+    
+</code></pre>
+<!--Image-->
+<!--****************************************************-->
+ 
+
+
+<h2>Adding Captions</h2>
+<ol>
+    <li>You can add a caption to your table using the &lt;caption> element, which is placed immediately after the opening &lt;table> tag.</li>
+</ol>
+
+<h2>Accessing Tables with JavaScript</h2>
+<ol><li>To manipulate tables using JavaScript, you can use the Document Object Model (DOM).</li></ol>
+<pre><code class="language-js">
+// Access the table element
+var table = document.getElementById('myTable');
+
+// Access a specific cell
+var cell = table.rows[1].cells[0];
+</code></pre>
+<!--image-->
+
+
+
+
+
+
+
+        <div class="next-prev">
+          <a href="./html-lists.html" id="prev">Previous</a>
+          <a href="./html-forms.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+
+

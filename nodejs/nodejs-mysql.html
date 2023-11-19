@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MySQL is a popular relational database management system, and Node.js is a server-side JavaScript runtime.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>Working with MySQL Database in Node.js</title>
+</head>
+<body>
+   <!--Navigation-->
+   <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+  
+    </div>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+         <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+        <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+        <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+        <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+  
+      </ul>
+    </div>
+  </nav>
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>Node and MySQL tutorial</h1>
+<p>In this tutorial, you will learn the basics of working with the popular MySQL database with Node.</p>
+
+<h2>Introduction to Node.js and MySQL</h2>
+<ol>
+    <li>MySQL is a popular relational database management system, and Node.js is a server-side JavaScript runtime.
+    </li>
+    <li>You can use the <strong>mysql</strong> package to connect to MySQL databases from Node.js.
+    </li>
+</ol>
+ 
+<h2> Setting Up MySQL and Node.js</h2>
+<ol>
+    <li>To get started, install the <strong>mysql</strong> package using npm    </li>
+</ol>
+<pre><code class="language-js">npm install mysql
+</code></pre>
+<!--Gap-->
+
+
+<h2>Connecting to MySQL</h2>
+<ol>
+    <li>To connect to a MySQL database, create a connection using the <strong>mysql</strong> package.
+    </li>
+</ol>
+<pre><code class="language-js">const mysql = require('mysql');
+
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'yourpassword',
+    database: 'mydb',
+});
+
+connection.connect((err) => {
+    if (err) throw err;
+    console.log('Connected to MySQL');
+});
+    </code></pre>
+<!--Gap-->
+
+
+<h2>Performing CRUD Operations</h2>
+<ol>
+    <li>You can perform Create, Read, Update, and Delete (CRUD) operations using SQL queries.
+    </li>
+</ol>
+<pre><code class="language-js">// Creating data
+const insertQuery = "INSERT INTO users (name, email) VALUES (?, ?)";
+const values = ['John', 'john@example.com'];
+connection.query(insertQuery, values, (err, result) => {
+    if (err) throw err;
+    console.log('Inserted ID:', result.insertId);
+});
+
+// Reading data
+const selectQuery = 'SELECT * FROM users';
+connection.query(selectQuery, (err, rows) => {
+    if (err) throw err;
+    console.log('Selected data:', rows);
+});
+
+// Updating data
+const updateQuery = 'UPDATE users SET email = ? WHERE name = ?';
+const updateValues = ['newemail@example.com', 'John'];
+connection.query(updateQuery, updateValues, (err, result) => {
+    if (err) throw err;
+    console.log('Updated rows:', result.affectedRows);
+});
+
+// Deleting data
+const deleteQuery = 'DELETE FROM users WHERE name = ?';
+const deleteValue = 'John';
+connection.query(deleteQuery, deleteValue, (err, result) => {
+    if (err) throw err;
+    console.log('Deleted rows:', result.affectedRows);
+});
+    </code></pre>
+<!--Gap-->
+
+
+<h2>Querying Data</h2>
+<ol>
+    <li>You can run SQL queries to filter and retrieve specific data from your database.
+    </li>
+</ol>
+<pre><code class="language-js">const selectQuery = 'SELECT name, email FROM users WHERE age > 25';
+connection.query(selectQuery, (err, rows) => {
+    if (err) throw err;
+    console.log('Selected data:', rows);
+});
+    </code></pre>
+<!--Gap-->
+
+
+<h2>Error Handling</h2>
+<ol>
+    <li>Always handle errors when working with MySQL to ensure robust applications.
+    </li>
+</ol>
+<pre><code class="language-js">connection.query('SELECT * FROM nonexistent_table', (err, result) => {
+    if (err) {
+        console.error('MySQL error:', err);
+    } else {
+        console.log('Selected data:', result);
+    }
+});
+  </code></pre>
+<!--Gap-->
+
+<h2>Using Promises for Asynchronous Operations</h2>
+<ol>
+    <li>To handle asynchronous MySQL operations with promises, you can use the <strong>mysql2</strong> package.
+    </li>
+
+</ol>
+<pre><code class="language-js">const mysql = require('mysql2/promise');
+
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'yourpassword',
+    database: 'mydb',
+});
+
+(async () => {
+    try {
+    await connection.connect();
+    console.log('Connected to MySQL');
+    
+    // Perform database operations using await
+    // ...
+    
+    } catch (error) {
+    console.error('Error:', error);
+    } finally {
+    connection.end();
+    }
+})();
+    </code></pre>
+<!--Gap-->
+
+
+        <div class="next-prev">
+          <a href="./nodejs-mongodb.html" id="prev">Previous</a>
+          <a href="./nodejs-firebase.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HTML forms are a fundamental part of web development, allowing users to interact with web applications, submit data, and provide feedback.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>HTML Forms Tutorial</title>
+</head>
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+        <div class="container">
+          <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+      
+        </div>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+             <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+            <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+            <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+            <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+      
+          </ul>
+        </div>
+      </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>HTML Forms Tutorial</h1>
+<p>HTML forms are a fundamental part of web development, allowing users to interact with web applications, submit data, and provide feedback.</p>
+<p>Please remember the examples you see in this page are applied by my css. They will different if you try them.</p>
+
+<h2>Form Structure</h2>
+<p>A basic HTML form consists of the following components.</p>
+<pre><code class="language-html">&lt;form action="process.php" method="POST">
+    &lt;!-- Form elements go here --&gt;
+    &lt;input type="text" name="username" id="username" placeholder="Username" required>
+    &lt;input type="password" name="password" id="password" placeholder="Password" required>
+    &lt;input type="submit" value="Submit">
+&lt;/form>
+  </code></pre>
+<ol>
+    <li><strong>&lt;form>: </strong>The form element that contains all form controls.
+    </li>
+    <li><strong>action: </strong>The URL where the form data is sent for processing (typically a server-side script).
+    </li>
+    <li><strong>method: </strong>The HTTP method (GET or POST) used to send data.
+    </li>
+</ol>
+
+<form action="process.php" method="POST">
+    <!-- Form elements go here -->
+    <input type="text" name="username" id="username" placeholder="Username" required>
+    <input type="password" name="password" id="password" placeholder="Password" required>
+    <input type="submit" value="Submit">
+  </form>
+  
+ 
+<!--****************************************************-->
+<br>
+<h2>Form Controls</h2>
+<p>HTML offers various form controls for collecting user input. </p>
+<ol>
+    <li><strong>Text fields: </strong>&lt;input type="text">
+    </li>
+    <li><strong>Password fields: </strong>&lt;input type="password">
+    </li>
+    <li><strong>Textareas: </strong>&lt;textarea>&lt;/textarea>
+    </li>
+    <li><strong>Radio buttons: </strong>&lt;input type="radio">
+    </li>
+    <li><strong>Checkboxes: </strong>&lt;input type="checkbox">
+    </li>
+    <li><strong>Select dropdowns: </strong>&lt;select>&lt;/select>
+    </li>
+    <li<strong>Buttons: </strong>&lt;input type="submit">, &lt;input type="reset>, &lt;button>
+    </li>
+</ol>
+ 
+<!--****************************************************-->
+
+
+<h2>Labels and IDs</h2>
+<ol>
+    <li>Labels improve the accessibility and usability of your forms. </li>
+    <li>hey should be associated with form controls using the <strong>for</strong> attribute and matching <strong>id</strong> attributes.</li>
+  
+</ol>
+<pre><code class="language-html">&lt;label for="username">Username:&lt;/label>
+&lt;input type="text" name="username" id="username">    
+</code></pre>
+<label for="username">Username:</label>
+<input type="text" name="username" id="username">
+
+ 
+<!--****************************************************-->
+
+<h2>Placeholder Text</h2>
+<ol>
+    <li>Use the <strong>placeholder</strong> attribute to provide hints or examples for users within form controls</li>
+  </ol>
+<pre><code class="language-html">&lt;input type="text" placeholder="Enter your name" name="name" id="name">
+</code></pre>
+<br>
+<input type="text" placeholder="Enter your name" name="name" id="name">
+
+<!--****************************************************-->
+
+<h2>Required Fields</h2>
+<ol>
+    <li>Use the required attribute to make a field mandatory. </li>
+    <li>The browser will prevent submission until all required fields are filled.</li>
+</ol>
+
+
+<h2>Validation</h2>
+<ol>
+    <li>You can use HTML5 input attributes like <strong>type="email"</strong>, <strong>type="number"</strong>, and <strong>pattern</strong> to enforce data formats and validate input.</li>
+</ol>
+<pre><code class="language-html">&lt;input type="email" name="email" id="email" required>
+&lt;input type="number" name="age" id="age" min="0" max="120">
+&lt;input type="text" pattern="[A-Za-z]{3}">
+</code></pre>
+<br>
+<input type="email" name="email" id="email" required placeholder="email">
+<input type="number" name="age" id="age" min="0" max="120" placeholder="password">
+<input type="text" pattern="[A-Za-z]{3}" placeholder="pattern example">
+
+<!--****************************************************-->
+
+
+<h2>Fieldset and Legend</h2>
+<ol>
+    <li>To group related form controls, use the <strong>&lt;fieldset> and &lt;legend></legend></strong> elements</li>
+ 
+</ol>
+<pre><code class="language-html">&lt;fieldset>
+    &lt;legend>Personal Information&lt;/legend>
+    &lt;!-- Form controls go here --&gt;
+&lt;/fieldset>  
+</code></pre>
+ 
+<!--****************************************************-->
+
+
+<h2>Multiple-Choice</h2>
+<ol>
+    <li>You can create radio buttons, checkboxes, and select options to allow users to make multiple choices</li>
+ 
+</ol>
+<pre><code class="language-html">&lt;input type="radio" name="gender" value="male"> Male
+&lt;input type="radio" name="gender" value="female"> Female
+&lt;input type="checkbox" name="interest" value="sports"> Sports
+&lt;input type="checkbox" name="interest" value="music"> Music
+
+&lt;select name="country">
+    &lt;option value="usa">United States&lt;/option>
+    &lt;option value="canada">Canada&lt;/option>
+&lt;/select>
+</code></pre>
+<input type="radio" name="gender" value="male"> Male
+<input type="radio" name="gender" value="female"> Female
+<input type="checkbox" name="interest" value="sports"> Sports
+<input type="checkbox" name="interest" value="music"> Music
+
+<select name="country">
+  <option value="usa">United States</option>
+  <option value="canada">Canada</option>
+</select>
+<br>
+<!--****************************************************-->
+ 
+<h2>File Upload</h2>
+<p>Use the &lt;input type="file"> control to allow users to upload files</p>
+<pre><code class="language-html">&lt;input type="file" name="file_upload">
+</code></pre>
+<input type="file" name="file_upload">
+
+
+
+
+
+
+
+
+
+        <div class="next-prev">
+          <a href="./html-tables.html" id="prev">Previous</a>
+          <a href="./html-favicon.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+
+

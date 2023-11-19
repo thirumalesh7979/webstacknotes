@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Middleware in Express are functions that execute during the request-response cycle. They are used to perform various tasks such as logging, authentication, validation, and more.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>Learn Express Middleware Tutorial</title>
+</head>
+<body>
+     <!--Navigation-->
+     <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+      <div class="container">
+        <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+    
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+    
+      </div>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+           <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+          <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+          <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+          <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+    
+        </ul>
+      </div>
+    </nav>
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>Learn Express Middleware Tutorial</h1>
+<p>Middleware in Express are functions that execute during the request-response cycle.
+</p>
+<p>They are used to perform various tasks such as logging, authentication, validation, and more.
+</p>
+<p>Create a Express basic server like we did in the previous tutorials.</p>
+
+<h2>What is Middleware?</h2>
+<ol>
+    <li>Middleware functions have access to the request <strong>req</strong> and response <strong>res</strong> objects and the <strong>next</strong> function.
+    </li>
+    <li>They can modify the request, response, or terminate the request-response cycle.
+    </li>
+</ol>
+<!--Gap-->
+
+<h2>Using Built-in Middleware
+</h2>
+<ol>
+    <li>Express provides built-in middleware like <strong>express.static()</strong> for serving static files and <strong>express.json()</strong> for parsing JSON data.
+    </li>
+</ol>
+<pre><code class="language-js">// Serve static files
+app.use(express.static('public'));
+
+// Parse JSON data
+app.use(express.json());
+    </code></pre>
+<!--Gap-->
+
+
+<h2>Creating Custom Middleware
+</h2>
+<ol>
+    <li>Create custom middleware functions and use them in routes.
+    </li>
+</ol>
+<pre><code class="language-js">function myMiddleware(req, res, next) {
+    console.log('Custom Middleware Executed');
+    next();
+    }
+
+    app.use(myMiddleware);
+
+    app.get('/route', (req, res) => {
+    res.send('Response from Route');
+});
+  </code></pre>
+<!--Gap-->
+
+
+<h2>Middleware Execution Order
+</h2>
+<ol>
+    <li>The order of middleware execution matters.
+    </li>
+</ol>
+<pre><code class="language-js">app.use((req, res, next) => {
+    console.log('First Middleware');
+    next();
+  });
+  
+  app.use((req, res, next) => {
+    console.log('Second Middleware');
+    next();
+  });
+  
+  app.get('/route', (req, res) => {
+    res.send('Response from Route');
+  });
+  </code></pre>
+<!--Gap-->
+
+
+<h2>Error Handling Middleware
+</h2>
+<ol>
+    <li>Middleware can handle errors using <strong>next(err)</strong>.
+    </li>
+</ol>
+<pre><code class="language-js">app.use((err, req, res, next) => {
+    console.error(err.message);
+    res.status(500).send('Internal Server Error');
+  });
+  
+  app.get('/error', (req, res, next) => {
+    const error = new Error('This is an error');
+    next(error);
+  });
+  </code></pre>
+<!--Gap-->
+
+        <div class="next-prev">
+          <a href="./express-sending-responses.html" id="prev">Previous</a>
+          <a href="./express-templates-views.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

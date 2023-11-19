@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mongoose is a software library for Node.js that makes it easier to work with MongoDB. In simple terms, it helps programmers interact with and manage data in MongoDB">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>Mongoose Library Tutorial</title>
+</head>
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+        <div class="container">
+          <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+      
+        </div>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+             <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">Java Script</a></li>
+            <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React JS</a></li>
+            <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node JS</a></li>
+            <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+      
+          </ul>
+        </div>
+      </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+        <h1>Mongoose Tutorial</h1>
+        <p>Mongoose is a software library for Node.js that makes it easier to work with MongoDB. In simple terms, it helps programmers interact with and manage data in MongoDB by providing a structured way to define data models, create, read, update, and delete documents, and perform other operations</p>
+
+        <h2>Setting Up Mongoose</h2>
+        <p>To get started Install Mongoose and require it in your Node.js application.</p>
+        <pre><code class="language-js">const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/mydatabase', { useNewUrlParser: true, useUnifiedTopology: true });
+</code></pre>
+
+        <h2>Defining a Schema</h2>
+        <p>Schemas define the structure of your documents in MongoDB.</p>
+        <pre><code class="language-js">
+const Schema = mongoose.Schema;
+const userSchema = new Schema({
+  name: String,
+  age: Number,
+}); </code></pre>
+
+        <h2>Creating a Mode</h2>
+        <p>Models are constructors compiled from the Schema definitions.</p>
+        <pre><code class="language-js">const User = mongoose.model('User', userSchema);
+        </code></pre>
+
+        <h2>Creating Documents</h2>
+        <p>You can create new documents using the model constructor.</p>
+        <pre><code class="language-js">const newUser = new User({ name: 'John', age: 30 });
+newUser.save((err) => {
+  if (err) throw err;
+  console.log('User saved successfully');
+});</code></pre>
+
+        <h2>Querying Documents</h2>
+        <p>Mongoose provides methods to query the database. For example, finding all users with a specific age.</p>
+        <pre><code class="language-js">User.find({ age: 30 }, (err, users) => {
+  if (err) throw err;
+  console.log(users);
+}); </code></pre>
+
+        <h2>Updating Documents</h2>
+        <p>You can update documents using Mongoose.</p>
+        <pre><code class="language-js">User.updateOne({ name: 'John' }, { age: 31 }, (err) => {
+  if (err) throw err;
+  console.log('User updated');
+});</code></pre>
+
+        <h2>Deleting Documents</h2>
+        <p>You can also delete documents using Mongoose.</p>
+        <pre><code class="language-js">User.deleteOne({ name: 'John' }, (err) => {
+  if (err) throw err;
+  console.log('User deleted');
+});  </code></pre>
+
+        <h2>Middleware</h2>
+        <p>Mongoose allows you to define middleware functions that run before or after specific actions, such as saving a document.</p>
+        <pre><code class="language-js">userSchema.pre('save', function(next) {
+  // Do something before saving
+  next();
+});</code></pre>
+
+        <h2>Validation</h2>
+        <p>Mongoose supports validation for schema fields.</p>
+        <pre><code class="language-js">const userSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  age: {
+    type: Number,
+    min: 18,
+  },
+});</code></pre>
+        <h2>Populating References</h2>
+        <p>When dealing with relationships between documents, Mongoose allows you to populate referenced documents.</p>
+        <pre><code class="language-js">const postSchema = new Schema({
+  title: String,
+  author: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+  },
+});
+
+Post.find({}).populate('author').exec((err, posts) => {
+  if (err) throw err;
+  console.log(posts);
+});</code></pre>
+
+
+<div class="next-prev">
+<a href="./mongodb-aggregations.html" id="prev">Previous</a>
+</div>
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

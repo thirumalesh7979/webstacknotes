@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Error handling is the process of managing and responding to errors or exceptions in your code. In Node.js, errors can occur due to various reasons, such as incorrect input, network issues, or file system problems.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>Node.js Error Handling Tutorial</title>
+</head>
+<body>
+   <!--Navigation-->
+   <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+  
+    </div>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+         <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+        <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+        <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+        <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+  
+      </ul>
+    </div>
+  </nav>
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>Node.js Error Handling Tutorial</h1>
+<p>In this tutorial, you will learn how to manage errors in Node.js Applications.</p>
+
+<h2>Introduction to Error Handling</h2>
+<ol>
+    <li>Error handling is the process of managing and responding to errors or exceptions in your code.
+    </li>
+    <li>In Node.js, errors can occur due to various reasons, such as incorrect input, network issues, or file system problems.
+    </li>
+</ol>
+ 
+<h2>Types of Errors</h2>
+<ol>
+    <p>In Node.js, errors can be categorized into two main types:
+    </p>
+    <li><strong>Synchronous Errors:</strong> These occur during the execution of synchronous code and can be caught using try...catch.
+    </li>
+    <li><strong>Asynchronous Errors:</strong> These occur in asynchronous code, such as callbacks and Promises.
+    </li>
+</ol>
+ 
+
+
+<h2>The try...catch Statement:</h2>
+<ol>
+    <li>The <strong>try...catch</strong> statement is used to catch and handle synchronous errors.
+    </li>
+   <li>It allows you to define a block of code to try, and if an error occurs, you can catch and handle it.
+    </li>
+</ol>
+<pre><code class="language-js">try {
+    // program that might throw an error
+  } catch (error) {
+    // handle the error
+    console.error('An error occurred:', error.message);
+  }
+  </code></pre>
+<!--Gap-->
+
+
+<h2>Throwing Custom Errors</h2>
+<ol>
+    <li>You can create and throw custom errors using the <strong>throw</strong> statement.</li>
+</ol>
+<pre><code class="language-js">try {
+    throw new Error('Custom error message');
+  } catch (error) {
+    console.error('An error occurred:', error.message);
+  }
+  </code></pre>
+<!--Gap-->
+
+
+<h2> Error Events</h2>
+<ol>
+    <li>In Node.js, some objects emit 'error' events when something goes wrong.
+    </li>
+    <li>You can listen for these events to handle errors.
+    </li>
+</ol>
+<pre><code class="language-js">const fs = require('fs');
+const fileStream = fs.createReadStream('nonexistent-file.txt');
+
+fileStream.on('error', (error) => {
+    console.error('An error occurred:', error.message);
+});
+    </code></pre>
+<!--Gap-->
+
+
+<h2>Error-First Callbacks</h2>
+<ol>
+    <li>Node.js commonly uses the error-first callback pattern, where callbacks receive an error as the first argument.
+    </li>
+</ol>
+<pre><code class="language-js">function readDataFromFile(callback) {
+fs.readFile('file.txt', 'utf-8', (err, data) => {
+    if (err) {
+    callback(err);
+    return;
+    }
+    callback(null, data);
+});
+}
+  </code></pre>
+<!--Gap-->
+
+<h2>Handling Errors in Asynchronous Code</h2>
+<ol>
+    <li>In asynchronous code, errors can be handled by checking for errors in the callback or using <strong>try...catch</strong> around <strong>async/await</strong> code.</li>
+</ol>
+<pre><code class="language-js">async function fetchData() {
+    try {
+      const data = await fetchDataFromServer();
+      console.log('Data:', data);
+    } catch (error) {
+      console.error('Error:', error.message);
+    }
+  }
+  </code></pre>
+<!--Gap-->
+
+<h2>Promises and Async/Await for Error Handling</h2>
+<ol>
+    <li>Promises in Node.js provide a structured way to handle asynchronous operations and errors.
+    </li>
+    <li>You can use <strong>catch</strong> with Promises or use <strong>async/await</strong> to handle Promise rejections.
+    </li>
+</ol>
+<pre><code class="language-js">fetchDataFromServer()
+    .then((data) => {
+      console.log('Data:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error.message);
+    });  
+</code></pre>
+
+        <div class="next-prev">
+          <a href="./nodejs-event-loop.html" id="prev">Previous</a>
+          <a href="./nodejs-mongodb.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

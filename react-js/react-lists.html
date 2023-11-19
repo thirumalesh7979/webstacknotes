@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="React lists are a powerful way to render multiple similar components from a collection of data. They are created using the map() function, which takes an array of data and returns an array of React elements.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>React Lists Tutorial</title>
+</head>
+<body>
+   <!--Navigation-->
+   <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+  
+    </div>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+         <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+        <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+        <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+        <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+  
+      </ul>
+    </div>
+  </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>React Lists Tutorial</h1>
+<p>This tutorial will teach React Lists in detail for beginners.  Let's get starteed</p>
+
+<h2>What are React Lists?</h2>
+<ol>
+    <li>React lists are a powerful way to render multiple similar components from a collection of data.</li>
+    <li>They are created using the <strong>map()</strong> function, which takes an array of data and returns an array of React elements.
+     </li>
+</ol>
+<pre><code class="language-js">const items = ["Item 1", "Item 2", "Item 3"];
+    const itemList = items.map((item, index) => (
+      &lt;li key={index}>{item}&lt;/li>
+    ));
+    </code></pre>
+    <!--Image-->
+<!--*****************************************-->
+
+<h2>Keyss</h2>
+<ol>
+    <li>Always provide a unique "key" prop to each item when rendering lists to optimize rendering and avoid warnings.
+    </li>
+    <li>Keys should be unique to each sibling element in the list, but they can be duplicated globally.</li>
+    
+</ol>
+<pre><code class="language-js">const items = ["Item 1", "Item 2", "Item 3"];
+    const itemList = items.map((item, index) => (
+      &lt;li key={index}>{item}&lt;/li>
+    ));
+</code></pre>
+<!--*****************************************-->
+
+
+<h2>Adding State to List Items</h2>
+<ol>
+    <li>To add state (e.g., checkboxes) to list items, you should use a state management library like React's <strong>useState</strong> and <strong>useEffect</strong>.
+    </li>
+</ol>
+<pre><code class="language-js">import React, { useState, useEffect } from "react";
+
+function Checklist() {
+    const [items, setItems] = useState(["Item 1", "Item 2", "Item 3"]);
+
+    return (
+    &lt;ul>
+        {items.map((item, index) => (
+        &lt;li key={index}>
+            &lt;input type="checkbox" /> {item}
+        &lt;/li>
+        ))}
+    &lt;/ul>
+    );
+}
+    </code></pre>
+    <!--Image-->
+<!--*****************************************-->
+
+
+<h2>Handling List Events</h2>
+<ol>
+    <li>You can handle events on list items by attaching event handlers to them, such as click or hover events.
+    </li>
+  
+</ol>
+<pre><code class="language-js">const items = ["Item 1", "Item 2", "Item 3"];
+
+function handleItemClick(item) {
+    alert(`Clicked: ${item}`);
+}
+
+const itemList = items.map((item, index) => (
+    &lt;li key={index} onClick={() => handleItemClick(item)}>
+    {item}
+&lt;/li>
+));
+    </code></pre>
+<!--*****************************************-->
+
+
+ 
+
+
+<h2>Rendering Nested Lists</h2>
+<ol>
+    <li>To render nested lists, use a recursive component or nested mapping.
+    </li>
+   
+</ol>
+<pre><code class="language-js">function NestedList({ items }) {
+return (
+    &lt;ul>
+    {items.map((item, index) => (
+    &lt;li key={index}>
+        {item.name}
+        {item.children && &lt;NestedList items={item.children} />}
+    &lt;/li>
+    ))}
+&lt;/ul>
+);
+}
+  </code></pre>
+<!--*****************************************-->
+
+
+
+
+
+
+
+
+
+
+        <div class="next-prev">
+          <a href="./react-events.html" id="prev">Previous</a>
+          <a href="./react-conditionals.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

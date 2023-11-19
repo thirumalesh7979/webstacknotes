@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Understand the JavaScript Classes more easily with these examples made for you.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>JavaScript Classes Practical Examples</title>
+</head>
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+        <div class="container">
+          <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+      
+        </div>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+             <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+            <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+            <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+            <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+      
+          </ul>
+        </div>
+      </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>JavaScript Classes Practical Examples</h1>
+<p>In  this tutorial, you will understand the classes in JavaScript by making some real world examples.</p>
+
+
+
+<h2>A Product class for an e-commerce application</h2>
+<ol>
+    <li>A Product class could have properties such as name, description, price, and image. </li>
+    <li>It could also have methods such as addToCart() and removeFromCart(). </li>
+    <li>his class could be used to create a reusable component for displaying product information on an e-commerce website. </li>
+    <li>It could also be used to manage the state of the shopping cart, such as adding and removing products.
+    </li>
+</ol>
+<pre><code class="language-js">class Product {
+    constructor(name, description, price, image) {
+      this.name = name;
+      this.description = description;
+      this.price = price;
+      this.image = image;
+      this.quantityInCart = 0;
+    }
+  
+    addToCart() {
+      this.quantityInCart++;
+    }
+  
+    removeFromCart() {
+      this.quantityInCart--;
+    }
+  
+    getTotalPrice() {
+      return this.price * this.quantityInCart;
+    }
+  }
+  
+// Create a new Product object.
+const product = new Product('T-shirt', 'A comfortable and stylish T-shirt.', 19.99, 'https://example.com/images/t-shirt.jpg');
+
+// Add the product to the shopping cart.
+product.addToCart();
+
+// Display the product information and total price.
+console.log(`Product name: ${product.name}`);
+console.log(`Product description: ${product.description}`);
+console.log(`Product price: ${product.price}`);
+console.log(`Product quantity in cart: ${product.quantityInCart}`);
+console.log(`Total price: ${product.getTotalPrice()}`);
+
+/*Output:
+Product name: T-shirt
+Product description: A comfortable and stylish T-shirt.
+Product price: 19.99
+Product quantity in cart: 1
+Total price: 19.99
+*/
+  </code></pre>
+<!--***********************************************-->
+
+
+<h2>A User class for a social media application</h2>
+<ol>
+    <li>A User class could have properties such as name, email address, profile picture, and friends list. It could also have methods such as login(), logout(), and postMessage(). </li>
+    <li>This class could be used to create a reusable component for displaying user information on a social media website. </li>
+    <li>It could also be used to manage the state of user sessions and to handle user interactions, such as posting messages and adding friends.
+    </li>
+</ol>
+<pre><code class="language-js">class User {
+    constructor(name, email, profilePicture) {
+      this.name = name;
+      this.email = email;
+      this.profilePicture = profilePicture;
+      this.friends = [];
+      this.loggedIn = false;
+    }
+  
+    // Method to log in the user
+    login() {
+      this.loggedIn = true;
+      console.log(`${this.name} has logged in.`);
+    }
+  
+    // Method to log out the user
+    logout() {
+      this.loggedIn = false;
+      console.log(`${this.name} has logged out.`);
+    }
+  
+    // Method to post a message
+    postMessage(message) {
+      if (this.loggedIn) {
+        console.log(`${this.name} has posted: ${message}`);
+      } else {
+        console.log('You must be logged in to post a message.');
+      }
+    }
+  
+    // Method to add a friend
+    addFriend(friend) {
+      this.friends.push(friend);
+      console.log(`${this.name} has added ${friend.name} as a friend.`);
+    }
+  }
+  
+// Creating instances of the User class
+const user1 = new User('Alice', 'alice@email.com', 'alice.jpg');
+const user2 = new User('Bob', 'bob@email.com', 'bob.jpg');
+
+// Logging in and using the class methods
+user1.login();
+user1.postMessage('Hello, everyone!');
+user1.addFriend(user2);
+
+user2.login();
+user2.postMessage('Hi there!');
+user2.addFriend(user1);
+
+user1.logout();
+user2.logout();
+  </code></pre>
+<p>The output of the above code will be</p>
+<pre><code class="language-js">Alice has logged in.
+Alice has posted: Hello, everyone!
+Alice has added Bob as a friend.
+Bob has logged in.
+Bob has posted: Hi there!
+Bob has added Alice as a friend.
+Alice has logged out.
+Bob has logged out.
+</code></pre>
+<!--***********************************************-->
+
+
+<h2>A Game object class for a video game</h2>
+<ol>
+    <li>A Game object class could have properties such as position, velocity, and health</li>
+    <li>It could also have methods such as move(), attack(), and takeDamage(). </li>
+    <li>This class could be used to create reusable components for representing different types of game objects, such as players, enemies, and projectiles</li>
+    <li>It could also be used to manage the state of the game world and to handle game physics.
+    </li>
+</ol>
+<pre><code class="language-js">class GameObject {
+    constructor(name, position, velocity, health) {
+      this.name = name;
+      this.position = position;
+      this.velocity = velocity;
+      this.health = health;
+    }
+  
+    // Method to move the game object
+    move(newPosition) {
+      this.position = newPosition;
+      console.log(`${this.name} has moved to position (${newPosition.x}, ${newPosition.y}).`);
+    }
+  
+    // Method to attack another game object
+    attack(target) {
+      console.log(`${this.name} is attacking ${target.name}.`);
+      // Implement attack logic here
+    }
+  
+    // Method to take damage
+    takeDamage(damage) {
+      this.health -= damage;
+      if (this.health <= 0) {
+        console.log(`${this.name} has been defeated.`);
+      } else {
+        console.log(`${this.name} has taken ${damage} damage. Health: ${this.health}`);
+      }
+    }
+  }
+  
+// Creating instances of the GameObject class
+const player = new GameObject('Player', { x: 0, y: 0 }, { x: 0, y: 0 }, 100);
+const enemy = new GameObject('Enemy', { x: 10, y: 10 }, { x: 0, y: 0 }, 50);
+
+// Using the class methods
+player.move({ x: 5, y: 5 });
+enemy.move({ x: 12, y: 12 });
+
+player.attack(enemy);
+enemy.takeDamage(20);
+
+enemy.attack(player);
+player.takeDamage(30);
+  </code></pre>
+<p>The output of the above code will be.</p>
+<pre><code class="language-js">Player has moved to position (5, 5).
+Enemy has moved to position (12, 12).
+Player is attacking Enemy.
+Enemy has taken 20 damage. Health: 30
+Enemy is attacking Player.
+Player has taken 30 damage. Health: 70
+</code></pre>
+<!--***********************************************-->
+ 
+
+
+
+
+
+        <div class="next-prev">
+          <a href="./javascript-classes.html" id="prev">Previous</a>
+       
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Node.js, an open-source and cross-platform runtime environment, is built on Chrome's V8 JavaScript engine, designed for executing JavaScript code outside of a web browser.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>Node.js Introduction Tutorial</title>
+</head>
+<body>
+   <!--Navigation-->
+   <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+  
+    </div>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+         <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+        <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+        <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+        <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+  
+      </ul>
+    </div>
+  </nav>
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+        <h1>What is Node.js</h1>
+        <p>Node.js, an open-source and cross-platform runtime environment, is built on Chrome's V8 JavaScript engine, designed for executing JavaScript code outside of a web browser.</p>
+
+        <h2>Node.js Introduction</h2>
+        <ol>
+            <li>Node.js is frequently mistaken for a framework or programming language. In reality, Node.js  used to develop back-end services for APIs, web applications, and mobile apps. </li>
+            <li>Some of the world's leading companies, including Paypal, Uber, Netflix, Walmart, and more, rely on Node.js in their production environments.</li>
+          
+        </ol>
+ 
+
+
+<h2>Why Learn Node.js?</h2>
+<ol>
+    <li>Since JavaScript is a necessity for front-end development, learning Node.js makes more sense than delving into other backend technologies like PHP, Java, Ruby, and others. Node.js is currently one of the most sought-after technologies globally, particularly in Silicon Valley. It is a skill that can give you numerous career opportunities for software developers.</li>
+</ol>
+ 
+
+<h2>Features of Node.js</h2>
+<ol>
+    <li>Node.js leverages Google's Chrome V8 engine, providing a server-side runtime environment capable of compiling and executing JavaScript with exceptional speed.</li>
+    <li>Features such as chat, gaming, social media updates, collaboration tools, e-commerce websites, real-time tracking apps, and marketplaces require seamless real-time communication between users, clients, and servers.</li>
+    <li>Node.js, known for its scalability and lightweight architecture, is a preferred choice for microservice architectures. This approach involves breaking down applications into isolated and independent services.</li>
+</ol>
+ 
+
+<h2> Creating Your First Node.js Script</h2>
+<ol>
+    <li>You can create a simple Node.js script by creating a JavaScript file and running it with the node command.
+    </li>
+<pre><code class="language-js">// hello.js
+console.log('Hello, Node.js!');
+</code></pre>
+</ol>
+<pre><code class="language-js">$ node hello.js
+Hello, Node.js!
+</code></pre>
+<!--Gap-->
+
+<h2>Building a Simple HTTP Server</h2>
+<ol>
+    <li>Node.js allows you to create HTTP servers easily.
+    </li>
+</ol>
+<pre><code class="language-js">const http = require('http');
+
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello, Node.js HTTP Server!');
+});
+
+server.listen(3000, () => {
+    console.log('Server is running on port 3000');
+});
+</code></pre>
+<!--Gap-->
+
+
+        <div class="next-prev">
+          <a href="./nodejs-modules.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

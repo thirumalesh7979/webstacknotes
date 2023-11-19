@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Styling is a crucial aspect of web development. In React, you can style your components using various methods, including CSS, CSS-in-JS, and CSS frameworks like Bootstrap.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>React and CSS</title>
+</head>
+<body>
+   <!--Navigation-->
+   <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+  
+    </div>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+         <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+        <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+        <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+        <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+  
+      </ul>
+    </div>
+  </nav>
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>React and CSS Tutorial</h1>
+<p>In this tutorial, you will learn how to use CSS in React to styling your applications.</p>
+
+<h2>Styling in React</h2>
+<ol>
+    <li>Styling is a crucial aspect of web development.
+    </li>
+    <li>In React, you can style your components using various methods, including CSS, CSS-in-JS, and CSS frameworks like Bootstrap.
+    </li>
+    
+</ol>
+ 
+<!--*****************************************-->
+
+<h2>Inline Styles</h2>
+<ol>
+    <li>React allows you to define inline styles directly in your components.
+    </li>
+    <li>Styles are defined as JavaScript objects, making it easy to set dynamic styles.
+    </li>
+  
+</ol>
+<pre><code class="language-js">const MyComponent = () => {
+    const textStyle = {
+      color: 'blue',
+      fontSize: '16px',
+    };
+  
+    return &lt;p style={textStyle}>Styled Text&lt;/p>;
+  };
+  </code></pre>
+  <!--Image-->
+<!--*****************************************-->
+
+
+<h2>Using CSS Classes</h2>
+<ol>
+    <li>You can apply CSS classes to React components to separate styling from logic.
+    </li>
+    <li>Create a CSS file and import it in your component file.
+    </li>
+  <ol>
+<pre><code class="language-js">// MyComponent.js
+import './MyComponent.css';
+
+const MyComponent = () => {
+    return &lt;div className="styled-div">Styled Div&lt;/div>;
+};
+</code></pre>
+<pre><code class="language-js">/* MyComponent.css */
+.styled-div {
+    color: red;
+    font-size: 18px;
+}
+    </code></pre>
+    <!--Image-->
+<!--*****************************************-->
+
+
+<h2>CSS Modules</h2>
+<ol>
+    <li>CSS Modules provide local scoping for your CSS classes, avoiding naming conflicts.
+    </li>
+    <li>Create a CSS file with the ".module.css" extension.
+    </li>
+   
+</ol>
+<pre><code class="language-js">// MyComponent.module.css
+.myComponent {
+    color: green;
+    font-size: 20px;
+}
+
+// MyComponent.js
+import styles from './MyComponent.module.css';
+
+const MyComponent = () => {
+    return &lt;div className={styles.myComponent}>Styled with CSS Modules&lt;/div>;
+};
+    </code></pre>
+<!--*****************************************-->
+
+
+<h2>CSS-in-JS</h2>
+<ol>
+    <li>Libraries like styled-components and Emotion allow you to write CSS as JavaScript.
+    </li>
+    <li>Define styled components with tagged template literals.
+    </li>
+    
+</ol>
+<pre><code class="language-js">import styled from 'styled-components';
+
+const StyledButton = styled.button`
+    background-color: #007bff;
+    color: white;
+    border: none;
+`;
+
+const MyComponent = () => {
+    return &lt;StyledButton>Styled Button&lt;/StyledButton>;
+};
+    </code></pre>
+<!--*****************************************-->
+
+
+<h2>Importing Style Sheet</h2>
+<ol>
+    <li>We can use our own style sheet as we usually done for the HTML Files</li>
+    <li>If you are only importing a single CSS file, then either method is fine.</li>
+    <li>However, if you are importing multiple CSS files, or if you are using a CSS preprocessor such as Sass or LESS, then it is recommended to use the <strong>import</strong> statement. This will help to keep your code more modular and organized.</li>
+</ol>
+<pre><code class="language-js">import React from "react";
+import styles from "./styles.css";
+
+const MyComponent = () => {
+    return (
+    &lt;iv className={styles.container}>
+        &lt;h1>Hello, world!&lt;/h1>
+    &lt;/div>
+    );
+};
+
+export default MyComponent;
+    </code></pre>
+<!--*****************************************-->
+
+
+
+
+
+
+
+
+
+
+        <div class="next-prev">
+          <a href="./react-routers.html" id="prev">Previous</a>
+          <a href="./react-bootstrap.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

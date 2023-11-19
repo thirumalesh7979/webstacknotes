@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn JavaScript Variables and Expressions. variables store data, while expressions combine values and operators. Together, they enable dynamic and interactive web development.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>JavaScript Variables and Expressions</title>
+</head>
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+        <div class="container">
+          <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+      
+        </div>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+             <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+            <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+            <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+            <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+      
+          </ul>
+        </div>
+      </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>JavaScript Variables and Expressions</h1>
+
+
+
+<h2>What are the Variables</h2>
+<ol>
+    <li>Variables are used to store and manage data in JavaScript.
+    </li>
+    <li>They act as containers for values, and their contents can change during program execution.
+    </li>
+   
+</ol>
+ 
+<!--***********************************************-->
+
+
+<h2>Declaring Variables in JavaScript</h2>
+<ol>
+    <li>Declare variables using <strong>var</strong>, <strong>let</strong>, or <strong>const</strong>.
+    </li>
+   <li><strong>var</strong> variables are function-scoped, which means that they can be accessed from anywhere within the function in which they are declared.
+</li>
+   
+<li><strong>let and const</strong> variables are block-scoped, which means that they can only be accessed from within the block in which they are declared.
+</li>
+</ol>
+<pre><code class="language-js">var name = "John";
+let age = 30;
+const PI = 3.14;
+
+console.log(age,name, PI); //Output: 30 John 3.14
+    </code></pre>
+<!--***********************************************-->
+
+
+<h2>Naming Conventions</h2>
+<ol>
+    <li>Variable names must begin with a letter, underscore (_), or dollar sign ($).
+    </li>
+    <li>They can also include digits, but not start with one.
+    </li>
+    
+</ol>
+<h3>Valid Variable Names</h3>
+<pre><code class="language-js">myVariable
+_myVariable
+$myVariable
+ageInDays
+productPrice
+totalNumberOfCustomers</code></pre>
+<h3>Invalid Variable Names</h3>
+<pre><code class="language-js">1myVariable
+my-variable
+my variable
+const
+function
+var</code></pre>
+<!--***********************************************-->
+
+
+<h2>Assigning Values</h2>
+<ol>
+    <li>Variables can be assigned values of various data types, including numbers, strings, booleans, and objects.
+    </li>
+    <li>We can also assign the value of the variable after declaring it.</li>
+</ol>
+<pre><code class="language-js">let score = 95;
+let message = "Hello, World!";
+let isLogged = true;
+    </code></pre>
+<pre><code class="language-js">let age; // Declaring the variable
+age = 19;  // Initializing the value to the variable
+console.log(age) //Output: 19
+</code></pre>
+<!--***********************************************-->
+
+
+<h2>Updating Variables</h2>
+<ol>
+    <li>Use the assignment operator (=) to update a variable's value.
+    </li>
+ 
+</ol>
+<pre><code class="language-js">let count = 5;
+count = count + 1; // Increment by 1 now count value is 6
+    </code></pre>
+<!--***********************************************-->
+
+
+<h2>Expressions</h2>
+<ol>
+    <li>Expressions are combinations of values, operators, and variables.
+    </li>
+    <li>They are used to perform operations and produce results.
+    </li>
+  
+</ol>
+<pre><code class="language-js">let total = 2 * (5 + 3); // total equals 16
+</code></pre>
+<!--***********************************************-->
+
+
+<h2>String Concatenation</h2>
+<ol>
+    <li>Strings can be concatenated using the + operator.
+    </li>
+ 
+</ol>
+<pre><code class="language-js">let firstName = "Jack";
+let lastName = "Salvatore";
+let fullName = firstName + " " + lastName; // fullName equals "Jack Salvatore"
+    </code></pre>
+<!--***********************************************-->
+
+
+<h2>Template Literals</h2>
+<ol>
+    <li>Template literals (enclosed in backticks) allow for easy string interpolation.
+    </li>
+ 
+</ol>
+<pre><code class="language-js">let name = "Alice";
+let greeting = `Hello, ${name}!`; // greeting equals "Hello, Alice!"
+    </code></pre>
+<!--***********************************************-->
+<h2>A Complete JavaScript Variables Examples</h2>
+<pre><code class="language-js">// Declare a variable and assign it a value
+var myName = "Jack Salvatore";
+
+// Declare a variable without assigning it a value
+let myAge;
+
+// Assign a value to the variable `myAge`
+myAge = 30;
+
+// Declare a constant and assign it a value
+const MY_FAVORITE_NUMBER = 7;
+
+// Use variables in an expression
+var myTotal = myAge + MY_FAVORITE_NUMBER;
+
+// Use an expression in a variable assignment
+let myAverage = (myAge + MY_FAVORITE_NUMBER) / 2;
+
+// Log the values of the variables to the console
+console.log(myName); // Outputs "Jack Salvatore"
+console.log(myAge); // Outputs 30
+console.log(MY_FAVORITE_NUMBER); // Outputs 7
+console.log(myTotal); // Outputs 37
+</code></pre>
+
+
+
+
+
+
+
+
+        <div class="next-prev">
+          <a href="./javascript-introductionl.html" id="prev">Previous</a>
+          <a href="./javascript-operators.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

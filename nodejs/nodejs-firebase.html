@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Firebase is a powerful backend-as-a-service platform that provides various services to build real-time web and mobile applications.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>Node.js and Firebase Tutorial</title>
+</head>
+<body>
+   <!--Navigation-->
+   <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+  
+    </div>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+         <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+        <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+        <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+        <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+  
+      </ul>
+    </div>
+  </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>Node.js and Firebase Tutorial</h1>
+<p>Firebase is a powerful backend-as-a-service platform that provides various services to build real-time web and mobile applications.</p>
+<p>In this tutorial, you will learn to work with the Firebase with Node.js.</p>
+
+<h2>Setting Up Firebase in Node.js</h2>
+<ol>
+    <li>To get started, you'll need to install the Firebase Admin SDK    </li>
+    <pre><code class="language-js">npm install firebase-admin
+    </code></pre>
+    <li>Initialize Firebase in your Node.js application using your Firebase project credentials.
+    </li><
+    pre><code class="languag-js">onst admin = require('firebase-admin');
+const serviceAccount = require('path/to/your/serviceAccountKey.json');
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: 'https://your-database-url.firebaseio.com',
+});
+</code></pre>
+
+    </ol>
+
+<!--Gap-->
+
+<h2>Realtime Database</h2>
+<ol>
+    <li>Firebase Realtime Database is a NoSQL database that provides real-time synchronization.
+    </li>
+    <li>You can read and write data to the database.
+    </li>
+</ol>
+<pre><code class="language-js">const db = admin.database();
+const ref = db.ref('sampleData');
+
+// Writing data
+ref.set({ name: 'Alice', age: 25 });
+
+// Reading data
+ref.once('value', (snapshot) => {
+    console.log('Data:', snapshot.val());
+});
+    </code></pre>
+
+<!--Gap-->
+
+
+<h2>Authentication</h2>
+<ol>
+    <li>Firebase Authentication offers user authentication for your app.
+    </li>
+    <li>You can sign up, sign in, and manage users.
+    </li>
+</ol>
+<pre><code class="language-js">const auth = admin.auth();
+// Creating a new user
+auth.createUser({
+    email: 'user@example.com',
+    password: 'password123',
+})
+    .then((userRecord) => {
+    console.log('User created:', userRecord.uid);
+    })
+    .catch((error) => {
+    console.error('Error creating user:', error);
+    });
+
+// Signing in with email and password
+auth.signInWithEmailAndPassword('user@example.com', 'password123')
+    .then((userCredential) => {
+    console.log('User signed in:', userCredential.user.uid);
+    })
+    .catch((error) => {
+    console.error('Error signing in:', error);
+});
+    </code></pre>
+<!--Gap-->
+
+
+<h2> Cloud Firestore</h2>
+<ol>
+    <li>Cloud Firestore is a NoSQL database that provides more advanced querying capabilities compared to the Realtime Database.
+    </li>
+</ol>
+<pre><code class="language-js">const db = admin.firestore();
+    const usersCollection = db.collection('users');
+
+    // Adding a document
+    usersCollection.add({ name: 'Bob', age: 30 });
+
+    // Querying data
+    usersCollection.where('age', '>', 25)
+    .get()
+    .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        console.log('Document data:', doc.data());
+    });
+});
+    </code></pre>
+<!--Gap-->
+
+
+<h2>Cloud Functions</h2>
+<ol>
+    <li>Firebase Cloud Functions allow you to run backend code in response to various events in Firebase services.
+    </li>
+</ol>
+<pre><code class="language-js">const functions = require('firebase-functions');
+
+exports.myFunction = functions.https.onRequest((request, response) => {
+    response.send('Hello from Firebase Cloud Functions!');
+});
+    </code></pre>
+<!--Gap-->
+
+
+<h2>Firebase Storage</h2>
+<ol>
+    <li>Firebase Storage enables you to store and serve user-generated content, such as images and videos.
+    </li>
+</ol>
+<pre><code class="language-js">const storage = admin.storage();
+const bucket = storage.bucket('your-storage-bucket.appspot.com');
+
+// Uploading a file
+bucket.upload('local-file.jpg', {
+    destination: 'images/image.jpg',
+});
+
+// Downloading a file
+bucket.file('images/image.jpg').download((err, contents) => {
+    console.log('File content:', contents);
+});
+    </code></pre>
+<!--Gap-->
+
+<h2>Error Handling</h2>
+<ol>
+    <li>Always handle errors when working with Firebase services to ensure robust applications.
+    </li>
+</ol>
+<pre><code class="language-js">auth.signInWithEmailAndPassword('user@example.com', 'invalid-password')
+.then((userCredential) => {
+    console.log('User signed in:', userCredential.user.uid);
+})
+.catch((error) => {
+    console.error('Error signing in:', error.message);
+});
+  </code></pre>
+<!--Gap-->
+        <div class="next-prev">
+          <a href="./nodejs-mongodb.html" id="prev">Previous</a>
+          <a href="./expressjs-introduction.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

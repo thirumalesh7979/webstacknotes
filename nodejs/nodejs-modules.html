@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Node.js built-in modules are libraries of pre-written code that provide a wide range of functionalities. You can use them by importing the module using the require statement. ">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>Node.js Built-in and Custom Modules</title>
+</head>
+<body>
+   <!--Navigation-->
+   <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+  
+    </div>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+         <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+        <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+        <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+        <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+  
+      </ul>
+    </div>
+  </nav>
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>Node.js Built-in Modules</h1>
+<p>Node Built-in modules are easy to perform most common tasks that we need to use while developing an applicaton.</p>
+
+<h2>Introduction to Node.js Built-In Modules</h2>
+<ol>
+    <li>Node.js built-in modules are libraries of pre-written code that provide a wide range of functionalities. </li>
+    <li>You can use them by importing the module using the require statement. </li>
+</ol>
+<pre><code class="language-js">const fs = require('fs');
+</code></pre>
+<!--Gap-->
+
+<h2>Node fs Module (File System)</h2>
+<ol>
+<li>The <strong>fs</strong> module allows you to work with the file system. You can read, write, and manipulate files with it.</li>
+</ol>
+<pre><code class="language-js">const fs = require('fs');
+
+fs.readFile('example.txt', 'utf8', (err, data) => {
+    if (err) {
+    console.error(err);
+    return;
+    }
+    console.log(data);
+});
+    </code></pre>
+<!--Gap-->
+
+
+<h2>Node  http Module</h2>
+<ol>
+    <li>The <strong>http</strong> module helps you create a web server in Node.js. </li>
+</ol>
+<pre><code class="language-js">const http = require('http');
+
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello, Node.js!');
+});
+
+server.listen(3000, () => {
+    console.log('Server is running on port 3000');
+});
+    </code></pre>
+<!--Gap-->
+
+
+<h2>Node path Module</h2>
+<ol>
+    <li>The <strong>path </strong> module provides utilities for working with file and directory paths.</li>
+</ol>
+<pre><code class="language-js">const path = require('path');
+
+const filePath = path.join(__dirname, 'images', 'myImage.jpg');
+console.log(filePath);
+    </code></pre>
+<!--Gap-->
+
+
+<h2>Node.js events Module</h2>
+<ol>
+    <li>The <strong>events</strong> module allows you to work with events and event emitters. </li>
+    <li> You can create your own custom events or use predefined ones.</li>
+</ol>
+<pre><code class="language-js">const EventEmitter = require('events');
+
+class MyEmitter extends EventEmitter {}
+
+const myEmitter = new MyEmitter();
+
+myEmitter.on('myEvent', () => {
+    console.log('Event occurred!');
+});
+
+myEmitter.emit('myEvent');
+    </code></pre>
+<!--Gap-->
+
+
+<h2>Node OS Module</h2>
+<ol>
+    <li>The <strong>os</strong> module provides information about the operating system. </li>
+    <li>You can get details like the CPU architecture, free memory, and more</li>
+</ol>
+<pre><code class="language-js">const os = require('os');
+
+console.log('CPU Architecture:', os.arch());
+console.log('Free Memory:', os.freemem());
+console.log('Total Memory:', os.totalmem());
+    </code></pre>
+<!--Gap-->
+
+<h2>Node Custom Modules</h2>
+<ol>
+    <li>A custom module in Node.js is simply a separate JavaScript file that contains functions, objects, or values that you want to reuse in other parts of your application.</li>
+    <li> Custom modules help you keep your code organized and make it easier to maintain.</li>
+
+</ol>
+<!--Gap-->
+<h2>How to Create a Custom Module</h2>
+<ol>
+    <li>To create a simple  custom module in Node. Start by creating a new JavaScript file (e.g., myModule.js) and add the following code to it</li>
+ 
+</ol>    
+<pre><code class="language-js">// myModule.js
+const greet = () => {
+    return "Hello, Node.js!";
+};
+
+module.exports = greet;
+    </code></pre>
+    <p>In this example, we've defined a function called <strong>greet</strong> and exported it using <strong>module.exports</strong>. This makes the <strong>greet</strong> function available for use in other parts of your application.</p>
+<!--Gap-->
+
+
+<h2>Using a Custom Module</h2>
+<ol>
+    <li>Now, let's use the custom module we created in another JavaScript file.</li>
+    <li>Create a new file (e.g., app.js) and use the require function to import the module</li>
+
+</ol>    
+<pre><code class="language-js">// app.js
+const customGreet = require('./myModule');
+console.log(customGreet());
+    </code></pre>
+    <p>In this example, we import the myModule.js module using require, and we can use the customGreet function in our app.js file. When you run app.js, it will output:
+    </p>
+    <p><strong>Hello, Node.js!
+    </strong></p>
+<!--Gap-->
+
+<h2>Exporting Multiple Functions and Values</h2>
+<ol>
+    <li>You can export multiple functions, objects, or values from a custom module. </li>
+    <li>Let's extend our myModule.js to export two functions</li>
+</ol>    
+<pre><code class="language-js">// myModule.js
+    const greet = () => {
+      return "Hello, Node.js!";
+    };
+    
+    const farewell = () => {
+      return "Goodbye, Node.js!";
+    };
+    
+    module.exports = {
+      greet,
+      farewell,
+    };
+    </code></pre>
+    <p>Now, in your app.js, you can use both functions</p>
+    <pre><code class="language-js">// app.js
+const customModule = require('./myModule');
+console.log(customModule.greet());
+console.log(customModule.farewell());
+</code></pre>
+<p>When you run app.js, it will output</p>
+<p><strong>Hello, Node.js! </strong><br>
+<strong>Goodbye, Node.js!</strong>
+    </p>
+<!--Gap-->
+
+
+<div class="next-prev">
+          <a href="./nodejs-introduction.html" id="prev">Previous</a>
+          <a href="./nodejs-filesystem.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

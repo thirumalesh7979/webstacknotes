@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Node.js Events module is a core module in Node.js that provides an easy way to work with events, allowing you to create, emit, and listen for events in your applications.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>Node.js Events Module Tutorial</title>
+</head>
+<body>
+   <!--Navigation-->
+   <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+  
+    </div>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+         <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+        <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+        <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+        <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+  
+      </ul>
+    </div>
+  </nav>
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>Node Events Module Notes</h1>
+<p>The Node.js Events module is a core module in Node.js that provides an easy way to work with events, allowing you to create, emit, and listen for events in your applications.</p>
+
+<h2>Introduction to Events:</h2>
+<ol>
+    <li>Events are a way for objects to signal that something has happened.
+    </li>
+    <li>In Node.js, the Events module provides a set of classes and methods for working with events.
+    </li>
+    <li>Events are widely used in Node.js for building event-driven applications like web servers, file system operations, and more.
+    </li>
+</ol>
+
+<h2>Real Time applications of Events</h2>
+<ol>
+    <li>Real-time chat applications
+    </li>
+    <li>Live streaming applications
+    </li>
+    <li>Online gaming applications
+    </li>
+    <li>Real Time dashboards and monitoring applications</li>
+</ol>
+ 
+
+<h2>EventEmitter Class:</h2>
+<ol>
+    <li>The core of the Events module is the EventEmitter class.
+    </li>
+    <li>You need to create an instance of EventEmitter to work with events.
+    </li>
+</ol>
+<pre><code class="language-js">const EventEmitter = require('events');
+const emitter = new EventEmitter();
+    </code></pre>
+<!--Gap-->
+
+
+<h2> Event Emitter Methods</h2>
+<ol>
+    <li><strong>on(eventName, listener) -</strong>  Adds a listener function to the specified event.
+    </li>
+    <li><strong>once(eventName, listener) - </strong> Adds a one-time listener for the event. It's removed automatically after being called once.
+    </li>
+    <li><strong>emit(eventName, [args]) - </strong> Emits the specified event with optional arguments.
+    </li>
+    <li><strong>removeListener(eventName, listener) - </strong> Removes a specific listener from the event.
+    </li>
+    <li><strong>removeAllListeners([eventName]) - </strong> Removes all listeners for a specific event or all events.
+    </li>
+</ol>
+ 
+
+<h2>Event Listeners</h2>
+<ol>
+    <li>Event listeners are functions that are executed when an event is emitted.
+    </li>
+    <li>Listeners are associated with events using the <strong>on</strong> or <strong>once</strong> method.once
+    </li>
+    <li>You can have multiple listeners for a single event.
+    </li>
+</ol>
+ 
+
+
+<h2> Creating and Emitting Events</h2>
+<ol>
+    <li>Let's create an event and emit it</li>
+</ol>
+<pre><code class="language-js">emitter.on('greet', () => {
+    console.log('Hello, world!');
+});
+
+emitter.emit('greet');
+
+//Output: Hello, world!
+
+  </code></pre>
+<!--Gap-->
+
+
+<h2>Handling Events with Callbacks</h2>
+<ol>
+    <li>You can pass data to event listeners as arguments:
+    </li>
+</ol>
+<pre><code class="language-js">emitter.on('sum', (a, b) => {
+    console.log(`Sum: ${a + b}`);
+});
+
+emitter.emit('sum', 3, 5);
+//Output: Sum: 8
+  </code></pre>
+<!--Gap-->
+
+<h2>Once Event Listeners</h2>
+<ol>
+    <li>Once listeners are removed after being called:
+    </li>
+</ol>
+<pre><code class="language-js">emitter.once('onceEvent', () => {
+    console.log('This will only happen once.');
+  });
+  
+emitter.emit('onceEvent');
+emitter.emit('onceEvent'); // This won't trigger the listener.
+//Output: This will only happen once.
+
+  </code></pre>
+<!--Gap-->
+
+
+<h2>Removing Event Listeners</h2>
+<ol>
+    <li>You can remove specific event listeners</li>
+</ol>
+<pre><code class="language-js">function myListener() {
+    console.log('Listener 1');
+  }
+  
+emitter.on('removeListenerExample', myListener);
+emitter.emit('removeListenerExample');
+emitter.removeListener('removeListenerExample', myListener);
+emitter.emit('removeListenerExample'); // This won't trigger myListener.
+  </code></pre>
+
+<h2>Error Events</h2>
+<ol>
+    <li>In Node.js, unhandled errors can cause the program to crash. To handle errors, you can use the 'error' event</li>
+</ol>
+<pre><code class="language-js">emitter.on('error', (err) => {
+    console.error('An error occurred:', err.message);
+});
+
+emitter.emit('error', new Error('Something went wrong.'));
+
+//Output: An error occurred: Something went wrong.
+  </code></pre>
+
+ 
+
+
+
+
+
+        <div class="next-prev">
+          <a href="./nodejs-filesystem.html" id="prev">Previous</a>
+          <a href="./nodejs-http-module.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

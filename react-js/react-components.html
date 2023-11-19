@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="React components are reusable UI building blocks. They can be stateful(Class Components) or stateless(Functional Components).">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>React Components Tutorial</title>
+</head>
+<body>
+   <!--Navigation-->
+   <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+  
+    </div>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+         <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+        <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+        <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+        <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+  
+      </ul>
+    </div>
+  </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>React Components Tutorial</h1>
+<p>In this React Components tutorial, we'll explore React components and how to use them in HTML. </p>
+
+<h2>What are React Components?</h2>
+<ol>
+    <li>React components are reusable UI building blocks.
+    </li>
+    <li>They can be stateful(Class Components) or stateless(Functional Components).
+    </li>
+    <li>Components can be used to create complex UI structures.
+    </li>
+</ol>
+
+<!--*****************************************-->
+
+<h2>What are the Functional Components?</h2>
+<ol>
+    <li>The Functional components are simple JavaScript Functions.</li>
+    <li> They are stateless, meaning that they do not have any internal state.</li>
+    <li> Functional components are typically used to render simple UI elements, such as buttons, headings, and lists.</li>
+</ol>
+<pre><code class="language-js">function MyHeading(){
+    return &lt;h1>This is an Heading!&lt;/h1>
+}
+</code></pre>
+<p>We can render the functional components as simple as we did for JSX.</p>
+<pre><code class="language-js">root.render(&lt;Myheading />);
+</code></pre>
+
+<!--Image-->
+
+<p>In the previous tutorial we said we can render multiple elements. Like this</p>
+<pre><code class="language-js">function Profile(){
+    return (
+        <>
+        &lt;h1>My Profile&lt;/h1>
+        &lt;p>I'm a Front End Developer&lt;/p>
+        &lt;h3>My Skills&lt;/h3>
+        &lt;ul>
+                &lt;li>React&lt;/li>
+                &lt;li>Bootstrap&lt;/li>
+                &lt;li>CSS&lt;/li>
+        &lt;/ul>
+        &lt;/>
+    )
+}
+
+
+</code></pre>
+<p>Render the above code and start the development server and you will notice the changes in your browser</p>
+
+
+
+<!--*****************************************-->
+
+
+<h2>Props</h2>
+<ol>
+    <li>Props in React are a way to pass data from one component to another.</li>
+    <li>They are read-only values that are passed to a component as an object. </li>
+    <li>Props can be any JavaScript value, including strings, numbers, objects, arrays, and functions.</li>
+</ol>
+<pre><code class="language-js">function Button(props) {
+    return &lt;button>{props.text}&lt;/button>;
+  }
+  </code></pre>
+  <p>To use the Button component, you would simply call it with the desired props</p>
+<pre><code class="language-js">&lt;Button text="Click Here" />
+</code></pre>
+<p>You can also destructure props in functional components. This allows you to extract specific props from the props object and assign them to variables. </p>
+<pre><code class="language-js">export function Button({ text }) {
+    return &lt;button>{text}&lt;/button>;
+  }
+  </code></pre>
+<p>This code is equivalent to the previous code, but it is more easy and readable.
+</p>
+<p>Let's see another example</p>
+
+<pre><code class="language-js">function Profile({name, message}){
+    return (
+        <>
+            &lt;h1>Hello, {name}&lt;/h1>
+            &lt;p>{message}&lt;/p>
+        </>
+    )
+
+}
+
+const profile = &lt;Profile name="Ben" message=""Welcome back! />;
+const container = document.getElementById("root");
+const root = ReactDOM.createRoot(container);
+
+root.render(profile)
+
+</code></pre>
+
+  <!--*****************************************-->
+
+
+<h2>React Class Components (stateful components)</h2>
+<ol>
+    <li>React class components are a type of React component that is written as a class. </li>
+    <li>They can have state and lifecycle methods, which makes them more complex than functional components. </li>
+    <li>Class components are typically used to render complex UI elements, such as forms, tables, and modals.
+    </li>
+    <p>They can have state, which allows them to track and update data.
+    </p>
+    <p>The state in class components is used to store and manage the data that can change over time and influence the component's behaviour and rendering.</p>
+    <p>You should use class components when you need to render a complex UI element that has state or lifecycle methods.</p>
+    <p>For example, you might use a class component to render a form that allows users to enter and submit data.</p>
+</ol>
+<pre><code class="language-js">import React from "react";
+    import ReactDOM from "react-dom/client";
+    
+    class Button extends React.Component {
+      constructor(props) {
+        super(props);
+    
+        this.state = {
+          text: "Click Me!",
+        };
+      }
+    
+      handleClick() {
+        this.setState({
+          text: "You clicked me!",
+        });
+      }
+    
+      render() {
+        return (
+          &lt;button onClick={() => this.handleClick()}>{this.state.text}&lt;/button>
+        );
+      }
+    }
+const container = document.getElementById("root");
+const root = ReactDOM.createRoot(container);
+root.render(&lt;Button />);
+    
+  </code></pre>
+<!--*****************************************-->
+
+<h2>Exporting and Importing the components</h2>
+<ol>
+    <li>Exporting and importing components in React allows you to create modular, reusable code by breaking down your application into separate components. </li>
+</ol>
+    <p>In your component file, define your component as a JavaScript function or class. For example:
+    <p>
+    <pre><code class="language-js">// Header.js
+import React from 'react';
+
+function Header() {
+    return &lt;h1>My App Header&lt;/h1>;
+}
+
+export default Header;
+</code></pre>
+<p>You can export your component using <strong>export default</strong>. This allows you to import it using any name when importing it in another file.
+</p>    
+
+<p>In another file where you want to use the component, import it using <strong>import</strong>
+</p>
+<pre><code class="language-js">import React from 'react';
+import Header from './Header'; // Import the Header component from Header.js
+
+function App() {
+    return (
+    &lt;div>
+        &lt;Header />
+        {/* Other components or content */}
+        &lt;/div>
+    );
+}
+
+export default App;
+    </code></pre>
+<ol>
+    <li>You use <strong>import</strong> to bring in the component you want to use. The relative path <strong>./Header</strong> is used to locate the <strong>Header</strong> component file.
+    </li>
+    <li>The imported component can be used within the importing file as if it were any other JavaScript function or class.
+    </li>
+    <li>The imported component can be used within JSX by enclosing it in angle brackets, such as <strong>&lt;Header /></strong>.
+    </li>
+</ol>
+
+
+<h2>Nesting the components</h2>
+<ol>
+    <li>Nesting functional components in React is a common way to create complex user interfaces</li>
+    <li>It allows you to break down your UI into smaller, more reusable pieces, which can make your code easier to maintain and update.</li>
+
+</ol>
+<p>You can create functional components using JavaScript functions. Each component typically returns JSX to describe what should be rendered. Here's an example of two simple functional components</p>
+<pre><code class="language-js">function Header() {
+    return &lt;h1>My App Header&lt;/h1>;
+  }
+  
+  function Content() {
+    return &lt;p>This is the content of my app.&lt;/p>;
+  }
+  </code></pre>
+<p>You can nest components by including one component within another as you would include any other JSX element. For instance, you can include the <strong>Header</strong> and <strong>Content</strong> components within a parent component like <strong>App</strong></p>
+<pre><code class="language-js">function App() {
+    return (
+        &lt;div>
+            &lt;Header />
+            &lt;Content />
+        &lt;/div>
+    );
+  }
+  </code></pre>
+<p>To render the root component (in this case, App), you can use <strong>ReactDOM.render()</strong> in your entry point file (usually index.js):
+</p>
+<pre><code class="language-js">import React from 'react';
+import ReactDOM from 'react-dom/client';
+    
+function App() {
+    return (
+    &lt;div>
+        &lt;Header />
+        &lt;Content />
+    &lt;/div>
+    );
+}
+const container = document.getElementById("root");
+const root = ReactDOM.createRoot(container);
+
+root.render(&lt;App />);
+    </code></pre>
+<p>You can pass data or properties (props) from a parent component to a child component to make your components more dynamic. </p>
+<pre><code class="language-js">function UserInfo(props) {
+return <p>{props.name} - {props.age} years old&lt;/p>;
+}
+
+function App() {
+return (
+    &lt;div>
+        &lt;Header />
+        &lt;Content />
+        &lt;UserInfo name="Alice" age={30} />
+    &lt;/div>
+);
+}
+  </code></pre>
+<!--*****************************************-->
+
+
+
+
+
+
+
+
+
+
+        <div class="next-prev">
+          <a href="./react-jsx.html" id="prev">Previous</a>
+          <a href="./react-events.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

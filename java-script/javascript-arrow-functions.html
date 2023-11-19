@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JavaScript Arrow Functions provide concise syntax for writing functions. Introduced in ES6, they're a shorthand for anonymous functions, with implicit returns for one-liners. ">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>Learn JavaScript Arrow Functions Tutorial</title>
+</head>
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+        <div class="container">
+          <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+      
+        </div>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+             <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+            <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+            <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+            <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+      
+          </ul>
+        </div>
+      </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>JavaScript Arrow Functions Tutorial</h1>
+ 
+<h2>What are arrow functions?</h2>
+<ol>
+    <li>Arrow functions are a easiest and modern way to write JavaScript functions. They are defined using the => operator.
+    </li>
+    <li>These are works like a regular functions but syntax is different.</li>
+  
+</ol>
+<pre><code class="language-js">// Regular function
+function add(a, b) {
+    return a + b;
+}
+let addResult = add(9,8);
+console.log(addResult); // 17
+
+// Arrow function
+const sum = (a, b) => a + b;
+let sumResult = sum(9,8)
+console.log(sumResult);  // 17
+
+// Both functions are equivalent and will return the same result.
+    </code></pre>
+<p>If the function body is more than one expression we should use curly braces {}.</p>
+
+<pre><code class="language-js">const sum = sum(a, b) =>{
+    let add = a + b;
+    return add;
+}
+let result = sum(9, 5);
+console.log(result); // 14
+</code></pre>
+
+
+<!--***********************************************-->
+
+
+<h2>When to use arrow functions in JavaScript</h2>
+<ol>
+    <li>Arrow functions are a good choice for short, simple functions.
+    </li>
+    <li>Arrow functions are also a good choice for functions that are passed to other functions as arguments.
+    </li>
+    <li>Arrow functions are not a good choice for functions that need to bind their own <strong>this</strong> keyword.
+    </li>
+</ol>
+<pre><code class="language-js">// Arrow functions can be used to create simple functions:
+const greet = (name) => `Hello, ${name}!`;
+
+// Arrow functions can be used to create anonymous functions:
+const numbers = [1, 2, 3, 4, 5];
+const doubledNumbers = numbers.map((number) => number * 2);
+
+// Arrow functions can be used to pass functions to other functions as arguments:
+const filterEvenNumbers = (numbers) => numbers.filter((number) => number % 2 === 0);
+const evenNumbers = filterEvenNumbers([1, 2, 3, 4, 5]);
+    </code></pre>
+<!--***********************************************-->
+ 
+
+
+
+
+
+
+        <div class="next-prev">
+          <a href="./what-are-javascript-functions.html" id="prev">Previous</a>
+          <a href="./javascript-higher-order.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

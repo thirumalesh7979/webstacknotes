@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The MongoDB Update operation is used to modify the existing documents in a collection using the two methods updateOneand updateMany methods.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>MongoDB update Method Tutorial</title>
+</head>
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+        <div class="container">
+          <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+      
+        </div>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+             <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">Java Script</a></li>
+            <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React JS</a></li>
+            <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node JS</a></li>
+            <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+      
+          </ul>
+        </div>
+      </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+        <h1>MongoDB Update Tutorial</h1>
+        <p>The MongoDB Update operation is used to modify the existing documents in a collection using the two methods <strong>updateOne</strong> and <strong>updateMany</strong>  methods.</p>
+        
+        <h2>Update a Single Document</h2>
+        <p>The <strong>updateOne()</strong> to modify a single document that matches a specific filter.</p>
+        <pre><code class="language-js">db.myCollection.updateOne({ name: "John" }, { $set: { age: 31 } });
+        </code></pre>
+
+        <h2>Update Multiple Documents</h2>
+        <p>The <strong>updateMany()</strong> to modify multiple documents that match a specific filter.</p>
+        <pre><code class="language-js">db.myCollection.updateMany({ age: { $lt: 25 } }, { $set: { status: "Young" } });
+        </code></pre>
+
+        <h2>Update or Insert with upsert</h2>
+        <p>With upsert set to <strong>true</strong>, <strong>updateOne</strong> will insert a document if no matching document is </p>
+        <pre><code class="language-js">db.myCollection.updateOne({ name: "Alice" }, { $set: { age: 26 } }, { upsert: true });
+        </code></pre>
+
+        <h2>Result of Update Operations</h2>
+        <p>The <strong>updateOne()</strong> and <strong>updateMany()</strong> return a result object with information about the </p>
+        <pre><code class="language-js">const result = db.myCollection.updateOne({ name: "John" }, { $set: { age: 31 } });
+printjson(result);
+          </code></pre>
+
+        <h2>Updating Nested Documents</h2>
+        <p>To modify fields within nested documents, use dot notation.</p>
+        <pre><code class="language-js">db.myCollection.updateOne({ "address.city": "New York" }, { $set: { "address.zipCode": "10001" } });
+        </code></pre>
+
+        <h2>Updating Arrays</h2>
+        <p>The operators like <strong>$push, $pull, and $addToSet </strong>to modify arrays in documents.</p>
+        <pre><code class="language-js">db.myCollection.updateOne({ name: "Alice" }, { $push: { hobbies: "Swimming" } });
+        </code></pre>
+
+        <h2>Increment or Decrement Fields</h2>
+        <p>Using<strong>$inc</strong> operator we increment or decrement numeric fields.</p>
+        <pre><code class="language-js">db.myCollection.updateOne({ name: "John" }, { $inc: { age: 1 } });
+        </code></pre>
+
+       
+
+        <h2>Removing Fields</h2>
+        <p>The  <strong>$unset</strong> to remove specific fields from a document.</p>
+        <pre><code class="language-js">db.myCollection.updateOne({ name: "John" }, { $unset: { age: 1 } });
+        </code></pre>
+        
+        
+        <div class="next-prev">
+          <a href="./mongodb-delete.html" id="prev">Previous</a>
+          <a href="./mongodb-query-operators.html" id="next">Next</a>
+       </div>
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

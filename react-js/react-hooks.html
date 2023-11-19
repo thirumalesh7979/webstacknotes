@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hooks are functions that let you hook into React state and lifecycle features. They can be used in any functional component, regardless of whether it's a class component or not.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>React Hooks Tutorial</title>
+</head>
+<body>
+        <!--Navigation-->
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+            <div class="container">
+              <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+          
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+          
+            </div>
+            <div class="collapse navbar-collapse" id="navmenu">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+                 <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+                <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+                <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+                <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+          
+              </ul>
+            </div>
+          </nav>
+
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>React Hooks Tutorial</h1>
+<p>In this tutorial, you will learn React Hooks in detail with examples. Let's get started...</p>
+
+<h2>What are React Hooks?</h2>
+<ol>
+    <li>Hooks are a new addition to React that allow you to use state and other React features without writing a class. </li>
+    <li>They were introduced in React 16.8 and have quickly become one of the most popular features of the library.</li>
+    <li>Hooks are functions that let you "hook into" React state and lifecycle features. </li>
+<li>They can be used in any functional component, regardless of whether it's a class component or not.</li>
+</ol>
+<!--*****************************************-->
+
+<h2>Why to use Hooks?</h2>
+<ol>
+    <li>You can extract common logic into custom Hooks, and then use those Hooks in other components.</li>
+    <li>Since Hooks are just functions, you can test them in isolation without having to worry about the rendering lifecycle.</li>
+    <li> If you're new to React, Hooks can be a good way to start learning the library because they're simpler and more concise than classes.</li>
+</ol>
+<!--*****************************************-->
+
+
+<h2>How to use Hooks</h2>
+<ol>
+    <li>To use a Hook, you simply import it from the <strong>react</strong> package and then call it in your functional component. For example, to use the <strong>useState</strong> Hook, you would do the following:
+    </li>
+  
+</ol>
+<pre><code class="language-js">import React, { useState } from 'react';
+
+function Example() {
+    const [count, setCount] = useState(0);
+
+    return (
+    &lt;div>
+        &lt;p>You have clicked {count} times&lt;/p>
+        &lt;button onClick={() => setCount(count + 1)}>Click me&lt;/button>
+    &lt;/div>
+    );
+}
+    </code></pre>
+<p>The useState Hook returns a tuple of two values: the current state value and a function for updating the state value. In the example above, we're using the useState Hook to manage the count state variable.
+</p>
+<!--*****************************************-->
+<p>There are many other built-in Hooks that you can use in your React components. Like useEffect, useContexr, UseReducer,etc.</p>
+
+<h2>useEffect</h2>
+<ol>
+    <li>The <strong>useEffect</strong> Hook is used to handle side effects in function components.
+    </li>
+    <li>It replaces lifecycle methods like <strong>componentDidMount and componentDidUpdate</strong>.
+    </li>
+    
+</ol>
+<pre><code class="language-js">import React, { useState, useEffect } from 'react';
+
+function DataFetching() {
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+    // Fetch data from an API or perform other side effects
+    fetch('https://api.example.com/data')
+        .then(response => response.json())
+        .then(data => setData(data));
+    }, []); // Empty dependency array means it runs once on mount
+
+    return &lt;div>{data ? &lt;p>Data: {data}&lt;/p> : &lt;p>Loading...&lt;/p>}&lt;/div>;
+}
+    </code></pre>
+<!--*****************************************-->
+
+
+<h2>useContext</h2>
+<ol>
+    <li>Context provides a way to pass data through the component tree without having to pass props manually.
+    </li>
+    <li><strong>useContext</strong> Hook allows you to access context values in function components.
+    </li>
+<pre><code class="language-js">import React, { useContext } from 'react';
+
+const MyContext = React.createContext('default value');
+
+function MyComponent() {
+    const value = useContext(MyContext);
+
+    return &lt;p>Context Value: {value}&lt;/p>;
+}
+</code></pre>
+</ol>
+<!--*****************************************-->
+
+
+<h2>useReducer</h2>
+<ol>
+    <li><strong>useReducer</strong> is a Hook for managing complex state logic with a reducer function.
+    </li>
+    <li>It's often used when you have multiple state values that depend on each other.
+    </li>
+  
+</ol>
+<pre><code class="language-js">import React, { useReducer } from 'react';
+
+function counterReducer(state, action) {
+    switch (action.type) {
+    case 'increment':
+        return { count: state.count + 1 };
+    case 'decrement':
+        return { count: state.count - 1 };
+    default:
+        return state;
+    }
+}
+
+function Counter() {
+    const [state, dispatch] = useReducer(counterReducer, { count: 0 });
+
+    return (
+    &lt;div>
+        &lt;dp>Count: {state.count}&lt;d/p>
+        &lt;dbutton onClick={() => dispatch({ type: 'increment' })}>Increment&lt;d/button>
+        &lt;dbutton onClick={() => dispatch({ type: 'decrement' })}>Decrement&lt;d/button>
+    &lt;d/div>
+    );
+}
+    </code></pre>
+<!--*****************************************-->
+<h2>React Cusom Hooks</h2>
+<ol>
+    <li>You can also create your own custom Hooks. This is a great way to encapsulate common logic and reuse it in multiple components.</li>
+    <li>To create a custom Hook, you simply define a function that returns a value. </li>
+    <li>Then, you can use that function in your components just like any other Hook.    </li>
+    <li>For example, here's a custom Hook for fetching data from an API.</li>
+</ol>
+<pre><code class="language-js">import React, { useState, useEffect } from 'react';
+
+function useFetch(url) {
+    const [data, setData] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+    async function fetchData() {
+        const response = await fetch(url);
+        const data = await response.json();
+        setData(data);
+        setIsLoading(false);
+    }
+
+    fetchData();
+    }, [url]);
+
+    return {
+    data,
+    isLoading,
+    };
+}
+</code></pre>
+<p>This Hook can be used in any component to fetch data from an API.</p>
+<pre><code class="language-js">import React, { useFetch } from 'react';
+
+function Example() {
+const { data, isLoading } = useFetch('https://api.example.com/users');
+
+if (isLoading) {
+return &lt;div>Loading...&lt;/div>;
+}
+
+return (
+&lt;div>
+    {data.map((user) => (
+        &lt;p key={user.id}>{user.name}&lt;/p>
+    ))}
+&lt;/div>
+);
+    }
+    </code></pre>
+
+
+
+
+
+
+
+
+
+        <div class="next-prev">
+          <a href="./react-table.html" id="prev">Previous</a>
+          <a href="./react-redux-tuotrial.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

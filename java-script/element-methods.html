@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JavaScript Element methods facilitate manipulation of individual HTML elements within the Document Object Model (DOM). Common ones include setAttribute, addEventListener, innerHTML, appendChild, and removeChild. ">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>Learn JavaScript DOM Element Methods Tutorial</title>
+</head>
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+        <div class="container">
+          <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+      
+        </div>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+             <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+            <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+            <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+            <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+      
+          </ul>
+        </div>
+      </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>JavaScript DOM Element Methods Tutorial</h1>
+ 
+
+<h2>setAttribute() </h2>
+<ol>
+    <li>Sets the value of an attribute of the given element.</li>
+   
+</ol>
+<pre><code class="language-html">&lt;div id="myDiv">&lt;/div>
+</code></pre>
+<pre><code class="language-js">document.getElementById("myDiv").setAttribute("style", "color: red;");
+</code></pre>
+<p>This will set the style attribute of the div element with the ID myDiv to the value "color: red;".
+</p>
+<!--***********************************************-->
+
+
+<h2>getAttribute() </h2>
+<ol>
+     <li>Gets the value of an attribute of the given element.
+    </li>
+</ol>
+<pre><code class="language-html">&lt;div id="myDiv" style="color: red;">&lt;/div>
+</code></pre>
+<pre><code class="language-js">const style = document.getElementById("myDiv").getAttribute("style");
+console.log(style); // "color: red;"
+</code></pre>
+<p>This will get the value of the style attribute of the div element with the ID myDiv and assign it to the variable style.
+</p>
+<!--***********************************************-->
+
+
+<h2>removeAttribute()</h2>
+<ol>
+     
+    <li>Removes an attribute from the given element.</li>
+</ol>
+<pre><code class="language-html">&lt;div id="myDiv" style="color: red;">&lt;/div>
+</code></pre>
+<pre><code class="language-js">document.getElementById("myDiv").removeAttribute("style");
+</code></pre>
+<p>This will remove the style attribute from the div element with the ID myDiv.
+</p>
+<!--***********************************************-->
+
+
+<h2>getAttributeNode()</h2>
+<ol>
+     
+    <li>Gets the attribute node (if any) corresponding to the given attribute name.</li>
+</ol>
+<pre><code class="language-html">&lt;div id="myDiv" style="color: red;">&lt;/div>
+</code></pre>
+<pre><code class="language-js">const styleNode = document.getElementById("myDiv").getAttributeNode("style");
+console.log(styleNode); // Attr object representing the `style` attribute
+</code></pre>
+<p>This will get the attribute node (an Attr object) corresponding to the style attribute of the div element with the ID myDiv.
+</p>
+<!--***********************************************-->
+
+
+<h2>setAttributeNode()</h2>
+<ol>
+     
+    <li>Sets the attribute node (if any) corresponding to the given attribute name.</li>
+</ol>
+<pre><code class="language-html">&lt;div id="myDiv">&lt;/div>
+</code></pre>
+<pre><code class="language-js">const styleNode = document.createAttribute("style");
+styleNode.value = "color: red;";
+document.getElementById("myDiv").setAttributeNode(styleNode);
+</code></pre>
+<p>This will create an attribute node (an Attr object) with the name style and the value "color: red;" and set it as the style attribute of the div element with the ID myDiv.
+</p>
+<!--***********************************************-->
+
+
+<h2>removeAttributeNode()</h2>
+<ol>
+     
+    <li>Removes the attribute node (if any) corresponding to the given attribute name.</li>
+</ol>
+<pre><code class="language-html">&lt;div id="myDiv" style="color: red;">&lt;/div>
+</code></pre>
+<pre><code class="language-js">const styleNode = document.getElementById("myDiv").getAttributeNode("style");
+document.getElementById("myDiv").removeAttributeNode(styleNode);
+    </code></pre>
+    <p>This will remove the attribute node (an Attr object) corresponding to the style attribute of the div element with the ID myDiv.
+    </p>
+<!--***********************************************-->
+
+
+<h2>getElementsByTagName()</h2>
+<ol>
+     
+    <li> Returns a list of all elements in the document with the given tag name.</li>
+</ol>
+<pre><code class="language-html">&lt;div id="myDiv">&lt;/div>
+&lt;div id="myDiv2">&lt;/div>
+    </code></pre>
+<pre><code class="language-js">const divs = document.getElementsByTagName("div");
+console.log(divs.length); // 2
+</code></pre>
+<!--***********************************************-->
+
+ 
+
+
+
+
+
+
+
+<div class="next-prev">
+    <a href="./document-methods.html" id="prev">Previous</a>
+    <a href="./node-methods.html" id="next">Next</a>
+</div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

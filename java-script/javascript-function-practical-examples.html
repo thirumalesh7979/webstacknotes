@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>JavaScript Functions Practical Examples</title>
+</head>
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+        <div class="container">
+          <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+      
+        </div>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+             <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+            <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+            <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+            <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+      
+          </ul>
+        </div>
+      </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>JavaScript Functions Practical Examples</h1>
+<p>In this JavaScript Functions Practical Examples, you will get an idea of how we can use functions in real world applications.</p>
+
+
+
+<h2>Rock Paper Scissors Game</h2>
+<pre><code class="language-js">// Define the array of possible choices
+const choices = ["rock", "paper", "scissors"];
+
+// Define a function to generate a random choice
+function randomChoice() {
+    return Math.floor(Math.random() * choices.length);
+}
+
+// Define a function to get the human's choice
+function humanChoice() {
+    const ch = choices[randomChoice()];
+    return ch;
+}
+
+// Define a function to get the computer's choice
+function computerChoice() {
+    const ch2 = choices[randomChoice()];
+    return ch2;
+}
+
+// Define a function to play the game
+function playGame() {
+    const human = humanChoice();
+    const computer = computerChoice();
+
+    console.log(`Human: ${human}`);
+    console.log(`Computer: ${computer}`);
+
+    if (
+    (human === "rock" && computer === "scissors") ||
+    (human === "paper" && computer === "rock") ||
+    (human === "scissors" && computer === "paper")
+    ) {
+    console.log("Human wins!");
+    } else {
+    console.log("Computer wins!");
+    }
+}
+
+// Play the game
+playGame();
+/* Output: 
+Human: rock
+Computer: paper
+Computer wins!
+*/
+
+playGame();
+/*Output: 
+Human: rock
+Computer: scissors
+Human wins!
+*/
+    </code></pre>
+<ol>
+<li>The <strong>choices</strong> array defines the three possible choices for the game: rock, paper, and scissors.
+</li>
+<li>The <strong>randomChoice()</strong> function generates a random number between 0 and the length of the choices array. This number is then used to index into the choices array to return a random choice.
+</li>
+<li>The <strong>humanChoice()</strong> function prompts the user to enter their choice and then returns the user's input.
+</li>
+<li><strong>computerChoice()</strong> This function returns the computer's choice. It does this by generating a random choice from the choices array and then returning that choice.
+</li>
+<li><strong>playGame()</strong> This function plays a round of rock-paper-scissors. It does this by calling the humanChoice and computerChoice functions to get the human's and computer's choices, respectively. It then compares the human's and computer's choices to determine the winner. Finally, it prints the winner to the console.
+</li>    
+</ol>
+
+<!--***********************************************-->
+
+
+<h2>User Profiles</h2>
+<pre><code class="language-js">const users = []; // Array to store user objects
+
+// Function to add a user
+function addUser(name, id, email) {
+    users.push({
+    name,
+    id,
+    email
+    });
+}
+
+// Function to remove a user
+function removeUser(userId) {
+    const index = users.findIndex(user => user.id === userId);
+    if (index !== -1) {
+    users.splice(index, 1);
+    }
+}
+
+// Function to search for a user
+function searchUser(userId) {
+    const index = users.findIndex(user => user.id === userId);
+    return index !== -1;
+}
+
+// Example usage:
+
+// Add a new user object
+addUser("Alice", 1, "alice@example.com");
+
+// Remove the user from the system
+removeUser(1);
+
+// Search for the user
+const isUserPresent = searchUser(1);
+
+console.log(isUserPresent); // false
+    </code></pre>
+<ol>
+    <li><strong>addUser(): </strong>This function takes three arguments: name, ID, and email. It uses these arguments to create a new user object and add it to the users array.
+    </li>
+    <li><strong>removeUser(): </strong>This function takes one argument: userID. It uses this argument to find the index of the user object with the given ID in the users array. If the user object is found, it is removed from the users array.
+    </li>
+    <li><strong>searchUser() function: </strong>This function takes one argument: userID. It uses this argument to find the index of the user object with the given ID in the users array. If the user object is found, the function returns true. Otherwise, it returns false.</li>
+</ol>
+
+<!--***********************************************-->
+
+
+ 
+
+
+
+
+
+
+        <div class="next-prev">
+          <a href="./javascript-higher-order.html" id="prev">Previous</a>
+          <a href="./javascript-dom-introduction.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

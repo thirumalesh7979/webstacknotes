@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The URL module in Node.js provides a way to work with URLs, which are common in web development. URLs include information about the protocol, domain, path, and query parameters.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>Node.js URL Module Tutorial</title>
+</head>
+<body>
+   <!--Navigation-->
+   <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+  
+    </div>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+         <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+        <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+        <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+        <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+  
+      </ul>
+    </div>
+  </nav>
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>Node.js URL Module Tutorial</h1>
+<p>The Node.js URL module provides utilities for working with URLs, parsing, and formatting them. </p>
+<p>In this beginner tutorial, you will learn URL module in Node and working with it.</p>
+
+<h2>Introduction to the URL Module</h2>
+<ol>
+    <li>The URL module in Node.js provides a way to work with URLs, which are common in web development.
+    </li>
+    <li>URLs include information about the protocol, domain, path, and query parameters.
+    </li>
+    <li>The URL module allows you to parse, format, and manipulate URLs easily.
+    </li>
+</ol>
+ 
+
+<h2>Parsing URLs</h2>
+<ol>
+    <li>You can use the <strong>url.parse()</strong> method to parse a URL string into its components.
+    </li>
+</ol>
+<pre><code class="language-js">const url = require('url');
+
+const urlString = 'https://www.example.com:8080/products?id=123#section';
+const parsedUrl = url.parse(urlString, true);
+
+console.log(parsedUrl);
+
+/* 
+Output: 
+{
+    protocol: 'https:',
+    slashes: true,
+    auth: null,
+    host: 'www.example.com:8080',
+    port: '8080',
+    hostname: 'www.example.com',
+    hash: '#section',
+    search: '?id=123',
+    query: { id: '123' },
+    pathname: '/products',
+    path: '/products?id=123',
+    href: 'https://www.example.com:8080/products?id=123#section'
+  }
+*/  
+    </code></pre>
+
+
+<!--Gap-->
+
+
+<h2>Formatting URLs:</h2>
+<ol>
+    <li>The <strong>url.format()</strong> method allows you to convert URL components back into a formatted URL string.
+    </li>
+</ol>
+<pre><code class="language-js">const url = require('url');
+
+const urlObject = {
+    protocol: 'https:',
+    host: 'www.example.com:8080',
+    pathname: '/products',
+    search: '?id=123',
+    hash: '#section',
+};
+
+const formattedUrl = url.format(urlObject);
+
+console.log(formattedUrl);
+
+// Output: https://www.example.com:8080/products?id=123#section
+    </code></pre>
+<!--Gap-->
+
+
+<h2> Modifying URLs</h2>
+<ol>
+    <li>You can modify URL components and create new URLs using the <strong> URL</strong> class.
+    </li>
+</ol>
+<pre><code class="language-js">const { URL } = require('url');
+
+const originalUrl = new URL('https://www.example.com/products?id=123');
+originalUrl.searchParams.set('id', '456');
+
+console.log(originalUrl.href);
+
+// Output: https://www.example.com/products?id=456
+    </code></pre>
+<!--Gap-->
+
+
+<h2>Resolving URLs</h2>
+<ol>
+    <li>You can resolve a relative URL against a base URL using the url.resolve() method.
+    </li>
+</ol>
+<pre><code class="language-js">const url = require('url');
+
+const baseUrl = 'https://www.example.com/';
+const relativeUrl = 'products?id=123';
+const resolvedUrl = url.resolve(baseUrl, relativeUrl);
+
+console.log(resolvedUrl);
+
+// Output: https://www.example.com/products?id=123
+    </code></pre>
+<!--Gap-->
+ 
+        <div class="next-prev">
+          <a href="./nodejs-buffers.html" id="prev">Previous</a>
+          <a href="./nodejs-email.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

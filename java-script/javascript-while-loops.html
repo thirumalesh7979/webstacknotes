@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The while loop checks the condition before execution, while the do-while loop checks it after, ensuring the block runs at least once. ">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>Learn JavaScript while and do-while loops Tutorial</title>
+</head>
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+        <div class="container">
+          <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+      
+        </div>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+             <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+            <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+            <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+            <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+      
+          </ul>
+        </div>
+      </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>JavaScript while and do-while loops Tutorial</h1>
+ 
+
+<h2>What is a while Loop?</h2>
+<ol>
+    <li>A while loop is a control flow statement in JavaScript that allows you to repeatedly execute a block of code as long as a specified condition is true.</li>
+    <li>It's used for situations where you want to continue running a piece of code until a certain condition is no longer met.</li>
+ </ol>
+ <h3>Syntax: </h3>
+<pre><code class="language-js">while (condition) {
+    // Code to be executed
+    update;
+}
+</code></pre>
+<h3>Example</h3>
+<pre><code class="language-js">let count = 1;
+while (count <= 5) {
+    console.log("Count: " + count);
+    count++;
+}
+</code></pre>
+<p>The output of the above code will be</p>
+<pre><code class="language-js">Count: 1
+Count: 2
+Count: 3
+Count: 4
+Count: 5
+    </code></pre>
+<p>In this example, the loop continues executing as long as the <strong>count</strong> variable is less than or equal to 5. It increments <strong>count</strong> by 1 in each iteration.
+</p>
+<pre><code class="language-js">let chargePercent = 90;
+while (chargePercent <= 100){
+    console.log(`${chargePercent} %`);
+    chargePercent++;
+}
+</code></pre>
+<p>The output of the above code will be</p>
+<pre><code class="language-js">90 %
+91 %
+92 %
+93 %
+94 %
+95 %
+96 %
+97 %
+98 %
+99 %
+100 %
+</code></pre>
+<!--***********************************************-->
+
+
+<h2>Infinite while Loop</h2>
+<ol>
+    <li>We said that while loop will always run the code as long as the condition is true.</li>
+    <li>This means the loop can execute repeatedly if the condition is always true</li>
+ 
+</ol>
+<pre><code class="language-js">while(true){
+    console.log("This loop always executes, To stop this you might turn off the computer close the editor");    
+}
+
+let number = 9;
+while(number == 9){
+    console.log("This loop always executes");
+}
+</code></pre>
+<!--***********************************************-->
+
+
+<h2>while Loop to Iterate Through an Array</h2>
+<ol>
+    <li><strong>while</strong> loops are not just for counting; they can also be used to iterate through arrays. In this example, we'll iterate through an array of fruits and print each one.</li>
+   
+</ol>
+<pre><code class="language-js">const fruits = ["apple", "banana", "cherry", "date"];
+let i = 0;
+
+while (i < fruits.length) {
+    console.log("Fruit: " + fruits[i]);
+    i++;
+}
+
+/* Output: 
+Fruit: apple
+Fruit: banana
+Fruit: cherry
+Fruit: date
+*/
+    </code></pre>
+<p>The <strong>i</strong> variable is used as an index to access elements of the <strong>fruits</strong> array, and the loop continues as long as <strong>i</strong> is less than the length of the array.
+</p>
+<!--***********************************************-->
+
+
+<h2>Controlling while Loops with Break and Continue</h2>
+<ol>
+    <li>In some cases, you may want to exit a while loop prematurely or skip a specific iteration. You can do this using the <strong>break</strong> and <strong>continue</strong> statements.
+    </li>
+    
+</ol>
+<h3>Break</h3>
+<p>Exits the loop before it actually exits.</p>
+<pre><code class="language-js">let count = 1;
+while (count <= 5) {
+    if (count === 3) {
+        break; // Exit the loop when count is 3
+    }
+    console.log("Count: " + count);
+    count++;
+}
+/* Output
+Count: 1
+Count: 2
+*/
+    </code></pre>
+
+<h3>continue</h3>
+<p>Skips the current iteration and proceeds to the next one.</p>
+<pre><code class="language-js">let count = 1;
+while (count <= 5) {
+    if (count === 3) {
+        count++;
+        continue; // Skip iteration when count is 3
+    }
+    console.log("Count: " + count);
+    count++;
+}
+</code></pre>
+<pre><code class="language-js">Count: 1
+Count: 2
+Count: 4
+Count: 5
+</code></pre>
+<!--***********************************************-->
+
+
+<h2>What is a do...while Loop?</h2>
+<ol>
+    <li>A <strong>do...while</strong>e loop is a control flow statement in JavaScript that executes a block of code at least once, and then repeatedly as long as a specified condition remains true. </li>
+    <li>Unlike the while loop, which checks the condition before the first iteration, the <strong>do...while</strong>e loop guarantees at least one execution of the code.</li>
+ 
+</ol>
+<h3>Syntax</h3>
+<pre><code class="language-js">do {
+    // Code to be executed
+} while (condition);
+</code></pre>
+<h3>Example: </h3>
+<pre><code class="language-js">let count = 1;
+do {
+    console.log("Count: " + count);
+    count++;
+} while (count <= 5);
+
+/* Output: 
+Count: 1
+Count: 2
+Count: 3
+Count: 4
+Count: 5
+*/
+    </code></pre>
+
+<pre><code class="language-js">do {
+    console.log("This will executes once even though condition is false.")
+}
+while(false);
+
+// Output: This will executes once even though condition is false.
+</code></pre>
+<!--***********************************************-->
+
+
+<h2>Logging In with User Validation</h2>
+<h3>do-while</h3>
+<ol>
+    <li> In a web application, you want to prompt the user to log in with their username and password. You need to ensure that the user provides valid input before proceeding.</li>
+ 
+</ol>
+<pre><code class="language-js">let validLogin = false;
+do {
+    let username = prompt("Enter your username:");
+    let password = prompt("Enter your password:");
+
+    // Perform authentication logic
+    if (username === "user123" && password === "pass123") {
+        console.log("Login successful!");
+        validLogin = true;
+    } else {
+        console.log("Invalid login credentials. Please try again.");
+    }
+} while (!validLogin);
+    </code></pre>
+<p>In this do...while loop example, the user is repeatedly prompted to log in until they provide valid credentials. The loop guarantees that the login prompt is shown at least once.
+</p>
+<h3>while</h3>
+<pre><code class="language-js">let validLogin = false;
+while (!validLogin) {
+    let username = prompt("Enter your username:");
+    let password = prompt("Enter your password:");
+
+    // Perform authentication logic
+    if (username === "user123" && password === "pass123") {
+        console.log("Login successful!");
+        validLogin = true;
+    } else {
+        console.log("Invalid login credentials. Please try again.");
+    }
+}
+    </code></pre>
+    <p>In this while loop example, the user is also prompted to log in until they provide valid credentials.</p>
+    <p>However, there's no guarantee that the login prompt will be shown at least once. If validLogin is already true initially, the loop will not execute, which might not be ideal for a login scenario.
+    </p>
+<!--***********************************************-->
+
+
+<h2>When to use while loops</h2>
+<ol>
+    <li>Iterating Over Arrays</li>
+    <li>User Input Validation</li>
+    <li>Processing Data Until a Condition is Met</li>
+    <li>File or Data Reading</li>
+    <li>Asynchronous Operations</li>
+    <li>Infinite Loops with Exit Conditions</li>
+</ol>
+ 
+<!--***********************************************-->
+
+ 
+
+
+
+        <div class="next-prev">
+          <a href="./javascript-if-else.html" id="prev">Previous</a>
+          <a href="./javascript-for-loops.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JavaScript Maps: Key-value data structures for efficient data manipulation. Unique keys, diverse data support, and built-in methods enhance web development tasks.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>Learn JavaScript Maps Tutorial</title>
+</head>
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+        <div class="container">
+          <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+      
+        </div>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+           
+            <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+            <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+            <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+            <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+      
+          </ul>
+        </div>
+      </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>JavaScript Maps Tutorial</h1>
+ 
+
+<h2>What is a JavaScript Map</h2>
+<ol>
+    <li>A JavaScript Map is a data structure that allows you to store key-value pairs. </li>
+    <li>Each key in a Map can only occur once, and the keys can be of any data type, including objects and functions. </li>
+    <li>Maps are widely used in JavaScript for various tasks, such as data storage, caching, and maintaining key-value associations.
+    </li>
+    <li>A social media application could use a map to store the user's friends list.</li>
+    <li>The keys would be the friends' user IDs, and the values would be the friends' names. This would allow the application to quickly and easily retrieve the names of the user's friends without having to search through an entire database.</li>
+    <li>An e-commerce application could use a map to store the prices of products in different currencies. </li>
+</ol>
+ 
+<!--***********************************************-->
+
+
+<h2>Creating a Map
+</h2>
+<ol>
+    <li>You can create a Map in JavaScript using the <strong>Map</strong> constructor:
+    </li>
+</ol>
+<pre><code class="language-js">const myMap = new Map();
+</code></pre>
+<!--***********************************************-->
+
+
+
+<h2>Adding Key-Value Pairs</h2>
+<ol>
+    <li>You can add key-value pairs to a Map using the <strong>set</strong> method</li>
+</ol>
+<pre><code class="language-js">const myMap = new Map();
+myMap.set('name', 'John');
+myMap.set('age', 30);
+myMap.set('city', 'New York');
+
+console.log(myMap); //Output: Map(3) { 'name' => 'John', 'age' => 30, 'city' => 'New York' }
+</code></pre>
+<!--***********************************************-->
+
+<h2>Map Initialization
+</h2>
+<ol>
+    <li>You can initialize a Map with key-value pairs in its constructor.</li>
+</ol>
+<pre><code class="language-js">const myMap = new Map([
+    ['name', 'Bob'],
+    ['age', 25],
+    ['city', 'London']
+  ]);
+
+</code></pre>
+
+<h2>Getting Values
+</h2>
+<ol>
+    <li>You can retrieve values from a Map using the <strong>get</strong> method.</li>
+</ol>
+<pre><code class="language-js">console.log(myMap.get('name')); // Output: 'John'
+console.log(myMap.get('age'));  // Output: 30
+</code></pre>
+<!--***********************************************-->
+
+
+<h2>Checking for Key Existence
+</h2>
+<ol>
+    <li>You can check if a key exists in a Map using the <strong>has</strong> method.    </li>
+   
+</ol>
+<pre><code class="language-js">console.log(myMap.has('name'));   // Output: true
+console.log(myMap.has('country')); // Output: false
+    </code></pre>
+<!--***********************************************-->
+
+
+<h2>Deleting Key-Value Pairs
+</h2>
+<ol>
+    <li>You can remove key-value pairs from a Map using the <strong>delete</strong> method:</li>
+ 
+</ol>
+<pre><code class="language-js">myMap.delete('age');
+console.log(myMap.get('age')); // Output: undefined
+    </code></pre>
+<!--***********************************************-->
+
+
+<h2>Getting the Size
+</h2>
+<ol>
+    <li>You can find the number of key-value pairs in a Map using the <strong>size</strong> property    </li>
+ 
+</ol>
+<pre><code class="language-js">console.log(myMap.size); // Output: 2
+</code></pre>
+<!--***********************************************-->
+
+
+<h2>Iterating Through a Map
+</h2>
+<ol>
+    <li>You can iterate through the key-value pairs of a Map using the <strong>forEach</strong> method.</li>
+ 
+</ol>
+<pre><code class="language-js">myMap.forEach((value, key) => {
+    console.log(`${key}: ${value}`);
+});
+
+/* Output: 
+name: John
+age: 30
+city: New York
+*/
+  </code></pre>
+<!--***********************************************-->
+<h2>Clearing a Map
+</h2>
+<ol><li>You can remove all key-value pairs from a Map using the <strong>clear</strong> method</li></ol>
+<pre><code class="language-js">myMap.clear();
+console.log(myMap.size); // Output: 0
+</code></pre>
+
+<h2>Using Functions as Keys
+</h2>
+<ol><li>You can also use functions as keys</li></ol>
+<pre><code class="language-js">const myFunction = () => console.log('Hello');
+myMap.set(myFunction, 'A function');
+console.log(myMap.get(myFunction)); // Output: 'A function'
+</code></pre>
+
+<h2>Complete Map Example in JavaScript</h2>
+<ol><li>This example shows how JavaScript maps can be used to store and manage product data, track items in a shopping cart, and calculate the total price of the items in the cart, without using classes.</li></ol>
+<pre><code class="language-js">// Create a map of products
+const productsMap = new Map();
+productsMap.set(1, { id: 1, name: "T-shirt", price: 20 });
+productsMap.set(2, { id: 2, name: "Jeans", price: 30 });
+productsMap.set(3, { id: 3, name: "Shoes", price: 40 });
+
+// Get a product from the map
+const product = productsMap.get(1); // { id: 1, name: 'T-shirt', price: 20 }
+
+// Iterate over the map and display the products in the console
+for (const [id, product] of productsMap) {
+    console.log(`${id}: ${product.name}`);
+}
+
+// Output:
+// 1: T-shirt
+// 2: Jeans
+// 3: Shoes
+    </code></pre>
+<pre><code class="language-js">// Create a shopping cart map
+const shoppingCartMap = new Map();
+
+// Add an item to the shopping cart
+shoppingCartMap.set(1, { quantity: 1 }); // Add a T-shirt to the shopping cart
+
+// Get the total price of the items in the shopping cart
+const totalPrice = 0;
+for (const [productId, item] of shoppingCartMap) {
+    const product = productsMap.get(productId);
+    totalPrice += product.price * item.quantity;
+}
+
+console.log(`Total price: ${totalPrice}`); // 20</code></pre>
+
+
+
+        <div class="next-prev">
+          <a href="./javascript-arrays.html" id="prev">Previous</a>
+          <a href="./javascript-if-else.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

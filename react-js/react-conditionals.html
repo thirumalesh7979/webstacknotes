@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="React conditionals allow you to render different content based on certain conditions or states. They are very useful for creating dynamic and engaging user interfaces.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>React Conditionals Tutorial</title>
+</head>
+<body>
+   <!--Navigation-->
+   <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+  
+    </div>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+         <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+        <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+        <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+        <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+  
+      </ul>
+    </div>
+  </nav>
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>React Conditionals Tutorial</h1>
+<p>In this tutorial, you will learn about conditional rendering in React</p>
+
+<h2>What is React Conditional Rendering?</h2>
+<ol>
+    <li>React conditionals allow you to render different content based on certain conditions or states. </li>
+    <li>They are very useful for creating dynamic and engaging user interfaces.</li>
+
+</ol>
+
+<!--*****************************************-->
+
+<h2>Types of Conditional Rendering</h2>
+<p>There are two main ways to implement conditional rendering in React</p>
+<ol>
+    <li><strong>Inline if-else statements:</strong> This is the simplest way to conditionally render content. You can use an if-else statement to render different elements based on a condition. </li>
+    <li><strong>Ternary operators: </strong>Ternary operators are a more concise way to write inline if-else statements. They take three arguments: a condition, a value to return if the condition is true, and a value to return if the condition is false.</li>
+
+</ol>
+<pre><code class="language-js">function Button() {
+const isLoggedIn = true;
+
+if (isLoggedIn) {
+    return &lt;button>Log out&lt;/button>;
+} else {
+    return &lt;button>Log in&lt;/button>;
+}
+}
+  </code></pre>
+<p>This component will render a "Log out" button if the user is logged in, or a "Log in" button if the user is not logged in.
+</p>
+<pre><code class="language-js">function Button() {
+const isLoggedIn = true;
+
+return (
+    &lt;button>{isLoggedIn ? 'Log out' : 'Log in'}&lt;/button>
+);
+}
+  </code></pre>
+  <p>This component is equivalent to the previous example, but it uses a ternary operator to write the if-else statement in a more concise way.
+  </p>
+  <p>You can also use conditionals to render different components. For example, the following component renders a different greeting depending on the user's name:
+  </p>
+  <pre><code class="language-js">function Greeting({ name }) {
+    if (name === 'Mike') {
+      return &lt;div>Hello, Mike!&lt;/div>;
+    } else {
+      return &lt;div>Hello, {name}!&lt;/div>;
+    }
+  }
+  </code></pre>
+  <p>This component can be used like this  </p>
+<pre><code class="language-js">&lt;Greeting name="Mike" />
+</code></pre>
+<!--Image-->
+<p>You can also use conditionals to control the flow of your application. </p>
+<pre><code class="language-js">function LoginOrRegisterForm() {
+const isLoggedIn = false;
+
+if (isLoggedIn) {
+    return &lt;LoginForm />;
+} else {
+    return &lt;RegisterForm />;
+}
+}
+  </code></pre>
+  <p>Render the above component and you will notice the changes in your page.</p>
+
+<!--*****************************************-->
+ 
+
+
+
+
+
+
+
+        <div class="next-prev">
+          <a href="./react-lists.html" id="prev">Previous</a>
+          <a href="./react-forms.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

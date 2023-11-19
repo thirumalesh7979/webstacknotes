@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="<img>: The image element src: Specifies the image file's source (URL or local path) alt: Provides alternative text for the image">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>HTML Images Tutorial</title>
+</head>
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+        <div class="container">
+          <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+      
+        </div>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+             <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+            <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+            <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+            <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+      
+          </ul>
+        </div>
+      </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>HTML Images Tutorial</h1>
+<p>HTML images play a crucial role in web design, enhancing visual appeal and conveying information.</p>
+
+<h2>Adding Images to HTML</h2>
+<p>To display an image in HTML, use the <strong>&lt;img> (image)</strong> element. </p>
+<pre><code class="language-html">&lt;img src="image.jpg" alt="Description of the image">
+</code></pre>
+<ol>
+    <li><strong>&lt;img>: </strong>The image element.
+    </li>
+    <li><strong>src: </strong>Specifies the image file's source (URL or local path).
+    </li>
+    <li><strong>alt: </strong>Provides alternative text for the image for accessibility and in case the image can't be displayed.
+    </li>
+</ol>
+
+<!--Image-->
+<!--****************************************************-->
+
+<h2>Image Types and Formats</h2>
+<ol>
+    <li>Common image formats used on the web include JPEG, PNG, GIF, and SVG.</li>
+    <li> Choose the format that best suits your needs based on factors like quality, file size, and transparency.</li>
+ 
+</ol>
+ 
+<!--****************************************************-->
+
+
+<h2>Image Attributes</h2>
+<ol>
+    <li><strong>width and height: </strong>Set the image dimensions.
+    </li>
+    <li><strong>title: </strong>Adds a tooltip when the user hovers over the image.
+    </li>
+    <li><strong>style: </strong>Apply inline CSS styles.
+    </li>
+    <li><strong>class and id: </strong>Use for CSS or JavaScript targeting.
+    </li>
+    <li><strong>border: </strong>Adds a border (not recommended; use CSS for styling).
+    </li>
+</ol>
+ 
+<!--****************************************************-->
+
+<h2>Responsive Images</h2>
+<p>To make images responsive and adapt to different screen sizes, use the srcset and sizes attributes.</p>
+<pre><code class="language-html">&lt;img src="small.jpg" srcset="medium.jpg 640w, large.jpg 1024w" sizes="(max-width: 640px) 100vw, 50vw">
+</code></pre>
+<ol>
+    <li><strong>srcset: </strong>Specifies different image sources for different viewport widths.
+    </li>
+    <li><strong>sizes: </strong>Determines the image's display size based on viewport width.
+    </li>
+   
+</ol>
+ 
+ 
+<!--****************************************************-->
+
+<h2>Lazy Loading</h2>
+<ol>
+    <li>Lazy loading is a technique where images load only when they come into the user's view, reducing initial page load times.</li>
+    <li>Use the loading="lazy" attribute to implement this</li>
+ 
+</ol>
+<pre><code class="language-html">&lt;img src="image.jpg" alt="Description of the image" loading="lazy">
+</code></pre>
+<!--Image-->
+<!--****************************************************-->
+ 
+<h2>Image Caption</h2>
+<ol><li>You can add captions to images by wrapping them in a &lt;figure> and &lt;figcaption>&lt;/figcaption></li></ol>
+<pre><code class="language-js">&lt;figure>
+    &lt;img src="image.jpg" alt="Description of the image">
+    &lt;figcaption>Caption for the image&lt;/figcaption>
+&lt;/figure>
+</code></pre>
+
+
+
+
+
+
+        <div class="next-prev">
+          <a href="./html-links.html" id="prev">Previous</a>
+          <a href="./html-lists.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+
+

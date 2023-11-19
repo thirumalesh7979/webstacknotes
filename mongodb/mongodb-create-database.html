@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="To Create a Database in MongoDB, 1. Open your terminal and run the MongoDB shell using the 'mongo' command.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>Create Databases in MongoDB</title>
+</head>
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+        <div class="container">
+          <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+      
+        </div>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+             <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+            <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+            <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+            <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+      
+          </ul>
+        </div>
+      </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+        <h1>Create a Database in MongoDB</h1>
+        <p>In this Tutorial, you will learn how to create a database in mongodb for your project. So, let's get started!</p>
+        <h2>Create databasae using MongoDB Shell</h2>
+        <p>1. Open your terminal and run the MongoDB shell using the <strong>mongo</strong> command.</p>
+        <p>2.  If you want to create the database in a specific location, you can switch to the admin database using the <strong>use</strong> command. For example, to switch to the admin database:</p>
+        <pre><code class="language-mongodb">use admin</code></pre>
+        <p>3. Use the <strong>use</strong> command to create a new database. If the database does not exist, MongoDB will create it. For example, to create a database called "mydatabase":</p>
+        <p>4. You can verify the currrent database by running this command</p>
+        <pre><code class="language-mongo">db</code></pre>
+
+        <h2>Create database using a MongoDB Driver</h2>
+        <p>If you're working with a MongoDB driver in a programming language like Node.js, you can create a database as follows</p>
+        <p>1. First, install the MongoDB driver for your chosen programming language. In Node.js, you can use the mongodb package.</p>
+        <pre><code class="language-mongo">npm install mongodb
+        </code></pre>
+        <p>3. Use the MongoDB driver to connect to your MongoDB server. Provide the connection string, which includes the server address and authentication credentials.</p>
+        <pre><code class="language-js">const { MongoClient } = require('mongodb');
+
+const uri = "mongodb://localhost:27017"; // MongoDB server address
+const client = new MongoClient(uri);
+
+async function main() {
+  try {
+    await client.connect(); // Connect to the MongoDB server
+    console.log("Connected to MongoDB");
+
+    const database = client.db("mydatabase"); // Specify the database name
+    console.log("Database created");
+  } finally {
+    await client.close(); // Close the connection
+  }
+}
+
+main().catch(console.error);
+          
+
+        </code></pre>
+
+        <div class="next-prev">
+          <a href="./mongodb-introduction.html" id="prev">Previous</a>
+          <a href="./mongodb-create-collection.html" id="next">Next</a>
+       </div>
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

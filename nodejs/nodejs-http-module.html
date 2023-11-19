@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Node.js HTTP module is a core module that allows you to create HTTP servers and clients.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>Node http Module Tutorial</title>
+</head>
+<body>
+   <!--Navigation-->
+   <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+  
+    </div>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+         <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+        <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+        <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+        <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+  
+      </ul>
+    </div>
+  </nav>
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>Node http Module Tutorial</h1>
+<p>The Node.js HTTP module is a core module that allows you to create HTTP servers and clients.</p>
+<p>In this tutorial, you will learn http module in node with examples.</p>
+
+<h2> Introduction to the HTTP Module</h2>
+<ol>
+    <li>The HTTP module in Node.js provides functionality to create HTTP servers and clients.
+    </li>
+    <li>It is commonly used to build web servers and make HTTP requests to other servers.
+    </li>
+</ol>
+ 
+<h2>Creating an HTTP Server</h2>
+<ol>
+    <li>To create an HTTP server, you need to require the <strong>http</strong> module and use its <strong>createServer</strong> method.
+    </li>
+    <li>You must provide a callback function that will be called for each incoming request.
+    </li>
+</ol>
+<pre><code class="language-js">const http = require('http');
+
+const server = http.createServer((req, res) => {
+    // Handle the request here
+});
+
+const port = 3000;
+server.listen(port, () => {
+    console.log(`Server is listening on port ${port}`);
+});
+    </code></pre>
+<!--Gap-->
+
+
+<h2>Handling HTTP Requests</h2>
+<ol>
+    <li>The <strong>req</strong> object represents the HTTP request and contains information about the client's request.
+    </li>
+    <li>You can access properties like <strong>req.url,</strong> <strong>req.method</strong>, and <strong>req.headers </strong>to examine the request.
+    </li>
+ 
+</ol>
+ 
+
+
+<h2>Sending HTTP Responses</h2>
+<ol>
+    <li>The <strong>res</strong> object is used to send an HTTP response to the client.
+    </li>
+    <li>You can set response headers, status codes, and send a response body using methods like <strong>res.setHeader()</strong>, <strong>res.statusCode</strong>, and <strong>res.end()</strong>.</li>
+    <li></li>
+</ol>
+<pre><code class="language-js">const server = http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Hello, world!\n');
+  });
+  </code></pre>
+<!--Gap-->
+
+
+<h2>Parsing Request Data</h2>
+<ol>
+    <li>To work with data sent in the request, you may need to parse it. </li>
+    <li>Commonly used data formats include URL parameters and request bodies</li>
+
+</ol>
+<pre><code class="language-js">const server = http.createServer((req, res) => {
+    // Parse URL parameters
+    const urlParams = new URL(req.url, `http://${req.headers.host}`);
+    const queryData = urlParams.searchParams.get('data');
+  
+    // Read request body
+    let body = '';
+    req.on('data', (chunk) => {
+      body += chunk;
+    });
+  
+    req.on('end', () => {
+      console.log('URL Parameter:', queryData);
+      console.log('Request Body:', body);
+      res.end('Data received');
+    });
+  });
+  </code></pre>
+<!--Gap-->
+
+
+<h2> Making HTTP Requests as a Client</h2>
+<ol>
+    <li>The HTTP module can be used to make HTTP requests to other servers as a client.
+    </li>
+    <li>The <strong>http.get()</strong> and <strong>http.request()</strong> methods are commonly used to initiate requests.
+    </li>
+
+</ol>
+<pre><code class="language-js">const http = require('http');
+
+    const options = {
+      hostname: 'example.com',
+      path: '/api/data',
+      method: 'GET',
+    };
+    
+    const req = http.request(options, (res) => {
+      let data = '';
+    
+      res.on('data', (chunk) => {
+        data += chunk;
+      });
+    
+      res.on('end', () => {
+        console.log(data);
+      });
+    });
+    
+    req.end();
+    </code></pre>
+<!--Gap-->
+
+ 
+        <div class="next-prev">
+          <a href="./nodejs-events.html" id="prev">Previous</a>
+          <a href="./nodejs-streams.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

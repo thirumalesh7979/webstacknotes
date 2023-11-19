@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JavaScript strings store and manipulate text. Explore methods like length, charAt, slice, and more for powerful string manipulation. ">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>Learn JavaScript Strings and String Methods Tutorial</title>
+</head>
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+        <div class="container">
+          <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+      
+        </div>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+             <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+            <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+            <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+            <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+      
+          </ul>
+        </div>
+      </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>JavaScript Strings and String Methods Tutorial</h1>
+ 
+
+<h2>What are Strings?</h2>
+<ol>
+    <li>A string is a sequence of characters enclosed within single (' ') or double (" ") quotes. </li>
+    <li>JavaScript treats both single and double quotes equally, and you can use them interchangeably.</li>
+    
+</ol>
+<pre><code class="language-js">let singleQuoted = 'This is a string.';
+let doubleQuoted = "This is another string.";
+    </code></pre>
+<!--***********************************************-->
+
+
+<h2>Creating Strings in JavaScript</h2>
+<ol>
+    <li>You can create strings using single or double quotes</li>
+    <li>You can also use backticks (` `) to create template strings, which support string interpolation</li>
+ 
+</ol>
+<pre><code class="language-js">let singleQuoted = 'This is a string.';
+let doubleQuoted = "This is another string.";
+
+let templateString = `This String created with Back Tics`
+</code></pre>
+<!--***********************************************-->
+
+
+<h2>String Concatenation</h2>
+<ol>
+    <li>You can concatenate strings using the <strong>+</strong> operator or by using template literals.
+    </li>
+
+</ol>
+<pre><code class="language-js">let firstName = 'Jack';
+let lastName = 'Salvatore';
+
+// Using the + operator
+let fullName = firstName + ' ' + lastName;
+console.log(fullName); // Output: Jack Salvatore
+
+let userName = "Jack";
+let userAge = 19
+let userDescription = `The ${userName} is ${userAge} years old.`;
+
+console.log(userDescription) // Output: The Jack is 19 years old.
+    </code></pre>
+<!--***********************************************-->
+
+
+<h2>String Manipulation</h2>
+<ol>
+    <li>JavaScript provides many methods for manipulating strings. You can trim, replace, and modify strings as needed.
+    </li>
+    <li>Just like Strings is also behaves like an array. So you can access specific characters like we can do for an array.</li>
+   
+</ol>
+<pre><code class="language-js">let text = '   Trim me!   ';
+let trimmed = text.trim(); // Removes leading and trailing spaces
+
+let replaced = text.replace('me', 'you'); // Replaces 'me' with 'you'
+
+console.log(trimmed); // Output: 'Trim me!'
+console.log(replaced); // Output: '   Trim you!   '
+
+let name = "Jack";
+let nameFirstCharacter = name[0];
+console.log(nameFirstCharacter); // Output: J
+    </code></pre>
+<!--***********************************************-->
+
+
+<h2>String Interpolation</h2>
+<ol>
+    <li>Template literals allow for string interpolation. You can embed expressions within ${} inside template literals.
+    </li>
+    
+</ol>
+<pre><code class="language-js">let name = 'Alice';
+let greeting = `Hello, ${name}!`;
+console.log(greeting); // Output: Hello, Alice!
+</code></pre>
+<!--***********************************************-->
+
+
+<h2>String Comparison</h2>
+<ol>
+    <li>You can compare strings using comparison operators (==, ===, <, >, etc.) or string methods like localeCompare.</li>
+ 
+</ol>
+<pre><code class="language-js">let string1 = 'apple';
+let string2 = 'banana';
+
+let checkStrings = string1 === string2;
+console.log(checkStrings); //Output: false
+
+console.log(string1.localeCompare(string2)); // Output: -1 (string1 comes before string2 in lexicographic order)
+    </code></pre>
+<!--***********************************************-->
+
+
+<h2>String Methods</h2>
+<ol>
+    <li>String methods in JavaScript allow you to perform various operations on strings, such as extracting characters, searching for patterns, and converting strings to different cases.
+    </li>
+    
+        <li><strong>charAt():</strong> Returns the character at the specified index in a string.</li>
+        <li><strong>indexOf():</strong> Returns the index of the first occurrence of a substring in a string, or -1 if the substring is not found.</li>
+        <li><strong>lastIndexOf():</strong> Returns the index of the last occurrence of a substring in a string, or -1 if the substring is not found.</li>
+        <li><strong>slice():</strong> Extracts a substring from a string, starting at a specified index and ending at another specified index.</li>
+        <li><strong>substring():</strong> Extracts a substring from a string, starting at a specified index and ending at the end of the string.</li>
+        <li><strong>substr():</strong> Extracts a substring from a string, starting at a specified index and ending at a specified length.</li>
+        <li><strong>toLowerCase():</strong> Converts a string to lowercase.</li>
+        <li><strong>toUpperCase():</strong> Converts a string to uppercase.</li>
+        <li><strong>trim():</strong> Removes whitespace from the beginning and end of a string.</li>
+       
+      
+   
+</ol>
+<pre><code class="language-js">const str = "This is a string.";
+
+// charAt()
+console.log(str.charAt(0)); // T
+
+// indexOf()
+console.log(str.indexOf("is")); // 2
+
+// lastIndexOf()
+console.log(str.lastIndexOf("is")); // 10
+
+// slice()
+console.log(str.slice(2, 5)); // is a
+
+// substring()
+console.log(str.substring(2)); // is a string.
+
+// substr()
+console.log(str.substr(2, 5)); // is a
+
+// toLowerCase()
+console.log(str.toLowerCase()); // this is a string.
+
+// toUpperCase()
+console.log(str.toUpperCase()); // THIS IS A STRING.
+
+// trim()
+console.log(str.trim()); // This is a string.
+    </code></pre>
+<!--***********************************************-->
+
+
+ 
+
+
+
+
+
+
+
+        <div class="next-prev">
+          <a href="./javascript-datatypes.html" id="prev">Previous</a>
+          <a href="./javascript-arrays.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

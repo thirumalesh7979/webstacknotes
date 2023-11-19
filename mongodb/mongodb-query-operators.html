@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The MongoDB Query Operators are used to filter, manipulate, and retrieve data from your MongoDB collections of your database.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>MongoDB Query Operators Tutorial</title>
+</head>
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+        <div class="container">
+          <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+      
+        </div>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+             <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">Java Script</a></li>
+            <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React JS</a></li>
+            <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node JS</a></li>
+            <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+      
+          </ul>
+        </div>
+      </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+        <h1>MongoDB Query Operators Tutorial</h1>
+        <p>The MongoDB Query Operators are used to filter, manipulate, and retrieve data from your MongoDB collections.</p>
+
+       <h2>Equality Operators</h2>
+       <p>$eq: Matches values that are equal to a specified value.</p>
+       <pre><code class="language-js">db.products.find({ price: { $eq: 10 } });
+       </code></pre>
+       <p>$ne: Matches values that are not equal to a specified value.</p>
+       <pre><code class="language-js">db.products.find({ category: { $ne: "Electronics" } });
+       </code></pre>
+
+       <h2>Comparison Operators</h2>
+       <p>$gt: Matches values greater than a specified value.</p>
+       <pre><code class="language-js">db.products.find({ price: { $gt: 20 } });
+       </code></pre>
+       <p>$lt: Matches values less than a specified value.</p>
+       <pre><code class="language-js">db.products.find({ qty: { $lt: 100 } });
+       </code></pre>
+
+       <h2>Logical Operators</h2>
+       <p>$and: Joins query clauses with a logical AND.</p>
+       <pre><code class="language-js">db.products.find({ $and: [{ price: { $gt: 10 } }, { category: "Electronics" }] });
+       </code></pre>
+       <p>$or: Joins query clauses with a logical OR.</p>
+       <pre><code class="language-js">db.products.find({ $or: [{ category: "Electronics" }, { brand: "Samsung" }] });
+       </code></pre>
+
+       <h2>Array Operators</h2>
+       <p>$in: Matches any of the values in an array.</p>
+       <pre><code class="language-js">db.products.find({ tags: { $in: ["Tech", "Gadgets"] } });
+       </code></pre>
+       <p>$all: Matches arrays that contain all specified elements.</p>
+       <pre><code class="language-js">db.products.find({ categories: { $all: ["Electronics", "Appliances"] } });
+       </code></pre>
+
+       <h2>Element Operators</h2>
+       <p>$exists: Matches documents that contain a field.</p>
+       <pre><code class="language-js">db.customers.find({ email: { $exists: true } });
+       </code></pre>
+       <p>$type: Matches documents where the type of a field matches a specified type.</p>
+       <pre><code class="language-js">db.orders.find({ orderDate: { $type: "date" } });
+       </code></pre>
+
+       <h2>Text Search Operators</h2>
+       <p>$text: Performs full-text search on text fields.</p>
+       <pre><code class="language-js">db.articles.find({ $text: { $search: "mongodb tutorial" } });
+       </code></pre>
+
+       <h2>Regular Expression Operators</h2>
+       <p>$regex: Matches documents based on a regular expression pattern.</p>
+       <pre><code class="language-js">db.contacts.find({ name: { $regex: /^John/ } });
+       </code></pre>
+
+       <h2>Array Element Operators</h2>
+       <p>$elemMatch: Matches documents that contain an array element matching specified conditions.
+       </p>
+       <pre><code class="language-js">db.posts.find({ comments: { $elemMatch: { author: "Alice", score: { $gt: 5 } } } });
+       </code></pre>
+
+       <h2>Geospatial Operators</h2>
+       <p>$near: Returns documents based on proximity to a specified point.</p>
+       <pre><code class="language-js">db.locations.find({ location: { $near: { $geometry: { type: "Point", coordinates: [12.34, 56.78] }, $maxDistance: 1000 } } });
+       </code></pre>
+
+       <h2>Array Projection Operators</h2>
+       <p>$slice: Limits the elements in an array field.</p>
+       <pre><code class="language-js">db.users.find({}, { interests: { $slice: 2 } });
+      </code></pre>
+
+        <div class="next-prev">
+          <a href="./mongodb-query-operators.html" id="prev">Previous</a>
+          <a href="./mongodb-aggregations.html" id="next">Next</a>
+       </div>
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

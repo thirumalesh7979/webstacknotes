@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JavaScript functions are reusable blocks of code. They encapsulate tasks, enhancing modularity. Defined with function keyword, they may take parameters and return values. ">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>Learn JavaScript Functions Tutorial</title>
+</head>
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+        <div class="container">
+          <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+      
+        </div>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+             <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+            <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+            <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+            <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+      
+          </ul>
+        </div>
+      </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>JavaScript Functions Tutorial</h1>
+ 
+
+<h2>What are JavaScript Functions?</h2>
+<ol>
+    <li>A function in JavaScript is a reusable block of code that performs a specific task. </li>
+    <li>Functions help in modularizing code, making it more readable and maintainable. </li>
+    <li>They can take inputs, process them, and return an output.</li>
+</ol>
+
+<!--***********************************************-->
+
+
+<h2>Defining Functions</h2>
+<ol>
+    <li>A function declaration is the most straightforward way to create a function.</li>
+    <li>It starts with the function keyword, followed by the function name, parameters (if any), and the function body enclosed in curly braces.</li>
+  
+</ol>
+<pre><code class="language-js">function greet() {
+    console.log("Hello, Everyone!");
+}
+  </code></pre>
+<!--***********************************************-->
+
+
+<h2>Calling the Function?</h2>
+<ol>
+    <li>To call the function, you simply use its name and provide the required arguments.</li>
+    
+</ol>
+<pre><code class="language-js">function greet() {
+    console.log("Hello, Everyone!");
+}
+greet(); //output: Hello, Everyone!
+</code></pre>
+<p>A function will continue to print output until it is no longer called.
+</p>
+<pre><code class="language-js">
+greet(); //output: Hello, Everyone!
+greet(); //output: Hello, Everyone!
+greet(); //output: Hello, Everyone!
+</code></pre>
+<!--***********************************************-->
+
+
+<h2>JavaScript Function Parameters and Arguments</h2>
+<ol>
+    <li>Function parameters are the variables that are listed in the function definition.</li>
+    <li>They are used to specify the data that the function will receive when it is called.</li>
+    <li>Function arguments are the values that are passed to a function when it is called. </li>
+    <li>They are assigned to the function's parameters in the order in which they are passed.</li>
+</ol>
+<h3>Syntax: </h3>
+<pre><code class="language-js">function functionName(parameter1, parameter2, ...) {
+    // function body
+}
+
+functionName(argument1, argument2, ...); // Function call
+</code></pre>
+<pre><code class="language-js">function greet(name, message){
+    console.log(`Hello, ${name}, ${message}`) ;   
+}
+
+greet("Alex", "How are You?");     //Output: Hello, Alex, How are You?
+greet("Charlie", "Are you Good?"); // Output: Hello, Charlie, Are you Good?
+
+let name = "Jack";
+let msg= "how are you?";
+greet(name, msg); // Output: Hello, Jack, how are you?
+</code></pre>
+<p>You can also call a function from within another function. This is called function nesting.</p>
+<pre><code class="language-js">function greetAndSayGoodbye(name) {
+    greet(name);
+    console.log(`Goodbye, ${name}!`);
+}
+
+greetAndSayGoodbye("Alex"); // Outputs:
+// Hello, Alex!
+// Goodbye, Alex!
+  </code></pre>
+<!--***********************************************-->
+
+
+<h2>Function return values
+</h2>
+<ol>
+    <li>A function return value is the value that a function returns to the caller. </li>
+    <li>This value can be used by the caller in any way it sees fit. For example, the caller can store the value in a variable, pass it to another function, or print it to the console.
+    </li>
+    <li>To return a value from a function, you use the <strong>return</strong> keyword. </li>
+</ol>
+<pre><code class="language-js">function greet(name){
+    let greeting = `Hello, ${name}`;
+    return greeting;
+}
+
+let greeting = greet("Alex");   // Storing the return value in a variable
+console.log(greeting); // Output: Hello, Alex
+
+console.log(greet("Charlie"))  // Directly using the return value.
+// Output: Hello, Charlie
+</code></pre>
+<p>Let's see an another JavaScript Function Example on return values.</p>
+<pre><code class="language-js">function calculateTotal(products){
+    let result = 0;
+    for(i=0; i&lt;products.length; i++){
+        result = result + products[i];
+    }
+    return result;
+}
+
+let priceArray = [980, 879, 970];
+let result = calculateTotal(priceArray);
+console.log(`The total price is: ${result}`); // Output: The total price is: 2829
+
+</code></pre>
+<!--***********************************************-->
+
+
+<h2>Function Scope</h2>
+<ol>
+    <li>Function scope is the region of a program in which a variable is defined and can be accessed.</li>
+    <li>A variable defined inside a function is only accessible within that function and its nested functions. </li>
+    <li>Variables defined outside of functions are accessible to all functions in the program.</li>
+</ol>
+<pre><code class="language-js">
+    const name = "Alex";    // Global and access to anywhere in the code
+function greet() {
+    let name = "Alex";  // Local Variable and access withing this function
+    console.log(`Hello, ${name}!`);
+}
+
+greet("Charlie"); // Outputs: Hello, Charlie!
+console.log(name); // Outputs: Alex
+  </code></pre>
+<p>If the local variable and global variable names are same then it takes the local variable.</p>
+<!--***********************************************-->
+
+
+<h2>Function Expression</h2>
+<ol>
+    <li>A function expression is another way to define a function. It involves assigning an anonymous function to a variable.</li>
+   
+</ol>
+<pre><code class="language-js">const greet = function(name) {
+    console.log("Hello, " + name + "!");
+};
+
+greet("Alice"); // Output: Hello, Alice!
+greet("Bob");   // Output: Hello, Bob!
+</code></pre>
+<!--***********************************************-->
+
+
+ 
+
+
+
+
+        <div class="next-prev">
+          <a href="./javascript-for-loops.html" id="prev">Previous</a>
+          <a href="./javascript-arrow-functions.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

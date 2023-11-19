@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The fs module is part of the Node.js standard library, so there's no need to install it separately. ">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>Node.js 'fs' File System Module Tutorial</title>
+</head>
+<body>
+   <!--Navigation-->
+   <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+  
+    </div>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+         <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+        <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+        <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+        <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+  
+      </ul>
+    </div>
+  </nav>
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>Node 'fs' File System Module</h1>
+<p>The fs module in Node.js is essential for working with the file system. </p>
+<p>It provides functions for creating, reading, updating, and deleting files and directories. </p>
+
+<h2> Introduction to the fs Module</h2>
+<ol>
+    <li>The fs module is part of the Node.js standard library, so there's no need to install it separately. </li>
+    <li> To use it in your code, include it using the require statement:</li>
+</ol>
+<pre><code class="language-js">const fs = require('fs');
+</code></pre>
+<!--Gap-->
+
+<h2>Reading Files</h2>
+<ol>
+    <li>You can read the contents of a file using the fs.readFile() function. </li>
+</ol>
+<pre><code class="language-js">const fs = require('fs');
+
+fs.readFile('example.txt', 'utf8', (err, data) => {
+    if (err) {
+    console.error(err);
+    return;
+    }
+    console.log('File Contents:', data);
+});
+
+//Output: File Contents: This is the content of example.txt.
+
+    </code></pre>
+<!--Gap-->
+
+
+<h2>Writing to Files</h2>
+<ol>
+    <li>To create or overwrite a file with new content, use the fs.writeFile() function. </li>
+</ol>
+<pre><code class="language-js">const fs = require('fs');
+
+const content = 'This is new content for the file.';
+fs.writeFile('newfile.txt', content, (err) => {
+    if (err) {
+        console.error(err);
+        return;
+    }
+console.log('File written successfully!');
+});
+//Output: File written successfully!
+    </code></pre>
+<!--Gap-->
+
+
+<h2>Deleting Files</h2>
+<ol>
+    <li>You can delete files using the fs.unlink() function. </li>
+</ol>
+<pre><code class="language-js">const fs = require('fs');
+
+const filePath = 'fileToDelete.txt';
+
+fs.unlink(filePath, (err) => {
+    if (err) {
+    console.error(err);
+    return;
+    }
+    console.log('File deleted successfully!');
+});
+    </code></pre>
+<!--Gap-->
+
+
+<h2>Updating the Files</h2>
+<p>To update a file, you typically follow these steps:</p>
+<ol>
+    <li>Read the file to get its current content.
+    </li>
+    <li>Modify the content as needed.
+    </li>
+    <li>Write the modified content back to the file.
+    </li>
+</ol>
+<pre><code class="language-js">const fs = require('fs');
+
+const filePath = 'updateMe.txt';
+
+// Step 1: Read the file to get its current content
+fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+    console.error(err);
+    return;
+    }
+
+    // Step 2: Modify the content as needed
+    const updatedContent = data.replace('old text', 'new text');
+
+    // Step 3: Write the modified content back to the file
+    fs.writeFile(filePath, updatedContent, 'utf8', (err) => {
+    if (err) {
+        console.error(err);
+        return;
+    }
+    console.log('File updated successfully!');
+    });
+});
+    </code></pre>
+<p>In this example, we first read the file, then modify the content by replacing "old text" with "new text," and finally write the updated content back to the file.
+</p>
+<!--Gap-->
+
+<h2>Working with Directories</h2>
+<ol>
+    <li>You can create, rename, and remove directories using functions like fs.mkdir(), fs.rename(), and fs.rmdir(). </li>
+
+</ol>
+<pre><code class="language-js">const fs = require('fs');
+
+fs.mkdir('myfolder', (err) => {
+    if (err) {
+    console.error(err);
+    return;
+    }
+    console.log('Directory created successfully!');
+});
+
+//Output: Directory created successfully!
+
+    </code></pre>
+<!--Gap-->
+
+
+<h2>Reading Directories</h2>
+<ol>
+    <li>To read the contents of a directory, you can use the <strong>fs.readdir()</strong> function.</li>
+    <li>It returns an array of filenames. </li>
+
+</ol>
+<pre><code class="language-js">const fs = require('fs');
+
+const directoryPath = 'myfolder';
+
+fs.readdir(directoryPath, (err, files) => {
+    if (err) {
+    console.error(err);
+    return;
+    }
+    console.log('Files in the directory:', files);
+});
+    </code></pre>
+<!--Gap-->
+
+
+        <div class="next-prev">
+          <a href="./nodejs-modules.html" id="prev">Previous</a>
+          <a href="./nodejs-events.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

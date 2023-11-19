@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>Node.js Streams Tutorial</title>
+</head>
+<body>
+   <!--Navigation-->
+   <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+  
+    </div>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+         <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+        <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+        <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+        <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+  
+      </ul>
+    </div>
+  </nav>
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>Node.js Streams Tutorial</h1>
+<p>In this tutorial, you will learn streams and working with streams in node.js</p>
+
+<h2>Introduction to Streams</h2>
+<ol>
+    <li>Streams are a way to handle data in Node.js in small, manageable chunks.
+    </li>
+    <li>They are especially useful for working with large files, network connections, and other data sources.
+    </li>
+</ol>
+ 
+
+<h2>Types of Streams</h2>
+<ol>
+    <p>There are four main types of streams in Node.js</p>
+    <li><strong>Readable:</strong> For reading data.
+    </li>
+    <li><strong>Writable:</strong> For writing data.
+    </li>
+    <li><strong>Duplex: </strong>For both reading and writing data.
+    </li>
+    <li><strong>Transform: </strong>A special type of duplex stream for data transformation.
+    </li>
+</ol>
+ 
+
+<h2>Creating Readable Streams</h2>
+<ol>
+    <li>To create a readable stream, you can use built-in classes like <strong>fs.createReadStream()</strong> for reading files or manually create a custom readable stream.
+    </li>
+</ol>
+<pre><code class="language-js">const fs = require('fs');
+
+const readableStream = fs.createReadStream('example.txt');
+readableStream.on('data', (chunk) => {
+    console.log(chunk.toString());
+});
+    </code></pre>
+<!--Gap-->
+
+
+<h2>Creating Writable Streams</h2>
+<ol>
+    <li>To create a writable stream, you can use built-in classes like <strong>fs.createWriteStream()</strong> for writing to files or manually create a custom writable stream.
+    </li>
+
+</ol>
+<pre><code class="language-js">const fs = require('fs');
+
+const writableStream = fs.createWriteStream('output.txt');
+writableStream.write('Hello, World!', 'utf-8');
+    </code></pre>
+<!--Gap-->
+
+
+<h2>Piping Streams</h2>
+<ol>
+   <li>Piping is a technique to connect a readable stream to a writable stream directly.
+    </li>
+</ol>
+<pre><code class="language-js">const fs = require('fs');
+
+const readableStream = fs.createReadStream('input.txt');
+const writableStream = fs.createWriteStream('output.txt');
+
+readableStream.pipe(writableStream);
+    </code></pre>
+<!--Gap-->
+
+
+<h2>Transform Streams</h2>
+<ol>
+    <li>Transform streams are a special type of duplex stream used for data transformation. You can use the <strong>transform </strong>stream to modify data as it passes through.
+    </li>
+</ol>
+<pre><code class="language-js">const { Transform } = require('stream');
+
+const upperCaseTransform = new Transform({
+    transform(chunk, encoding, callback) {
+    this.push(chunk.toString().toUpperCase());
+    callback();
+    },
+});
+
+process.stdin.pipe(upperCaseTransform).pipe(process.stdout);
+    </code></pre>
+<!--Gap-->
+
+<h2> Handling Errors and Events</h2>
+<ol>
+    <li>Streams emit events like 'data', 'end', and 'error'.
+    </li>
+    <li>It's important to handle errors and manage resources, especially when working with streams.
+    </li>
+</ol>
+<pre><code class="language-js">
+    readableStream.on('data', (chunk) => {
+        console.log(chunk.toString());
+      });
+      
+      readableStream.on('end', () => {
+        console.log('End of data.');
+      });
+      
+      readableStream.on('error', (err) => {
+        console.error('Error:', err);
+      });
+      
+</code></pre>
+<!--Gap-->
+
+<h2>Applications of Streams in Real Time</h2>
+<ol>
+    <li>Data Processing</li>
+    <li>Log Analysis</li>
+    <li>Social Media Monitoring</li>
+    <li>IoT</li>
+    <li>Machine Learning</li>
+</ol>
+
+        <div class="next-prev">
+          <a href="./nodejs-http-module.html" id="prev">Previous</a>
+          <a href="./nodejs-buffers.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

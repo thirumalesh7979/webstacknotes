@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="React events are a way to detect and respond to user interactions in React applications. React events are similar to DOM events, but they are normalized to provide a consistent cross-browser experience.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>React Events Tutorial</title>
+</head>
+<body>
+   <!--Navigation-->
+   <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+  
+    </div>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+         <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+        <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+        <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+        <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+  
+      </ul>
+    </div>
+  </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>React Events Tutorial</h1>
+<p>In this React Events Tutorial, you will learn how to work with events in your applicaion.</p>
+
+<h2>What are React Events?</h2>
+<ol>
+    <li>React events are a way to detect and respond to user interactions in React applications.</li>
+  <li> React events are similar to DOM events, but they are normalized to provide a consistent cross-browser experience.
+    </li>
+    <li>To handle an event in React, you need to pass a function as a prop to the element that you want to listen for the event on. </li>
+    <li>This function is called the <strong>event handler</strong></li>
+</ol>
+<p>For example, to handle a click event on a button, you would pass an onClick prop to the button element:
+</p>
+<pre><code class="language-js">&lt;button onClick={() => alert('You clicked me!')}>Click me!&lt;/button>
+</code></pre>
+<!--*****************************************-->
+
+<h2>Passing Arguments to Event Handlers</h2>
+<ol>
+    <li>You may need to pass additional data to an event handler function. </li>
+    <li>You can use arrow functions or bind to achieve this.</li>
+
+</ol>
+<pre><code class="language-js">import React from 'react';
+
+    class EventArgumentsComponent extends React.Component {
+      handleClickWithArgument(arg) {
+        console.log('Button clicked with argument:', arg);
+      }
+    
+      render() {
+        return (
+          &lt;button onClick={() => this.handleClickWithArgument('Hello')}>Click me&lt;/button>
+        );
+      }
+    }
+    </code></pre>
+<!--*****************************************-->
+
+
+<h2>Using Event Objects</h2>
+<ol>
+    <li>When you define an event handler, React passes an event object containing information about the event. </li>
+    <li>You can access properties like <strong>event.target</strong>, <strong>event.preventDefault()</strong>, and more.</li>
+  
+</ol>
+<pre><code class="language-js">import React from 'react';
+
+    class EventObjectComponent extends React.Component {
+      handleClick(event) {
+        console.log('Button clicked on', event.target);
+      }
+    
+      render() {
+        return (
+          &lt;button onClick={this.handleClick}>Click me&lt;/button>
+        );
+      }
+    }
+    </code></pre>
+<!--*****************************************-->
+
+
+<h2>Event Types in React</h2>
+<p>You can handle various types of events in React components, such as onClick, onChange, onSubmit, onMouseOver, and more. </p>
+<h3>onClick</h3>
+
+    <p>This event is used to handle clicks on elements like buttons, links, or any other interactive components.</p>
+    <pre><code class="language-js">import React from 'react';
+
+        function ClickExample() {
+          const handleClick = () => {
+            alert('Button clicked!');
+          };
+        
+          return (
+            &lt;button onClick={handleClick}>Click Me&lt;/button>
+          );
+        }
+        </code></pre>
+
+<h3>onChange</h3>
+<p>The onChange event is used for input elements like text fields, checkboxes, and radio buttons to capture changes in their values.
+</p>
+<pre><code class="language-js">import React, { useState } from 'react';
+
+function InputExample() {
+    const [text, setText] = useState('');
+
+    const handleInputChange = (event) => {
+    setText(event.target.value);
+    };
+
+    return (
+    &lt;input type="text" value={text} onChange={handleInputChange} />
+    );
+}
+</code></pre>
+<h3>onSubmit</h3>
+<p>This event is commonly used with form elements to handle form submissions.
+</p>
+<pre><code class="language-js">import React, { useState } from 'react';
+
+function FormExample() {
+    const [name, setName] = useState('');
+    
+    const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(`Form submitted with name: ${name}`);
+    };
+
+    return (
+        &lt;form onSubmit={handleSubmit}>
+        &lt;input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        />
+        &lt;button type="submit">Submit&lt;/button>
+        &lt;/form>
+    );
+}
+    </code></pre>
+
+<h3>onMouseOver and onMouseOut</h3>
+<p>These events are used to capture mouse hover and mouse leave actions on elements.
+</p>
+<pre><code class="language-js">import React, { useState } from 'react';
+
+function MouseExample() {
+    const [isHovered, setHovered] = useState(false);
+
+    const handleMouseOver = () => {
+    setHovered(true);
+    };
+
+    const handleMouseOut = () => {
+    setHovered(false);
+    };
+
+    return (
+    &lt;div
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
+        style={{ backgroundColor: isHovered ? 'blue' : 'red' }}
+    >
+        Hover me
+    &lt;/div>
+    );
+}
+    </code></pre>
+
+
+<!--*****************************************-->
+
+
+<h2>Synthetic events
+</h2>
+<ol>
+    <li>Synthetic events are a cross-browser wrapper around native DOM events.</li>
+    <li>This means that you can write the same event handlers for all browsers, without having to worry about cross-browser compatibility.</li>
+</ol>
+<pre><code class="language-js">function handleClick(event) {
+    console.log(event.type); // "click"
+}
+
+&lt;button onClick={handleClick}>Click me!&lt;/button>
+  </code></pre>
+<p>This code will work in all browsers, even though the underlying native DOM event may be different in each browser.
+</p>
+
+
+
+<!--*****************************************-->
+
+
+<h2>Event bubbling
+</h2>
+<ol>
+    <li>Event bubbling is a process by which events propagate up the DOM tree.</li>
+    <li>This means that if you click on a child element, the click event will also bubble up to the parent element and all of its ancestors.</li>
+
+</ol>
+<pre><code class="language-js" &lt;div>
+    &lt;button>Click me!&lt;/button>
+&lt;/div>
+</code></pre>
+
+<pre><code class="language-js">const div = document.querySelector("div");
+
+div.addEventListener("click", function(event) {
+    console.log("Div clicked!");
+});
+
+const button = document.querySelector("button");
+
+button.addEventListener("click", function(event) {
+    console.log("Button clicked!");
+});
+</code></pre>
+<p>When you click on the button, the following output will be logged to the console:
+</p>
+<!--Image-->
+<!--*****************************************-->
+
+<h2>Event capturing</h2>
+<ol>
+    <li>Event capturing is the opposite of event bubbling.</li>
+    <li>It allows you to listen for events on an element before they are propagated up the DOM tree.</li>
+</ol>
+<pre><code class="languag-js">&lt;div>
+    &lt;button>Click me!&lt;/button>
+&lt;/div>
+</code></pre>
+<pre><code class="language-js">const div = document.querySelector("div");
+
+div.addEventListener("click", function(event) {
+    console.log("Div clicked!");
+}, true); // Capture phase
+
+const button = document.querySelector("button");
+
+button.addEventListener("click", function(event) {
+    console.log("Button clicked!");
+});
+</code></pre>
+<p>You will see the below output on your console.</p>
+<!--Image-->
+
+
+
+
+
+
+
+
+        <div class="next-prev">
+          <a href="./react-components.html" id="prev">Previous</a>
+          <a href="./react-lists.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

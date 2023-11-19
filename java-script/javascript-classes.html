@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="In JavaScript, classes provide a blueprint for creating objects with shared properties and methods. Introduced in ES6, they offer a cleaner syntax for object-oriented programming, promoting code organization and reusability.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>Learn JavaScript Classes Tutorial</title>
+</head>
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+        <div class="container">
+          <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+      
+        </div>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+             <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+            <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+            <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+            <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+      
+          </ul>
+        </div>
+      </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>JavaScript Classes Tutorial</h1>
+<p>In this tutorial, you will learn JavaScript Classes and how to use them to create JavaScript Objects.</p>
+
+
+
+<h2>What are JavaScript Classes?</h2>
+<ol>
+    <li>JavaScript classes are a syntactic construct that allows programmers to create blueprints for JavaScript objects. </li>
+    <li>Classes can be used to define the properties and behaviors of objects, and to create hierarchies of objects with different capabilities.</li>
+  
+</ol>
+ 
+<!--***********************************************-->
+
+
+<h2>Class Declaration
+</h2>
+<ol>
+    <li>To declare a class in JavaScript, you use the class keyword followed by the class name. Inside the class, you can define properties and methods.    </li>
+ 
+</ol>
+<pre><code class="language-js">class Person {
+constructor(name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+sayHello() {
+    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+}
+}
+  </code></pre>
+<p>In the above example, we've defined a <strong>Person</strong> class with a constructor that sets the <strong>name</strong> and <strong>age</strong> properties and a <strong>sayHello</strong> method to print a greeting.
+</p>
+<!--***********************************************-->
+
+
+<h2>Creating Objects (Instances)
+</h2>
+<ol>
+    <li>To create objects (instances) from a class, you use the <strong>new</strong> keyword and call the class constructor.</li>
+ 
+</ol>
+<pre><code class="language-js">const person1 = new Person("Alice", 30);
+const person2 = new Person("Bob", 25);
+
+person1.sayHello(); // Output: Hello, my name is Alice and I am 30 years old.
+person2.sayHello(); // Output: Hello, my name is Bob and I am 25 years old.
+</code></pre>
+<!--***********************************************-->
+
+
+<h2>Class Inheritance
+</h2>
+<ol>
+    <li>You can also create a subclass that inherits properties and methods from a parent class. </li>
+ 
+</ol>
+<pre><code class="language-js">class Student extends Person {
+    constructor(name, age, grade) {
+        super(name, age); // Call the parent class constructor
+        this.grade = grade;
+    }
+
+    study() {
+        console.log(`${this.name} is studying hard to get good grades.`);
+    }
+}
+  </code></pre>
+<p>In this example, the <strong>Student</strong> class extends the <strong>Person</strong> class and adds a study method. The <strong>super</strong> keyword is used to call the constructor of the parent class.
+</p>
+<!--***********************************************-->
+
+
+<h2>Static Methods
+</h2>
+<ol>
+    <li>You can define static methods on a class, which are called on the class itself, not on instances.</li>
+ 
+</ol>
+<pre><code class="language-js">class MathUtils {
+    static add(x, y) {
+      return x + y;
+    }
+  }
+  
+const result = MathUtils.add(5, 3); // Call the static method directly
+  </code></pre>
+<!--***********************************************-->
+
+
+<h2>Getter and Setter Methods
+</h2>
+<ol>
+    <li>You can also define getter and setter methods to control access to class properties.    </li>
+ 
+</ol>
+<pre><code class="language-js">class Circle {
+constructor(radius) {
+    this._radius = radius; // Prefix with an underscore by convention
+}
+
+get radius() {
+    return this._radius;
+}
+
+set radius(value) {
+    if (value < 0) {
+    console.log("Radius cannot be negative.");
+    } else {
+    this._radius = value;
+    }
+}
+}
+  </code></pre>
+<!--***********************************************-->
+
+
+<h2>Rock Paper Scissors Game</h2>
+<pre><code class="language-js">class Game {
+    arr = ["rock", "paper", "scissors"];
+  
+    Random() {
+      let rand = Math.floor(Math.random() * this.arr.length);
+      return rand;
+    }
+  
+    Human() {
+      let ch = this.arr[this.Random()];
+      return ch;
+    }
+  
+    Computer() {
+      let ch2 = this.arr[this.Random()];
+      return ch2;
+    }
+  
+    Play() {
+        let human = this.Human();
+        let computer = this.Computer();
+      
+        console.log("Human: " + human);
+        console.log("Computer: " + computer);
+      
+        if (human === computer) {
+          console.log("It's a draw!");
+        } else if (
+          (human === "rock" && computer === "scissors") ||
+          (human === "paper" && computer === "rock") ||
+          (human === "scissors" && computer === "paper")
+        ) {
+          console.log("Human wins");
+        } else {
+          console.log("Computer wins");
+        }
+      }
+      
+  }
+
+const game = new Game();
+game.Play();
+/*Output:
+Human: rock
+Computer: scissors
+Human wins
+*/
+game.play();
+/* Output:
+Human: scissors
+Computer: scissors
+It's a draw!
+*/
+  
+  </code></pre>
+<!--***********************************************-->
+
+ 
+
+
+
+
+
+
+        <div class="next-prev">
+          <a href="./dom-practical-exmaples.html" id="prev">Previous</a>
+          <a href="./javascript-classes-practical-examples.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

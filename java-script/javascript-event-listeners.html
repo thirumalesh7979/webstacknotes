@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Event listeners in JavaScript enable responsiveness to user interactions. They "listen" for events like clicks or keypresses, triggering specified functions">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>Learn JavaScript Event Listeners Tutorial</title>
+</head>
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+        <div class="container">
+          <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+      
+        </div>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+            <li class="nav-item"><a href="../css/css-main-page.html" class="nav-link">CSS</a></li>
+            <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+            <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+            <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+            <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+      
+          </ul>
+        </div>
+      </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>JavaScript Event Listeners Tutorial</h1>
+ 
+<h2>What are Event Listeners?</h2>
+<ol>
+    <li>Event listeners are functions that are triggered when a specific event occurs.</li>
+    <li>They are used to add interactivity to web pages and mobile apps.</li>
+    <li>Event listeners can be attached to any HTML element, the document object, or the window object.
+
+    </li>
+</ol>
+ 
+<!--***********************************************-->
+
+
+<h2>addEventListener(type, listener, options)</h2>
+<ol>
+    <li>Adds an event listener to the specified target for the specified event type. The listener can be a function or an object that implements the EventListener interface. </li>
+    <li>The options object can be used to specify additional options for the event listener, such as whether it should be captured or bubbled.</li>
+ 
+</ol>
+<pre><code class="language-js">&lt;button onclick="myFunction()">Click Me!&lt;/button>
+
+&lt;script>
+function myFunction() {
+    alert("You clicked the button!");
+}
+
+// Add an event listener to the button element for the click event
+document.querySelector("button").addEventListener("click", myFunction);
+&lt;/script>
+</code></pre>
+<!--***********************************************-->
+
+
+<h2>removeEventListener(type, listener, options)</h2>
+<ol>
+    <li>Removes an event listener from the specified target for the specified event type. </li>
+    <li>The listener must be the same function or object that was passed to the addEventListener() method. </li>
+    <li>The options object must also be the same object that was passed to the addEventListener() method, or null.</li>
+</ol>
+<pre><code class="language-js">&lt;button onclick="myFunction()">Click Me!&lt;/button>
+
+&lt;script>
+function myFunction() {
+    alert("You clicked the button!");
+}
+
+// Add an event listener to the button element for the click event
+document.querySelector("button").addEventListener("click", myFunction);
+
+// Remove the event listener from the button element
+document.querySelector("button").removeEventListener("click", myFunction);
+&lt;/script>
+    </code></pre>
+<!--***********************************************-->
+
+
+<h2>dispatchEvent(event)</h2>
+<ol>
+    <li>Dispatches an event to the specified target. The event can be a custom event or a standard DOM event.
+    </li>
+   
+</ol>
+<pre><code class="language-js">&lt;button onclick="dispatchEvent(new CustomEvent('my-event'))">Click Me!&lt;/button>
+
+    &lt;script>
+window.addEventListener("my-event", function(event) {
+    alert("The my-event event was dispatched!");
+});
+
+// Dispatch the my-event event
+document.querySelector("button").dispatchEvent(new CustomEvent('my-event'));
+&lt;/script>
+</code></pre>
+<!--***********************************************-->
+
+
+<h2>onclick</h2>
+<ol>
+    <li>Triggered when an element is clicked.</li>
+    
+</ol>
+<pre><code class="language-js">&lt;button onclick="myFunction()">Click Me!&lt;/button>
+
+&lt;script>
+function myFunction() {
+    alert("You clicked the button!");
+}
+&lt;/script>
+    </code></pre>
+<p>This example creates a button element with the onclick() event listener attached to it. When the user clicks on the button, the myFunction() function is called.
+</p>
+<!--***********************************************-->
+
+
+<h2>ondblclick()</h2>
+<ol>
+    <li>Triggered when an element is double-clicked.</li>
+ 
+</ol>
+<pre><code class="language-js">&lt;p ondblclick="myFunction()">Double-click me!&lt;/p>
+
+&lt;script>
+    function myFunction() {
+        alert("You double-clicked the paragraph!");
+    }
+&lt;/script>
+    </code></pre>
+<p>This example creates a paragraph element with the ondblclick() event listener attached to it. When the user double-clicks on the paragraph, the myFunction() function is called.
+</p>
+<!--***********************************************-->
+
+
+<h2>Some Other Event Listeners</h2>
+<ol>
+    <ol>
+        <li>onabort(): Triggered when an asynchronous operation is aborted.</li>
+        <li>onblur(): Triggered when an element loses focus.</li>
+        <li>onchange(): Triggered when the value of an element changes.</li>
+        <li>onclick(): Triggered when an element is clicked.</li>
+        <li>ondblclick(): Triggered when an element is double-clicked.</li>
+        <li>onfocus(): Triggered when an element gains focus.</li>
+        <li>oninput(): Triggered when the value of an element changes.</li>
+        <li>onkeydown(): Triggered when a key is pressed down.</li>
+        <li>onkeypress(): Triggered when a key is pressed and released.</li>
+        <li>onkeyup(): Triggered when a key is released.</li>
+        <li>onload(): Triggered when a resource (such as an image or script) has finished loading.</li>
+        <li>onmousedown(): Triggered when a mouse button is pressed down.</li>
+        <li>onmousemove(): Triggered when the mouse is moved.</li>
+        <li>onmouseout(): Triggered when the mouse cursor leaves an element.</li>
+        <li>onmouseover(): Triggered when the mouse cursor enters an element.</li>
+        <li>onmouseup(): Triggered when a mouse button is released.</li>
+        <li>onreset(): Triggered when a form is reset.</li>
+        <li>onscroll(): Triggered when an element is scrolled.</li>
+        <li>onsubmit(): Triggered when a form is submitted.</li>
+        <li>onunload(): Triggered when a page is unloaded.</li>
+        </ol>
+</ol>
+ 
+
+
+
+
+
+
+
+
+
+        <div class="next-prev">
+          <a href="./node-methods.html" id="prev">Previous</a>
+          <a href="./dom-practical-exmaples.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

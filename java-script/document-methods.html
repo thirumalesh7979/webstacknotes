@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JavaScript Document Methods: Essential for DOM manipulation. Examples include getElementById, getElementsByClassName, createElement, and more for dynamic web interactions.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>Learn JavaScript Document Methods Tutorial</title>
+</head>
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+        <div class="container">
+          <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+      
+        </div>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+             <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+            <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+            <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+            <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+      
+          </ul>
+        </div>
+      </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>JavaScript Document Methods Tutorial</h1>
+ 
+<p>Before we begin let's start with a basic HTML Template.</p>
+<p>Create a JavaScript file and include it in the HTML file. For example: <strong>method.js</strong></p>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Basic HTML Template&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h1&gt;What is JavaScript&lt;/h1&gt;
+    &lt;p&gt;JavaScript is a programming language.&lt;/p&gt;
+    &lt;div class="content"&gt;
+        &lt;h2 id="article-heading"&gt;JavaScript Advantages&lt;/h2&gt;
+        &lt;ul class="lists"&gt;
+            &lt;li&gt;Speed&lt;/li&gt;
+            &lt;li&gt;Ease of Use&lt;/li&gt;
+            &lt;li&gt;Rich Ecosystem&lt;/li&gt;
+            &lt;li&gt;Versatility&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt; 
+    
+
+&lt;script src="./methods.js">&lt;/script>
+&lt;/body&gt;
+&lt;/html&gt;
+    
+</code></pre>
+<!--Image-->
+ 
+
+<h2>createElement() </h2>
+<ol>
+    <li>Creates a new element with the given tag name.</li>
+    
+</ol>
+<pre><code class="language-js">// Create a new `<div>` element.
+const newDiv = document.createElement('div');
+
+// Add some text content to the element.
+newDiv.textContent = 'This is a new div element.';
+
+// Append the element to the body of the document.
+document.body.appendChild(newDiv);
+</code></pre>
+
+ <!--Image-->
+<!--***********************************************-->
+
+
+<h2>createTextNode() </h2>
+<ol>
+    
+    <li> Creates a new text node with the given text content.</li>
+</ol>
+<pre><code class="language-js">// Create a new text node with the text "Hello, world!".
+const helloWorldTextNode = document.createTextNode('Hello, world!');
+
+// Append the text node to the body of the document.
+document.body.appendChild(helloWorldTextNode);
+</code></pre>
+
+ <!--Image-->
+<!--***********************************************-->
+
+
+<h2>getElementById() </h2>
+<ol>
+    
+    <li> Returns the element with the given ID.</li>
+</ol>
+<pre><code class="language-js">// Get the element with the ID "article-heading".
+const articleHeadingElement = document.getElementById('article-heading');
+console.log(articleHeadingElement)
+
+// Change the text content of the element.
+articleHeadingElement.textContent = 'New heading text';
+</code></pre>
+
+ <!--Image-->
+<!--***********************************************-->
+
+
+<h2>getElementsByClassName()</h2>
+<ol>
+    
+    <li>Returns a list of all elements in the document with the given class name.</li>
+</ol>
+<pre><code class="language-js">// Get a list of all elements in the document with the class name "lists".
+const listElements = document.getElementsByClassName('lists');
+console.log(listElements);
+
+// Loop through the list of elements and change the text content of each element.
+for (const listElement of listElements) {
+    listElement.textContent = 'New list item text';
+}
+</code></pre>
+
+ <!--Image-->
+<!--***********************************************-->
+
+
+<h2>getElementsByName() </h2>
+<ol>
+    
+    <li>Returns a list of all elements in the document with the given name.</li>
+</ol>
+<pre><code class="language-js">// Get a list of all elements in the document with the name "name".
+const nameElements = document.getElementsByName('name');
+
+// Loop through the list of elements and change the text content of each element.
+for (const nameElement of nameElements) {
+    nameElement.textContent = 'New name text';
+}
+</code></pre>
+
+ <!--Image-->
+<!--***********************************************-->
+
+
+<h2>querySelector()</h2>
+<ol>
+    
+    <li> Returns the first element in the document that matches the given CSS selector.</li>
+</ol>
+<pre><code class="language-js">// Get the first element in the document that matches the CSS selector `.content`.
+const contentElement = document.querySelector('.content');
+
+// Change the background color of the element.
+contentElement.style.backgroundColor = 'red';
+</code></pre>
+<!--Image-->
+<!--***********************************************-->
+
+
+<h2>querySelectorAll()</h2>
+<ol>
+    
+    <li>Returns a list of all elements in the document that match the given </li>
+</ol>
+<pre><code class="language-js">// Get a list of all elements in the document that match the CSS selector `ul.lists > li`.
+const listItemElements = document.querySelectorAll('ul.lists > li');
+
+// Loop through the list of elements and change the text color of each element.
+for (const listItemElement of listItemElements) {
+    listItemElement.style.color = 'blue';
+}
+</code></pre>
+<!--***********************************************-->
+
+ <!--Image-->
+
+
+
+
+
+
+
+        <div class="next-prev">
+          <a href="./javascript-dom-methods.html" id="prev">Previous</a>
+          <a href="./element-methods.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+
+

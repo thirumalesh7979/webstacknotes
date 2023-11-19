@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn JavaScript DOM by building a simple Rock Paper Scissors game.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <style>
+        body {
+  font-family: sans-serif;
+}
+
+#game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #ccc;
+  border: none;
+  cursor: pointer;
+}
+
+#result {
+  margin-top: 20px;
+  text-align: center;
+}
+
+p {
+  font-size: 20px;
+}
+
+    </style>
+    <title>Make JavaScript Rock Paper Scissors Game</title>
+</head>
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+        <div class="container">
+          <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+      
+        </div>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+             <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+            <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+            <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+            <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+      
+          </ul>
+        </div>
+      </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>JavaScript Rock Paper Scissors Game</h1>
+<p>In this tutorial, you will make  Rock Paper Scissors game with you previous HTML, CSS and JavaScript knowledge.</p>
+
+
+<h2>Concepts that can be covered by this project</h2>
+<ol>
+    <li>HTML: Basic HTML structure, such as &lt;head>, &lt;body>, &lt;div>, and &lt;button>.</li>
+    <li>CSS: Basic CSS styling, such as font-family, font-size, margin, padding, and background-color.</li>
+    <li>JavaScript: Variables, functions, event listeners, and DOM manipulation.</li>
+</ol>
+
+<h2>HTML</h2>
+<pre><code class="language-html">&lt;!DOCTYPE html>
+&lt;html>
+    &lt;head>
+        &lt;title>Rock Paper Scissors&lt;/title>
+        &lt;link rel="stylesheet" href="style.css">
+    &lt;/head>
+    &lt;body>
+        &lt;h1>Rock Paper Scissors&lt;/h1>
+        &lt;div id="game">
+            &lt;h3>Choose your weapon:&lt;/h3>
+            &lt;button id="rock">Rock&lt;/button>
+            &lt;button id="paper">Paper&lt;/button>
+            &lt;button id="scissors">Scissors&lt;/button>
+        &lt;/div>
+    &lt;div id="result">
+        &lt;h3>Result:&lt;/h3>
+        &lt;p id="winner">&lt;/p>
+    &lt;/div>
+    &lt;script src="script.js">&lt;/script>
+    &lt;/body>
+&lt;/html>
+</code></pre>
+<h3>Summary of the above is</h3>
+<ol>
+    <li>The HTML code creates a basic structure for the game, including the title, the "Choose your weapon" buttons, and the "Result" section.
+    </li>
+    <li>The JavaScript code adds the game logic, such as generating the computer's choice, comparing the player's choice to the computer's choice, and displaying the winner of the game.
+    </li>
+    <li>The JavaScript code uses event listeners to listen for clicks on the "Choose your weapon" buttons. When a button is clicked, the JavaScript code calls the playGame() function to play a round of the game.
+    </li>
+    <li>The playGame() function generates the computer's choice, compares the player's choice to the computer's choice, and displays the winner of the game on the screen.
+    </li>
+  
+</ol>
+
+<h2>CSS (style.css)</h2>
+<pre><code class="language-css">body {
+    font-family: sans-serif;
+  }
+  
+  #game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  button {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #ccc;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #result {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  p {
+    font-size: 20px;
+  }
+  </code></pre>
+
+
+  <h2>JavaScript (script.js)</h2>
+  <pre><code class="language-js">
+const rockButton = document.getElementById('rock');
+const paperButton = document.getElementById('paper');
+const scissorsButton = document.getElementById('scissors');
+const resultElement = document.getElementById('winner');
+
+const computerOptions = ['rock', 'paper', 'scissors'];
+
+function generateComputerChoice() {
+const randomNumber = Math.floor(Math.random() * computerOptions.length);
+return computerOptions[randomNumber];
+}
+
+function playGame(playerChoice) {
+const computerChoice = generateComputerChoice();
+
+if (playerChoice === computerChoice) {
+resultElement.textContent = 'Draw';
+} else if (playerChoice === 'rock' && computerChoice === 'scissors') {
+resultElement.textContent = 'Player wins';
+} else if (playerChoice === 'paper' && computerChoice === 'rock') {
+resultElement.textContent = 'Player wins';
+} else if (playerChoice === 'scissors' && computerChoice === 'paper') {
+resultElement.textContent = 'Player wins';
+} else {
+resultElement.textContent = 'Computer wins';
+}
+}
+
+rockButton.addEventListener('click', () => playGame('rock'));
+paperButton.addEventListener('click', () => playGame('paper'));
+scissorsButton.addEventListener('click', () => playGame('scissors'));
+
+  </code></pre>
+<ol>
+<li>generateComputerChoice(): This function generates a random choice for the computer, either "rock", "paper", or "scissors".
+</li>
+<li>playGame(playerChoice): This function plays a round of the game, comparing the player's choice to the computer's choice and updating the result element on the screen.
+</li>
+<li>The code also adds event listeners to the "Choose your weapon" buttons, so that when a player clicks on a button, the playGame() function is called.
+</li>
+</ol>
+
+
+ 
+  <h2>Rock Paper Scissors</h2>
+  <div id="game">
+    <h3>Choose your weapon:</h3>
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
+  </div>
+  <div id="result">
+    <h3>Result:</h3>
+    <p id="winner"></p>
+  </div>
+ 
+
+
+        <div class="next-prev">
+          <a href="./javascript-event-listeners.html" id="prev">Previous</a>
+          <a href="./javascript-classes.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script>const rockButton = document.getElementById('rock');
+    const paperButton = document.getElementById('paper');
+    const scissorsButton = document.getElementById('scissors');
+    const resultElement = document.getElementById('winner');
+    
+    const computerOptions = ['rock', 'paper', 'scissors'];
+    
+    function generateComputerChoice() {
+      const randomNumber = Math.floor(Math.random() * computerOptions.length);
+      return computerOptions[randomNumber];
+    }
+    
+    function playGame(playerChoice) {
+      const computerChoice = generateComputerChoice();
+    
+      if (playerChoice === computerChoice) {
+        resultElement.textContent = 'Draw';
+      } else if (playerChoice === 'rock' && computerChoice === 'scissors') {
+        resultElement.textContent = 'Player wins';
+      } else if (playerChoice === 'paper' && computerChoice === 'rock') {
+        resultElement.textContent = 'Player wins';
+      } else if (playerChoice === 'scissors' && computerChoice === 'paper') {
+        resultElement.textContent = 'Player wins';
+      } else {
+        resultElement.textContent = 'Computer wins';
+      }
+    }
+    
+    rockButton.addEventListener('click', () => playGame('rock'));
+    paperButton.addEventListener('click', () => playGame('paper'));
+    scissorsButton.addEventListener('click', () => playGame('scissors'));
+    </script>
+</body>
+</html>

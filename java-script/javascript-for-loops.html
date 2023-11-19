@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JavaScript for loops automate repetitive tasks by iterating over a range or elements. They consist of an initialization, condition, and increment expression, efficiently managing looping logic.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>Learn JavaScript for Loops Tutorial</title>
+</head>
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+        <div class="container">
+          <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+      
+        </div>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+             <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+            <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+            <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+            <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+      
+          </ul>
+        </div>
+      </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>JavaScript for Loops Tutorial</h1>
+ 
+
+
+
+<h2>What is JavaScript for Loop</h2>
+<ol>
+    <li>A for loop is a control flow statement that allows you to execute a block of code a certain number of times.</li>
+    <li>It is one of the most commonly used loops in JavaScript.</li>
+ 
+</ol>
+<h3>Syntax: </h3>
+<pre><code class="language-js">for (initialExpression; condition; incrementExpression) {
+    // code block to be executed
+}
+  </code></pre>
+<p><strong>initialExpression: </strong>This expression is executed once, before the loop starts. It is typically used to initialize a counter variable.
+</p>
+<p><strong>condition: </strong>This expression is evaluated before each iteration of the loop. If the condition is true, the code block is executed. Otherwise, the loop terminates.
+</p>
+<p><strong>incrementExpression: </strong>This expression is executed after each iteration of the loop. It is typically used to increment the counter variable.
+</p>
+<h3>Example</h3>
+<pre><code class="language-js">for (let count = 1; count <= 5; count++) {
+    console.log("Count: " + count);
+}
+</code></pre>
+<pre><code class="language-js">Count: 1
+Count: 2
+Count: 3
+Count: 4
+Count: 5
+    </code></pre>
+<!--***********************************************-->
+
+
+<h2>Nested for Loops</h2>
+<ol>
+    <li>You can use nested for loops to work with two-dimensional arrays or perform operations on grids and matrices. </li>
+    <li>Here's an example that prints a simple grid pattern.</li>
+    
+</ol>
+<pre><code class="language-js">for (let row = 1; row <= 3; row++) {
+let pattern = "";
+for (let col = 1; col <= 3; col++) {
+    pattern += "* ";
+}
+console.log(pattern);
+}
+</code></pre>
+<p>The above code will give output like this</p>
+<pre><code class="language-js">* * *
+* * *
+* * *
+</code></pre>
+<!--***********************************************-->
+
+
+<h2>Break and continue statements
+</h2>
+<ol>
+    <li>The break and continue statements can be used to control the flow of a for loop.
+    </li>
+    <li>The break statement terminates the loop immediately.
+    </li>
+    <li>The continue statement skips the rest of the current iteration of the loop and moves on to the next iteration.
+    </li>
+</ol>
+<pre><code class="language-js">for (let i = 1; i <= 10; i++) {
+if (i === 5) {
+    break;
+}
+
+if (i % 2 === 0) {
+    continue;
+}
+
+console.log(i);
+}
+/*Output:
+1
+2
+*/
+  </code></pre>
+<!--***********************************************-->
+
+
+<h2>for...in Loop</h2>
+<ol>
+    <li>The <strong>for...in</strong> loop is primarily used for iterating over the properties of objects.</li>
+    <li>It iterates through the enumerable properties of an object, including those inherited from its prototype chain. </li>
+ 
+</ol>
+<h3>Syntax: </h3>
+<pre><code class="language-js">for (variable in object) {
+    // Code to be executed
+}
+</code></pre>
+<p>variable: This variable represents the property name for each iteration.
+</p>
+<p>object: The object whose properties you want to iterate.
+</p>
+
+<pre><code class="language-js">const person = {
+    name: "John",
+    age: 30,
+    occupation: "Engineer"
+};
+
+for (let key in person) {
+    console.log(key + ": " + person[key]);
+}
+</code></pre>
+<p>Output of the above code will be</p>
+<pre><code class="language-js">name: John
+age: 30
+occupation: Engineer
+</code></pre>
+<!--***********************************************-->
+
+
+<h2>for...of Loop</h2>
+<ol>
+    <li>The <strong>for...of</strong> loop, on the other hand, is used for iterating over iterable objects, such as arrays, strings, maps, sets, and more.</li>
+    <li>t allows you to access the values directly, rather than the keys or indices.</li>
+ 
+</ol>
+<h3>Syntax: </h3>
+<pre><code class="language-js">for (variable of iterable) {
+    // Code to be executed
+}
+</code></pre>
+<p>variable: This variable represents the value for each iteration.
+</p>
+<p>iterable: The data structure (array, string, map, set, etc.) you want to iterate over.
+</p>
+<h3>Example</h3>
+<pre><code class="language-js">const fruits = ["apple", "banana", "cherry", "date"];
+
+for (let fruit of fruits) {
+    console.log("Fruit: " + fruit);
+}
+    </code></pre>
+<pre><code class="language-js">Fruit: apple
+Fruit: banana
+Fruit: cherry
+Fruit: date
+</code></pre>
+<!--***********************************************-->
+
+
+<h2>When to user for loops over while loops</h2>
+<ol>
+    <li>Definite Number of Iterations. That means when we know how many times the loop will execute.</li>
+    <li>Iterating Over Arrays or Collections:</li>
+    <li>Complex Loop Control</li>
+    <li>Initialization and Update Logic</li>
+</ol>
+
+
+
+
+
+
+        <div class="next-prev">
+          <a href="./javascript-while-loops.html" id="prev">Previous</a>
+          <a href="./what-are-javascript-functions.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

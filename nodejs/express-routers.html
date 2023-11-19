@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Express Routers are a fundamental concept in Express.js that allows you to modularize and organize your routes and middleware.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>Express Routers Tutorial</title>
+</head>
+<body>
+   <!--Navigation-->
+   <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+  
+    </div>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+         <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+        <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+        <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+        <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+  
+      </ul>
+    </div>
+  </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>Express Routers Tutorial</h1>
+<p>Express Routers are a fundamental concept in Express.js that allows you to modularize and organize your routes and middleware.</p>
+
+<h2>Introduction to Express Routers
+</h2>
+<ol>
+    <li>Express Routers are mini versions of Express applications.
+    </li>
+    <li>They allow you to modularize routes and middleware, making your application more organized and maintainable.
+    </li>
+</ol>
+<!--Gap-->
+
+<h2>Setting Up Express and Creating a Basic Server
+</h2>
+<ol>
+    <li>First, create a new Node.js project and install the Express package    </li>
+<pre><code class="language-js">npm init
+npm install express
+</code></pre>
+    <li>Create a basic Express server as described in the previous guide.
+    </li>
+</ol>
+ 
+
+
+<h2>Introduction to Express Router
+</h2>
+<ol>
+    <li>A Router is an instance of the Express.js framework that provides route methods.
+    </li>
+    <li>You can think of it as a smaller, separate version of your application that can be used to handle routes.
+    </li>
+</ol>
+ 
+
+
+<h2>Creating and Using Router Instances
+</h2>
+<ol>
+    <li>Create a Router instance using <strong>express.Router()</strong> and use it like an Express app.
+    </li>
+</ol>
+<pre><code class="language-js">const express = require('express');
+const app = express();
+const router = express.Router();
+    </code></pre>
+<!--Gap-->
+
+
+<h2>Routing with Routers
+</h2>
+<ol>
+    <li>Define routes and associated middleware for a Router instance.
+    </li>
+</ol>
+<pre><code class="language-js">router.get('/', (req, res) => {
+    res.send('Router Home Page');
+});
+
+router.get('/about', (req, res) => {
+res.send('About Us');
+});
+
+app.use('/router', router);
+  </code></pre>
+<!--Gap-->
+
+
+<h2>Organizing Routes with Routers
+</h2>
+<ol>
+    <li>Routers are particularly useful for organizing routes into separate files.
+    </li>
+</ol>
+<pre><code class="language-js">// users.js
+const express = require('express');
+const router = express.Router();
+
+router.get('/', (req, res) => {
+    res.send('User List');
+});
+
+module.exports = router;
+
+// app.js
+const express = require('express');
+const app = express();
+const usersRouter = require('./users');
+
+app.use('/users', usersRouter);
+    </code></pre>
+<!--Gap-->
+
+<h2>Error Handling in Routers
+</h2>
+<ol>
+    <li>Routers can also handle errors just like Express applications.
+    </li>
+</ol>
+<pre><code class="language-js">router.get('/error', (req, res, next) => {
+    const error = new Error('This is a router error');
+    next(error);
+});
+
+router.use((err, req, res, next) => {
+    console.error(err.message);
+    res.status(500).send('Router Error');
+});
+
+app.use('/router', router);
+  </code></pre>
+<!--Gap-->
+        <div class="next-prev">
+          <a href="./expressjs-introduction.html" id="prev">Previous</a>
+          <a href="./express-handling-http-requests.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The event loop is a fundamental part of Node.js, responsible for managing asynchronous operations. It allows Node.js to handle I/O operations efficiently and avoid blocking the execution of code.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>Leran Event Loop in Node.js Tutorial</title>
+</head>
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+        <div class="container">
+          <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+      
+        </div>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+             <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+            <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+            <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+            <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+      
+          </ul>
+        </div>
+      </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>Node.js Event Loop</h1>
+<p>The Node.js event loop is a core concept that underpins the asynchronous, non-blocking nature of Node.js.</p>
+<p>In this tutorial, you will learn how event loop works exactly.</p>
+
+<h2>Introduction to the Event Loop</h2>
+<ol>
+    <li>The event loop is a fundamental part of Node.js, responsible for managing asynchronous operations.
+    </li>
+    <li>It allows Node.js to handle I/O operations efficiently and avoid blocking the execution of code.
+    </li>
+</ol>
+ 
+
+<h2>Understanding the Call Stack</h2>
+<ol>
+    <li>The call stack is a data structure that keeps track of the currently executing functions in your code.
+    </li>
+    <li>When a function is called, it's added to the call stack. When it returns, it's removed from the stack.
+    </li>
+</ol>
+ 
+
+<h2>Callback Queue and Message Queue</h2>
+<ol>
+    <li>The callback queue and message queue hold functions and callbacks that are ready to be executed.
+    </li>
+    <li>The callback queue is for functions like <strong>setTimeout</strong> and I/O operations.
+    </li>
+    <li>The message queue is for events like <strong>click</strong> or <strong>HTTP request</strong>.
+    </li>
+</ol>
+ 
+
+
+<h2>The Event Loop Execution Cycle</h2>
+<ol>
+    <li>The event loop continuously checks the call stack and queues.
+    </li>
+    <li>If the call stack is empty, the event loop takes the first function in the callback queue and pushes it onto the call stack for execution.
+    </li>
+</ol>
+ 
+
+<h2>Asynchronous setTimeout</h2>
+<pre><code class="language-js">console.log('Start');
+
+setTimeout(() => {
+    console.log('Timeout callback');
+}, 2000);
+
+console.log('End');
+
+/*
+Output:
+Start
+End
+(After 2 seconds) Timeout callback
+*/
+    </code></pre>
+<ol>
+<li>A <strong>setTimeout</strong> is set for 2 seconds to execute a callback function.
+</li>
+<li>While waiting for the timeout, other code continues to execute.
+</li>
+<li>The callback runs after the specified time, demonstrating the event loop's non-blocking nature.
+</li>
+</ol>
+<!--Gap-->
+
+
+<h2>Event Loop and Non-blocking I/O</h2>
+
+<pre><code class="language-js">const fs = require('fs');
+
+console.log('Start reading file');
+
+fs.readFile('example.txt', 'utf-8', (err, data) => {
+if (err) throw err;
+console.log('File data:', data);
+});
+
+console.log('End reading file');
+
+/* 
+Output:
+Start reading file
+End reading file
+File data: (file content)
+*/
+    </code></pre>
+<ol>
+    <li>A file is read asynchronously using <strong>fs.readFile</strong>.
+    </li>
+    <li>While waiting for the file reading to complete, other code continues executing.
+    </li>
+    <li>When the file reading finishes, the callback is executed, showcasing non-blocking I/O.
+    </li>
+</ol>
+<!--Gap-->
+
+<h2>Synchronous vs. Asynchronous</h2>
+
+<pre><code class="language-js">console.log('Start');
+
+setTimeout(() => {
+    console.log('Timeout callback');
+}, 0);
+
+console.log('End');
+
+/* 
+Output:
+Start
+End
+Timeout callback
+*/
+    </code></pre>
+    <ol>
+        <li>A timeout is set with a 0 millisecond delay.
+        </li>
+        <li>Even though it's set to execute immediately, it waits for the current cycle to complete.
+        </li>
+        <li>After the initial code execution, the callback is added to the callback queue and runs when the call stack is empty, demonstrating event loop behavior.
+        </li>
+    </ol>
+<!--Gap-->
+        <div class="next-prev">
+          <a href="./nodejs-email.html" id="prev">Previous</a>
+          <a href="./nodejs-error-handling.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

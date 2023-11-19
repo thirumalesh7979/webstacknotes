@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sending email involves sending messages from your Node.js application to recipients. You can use an SMTP server or email service to achieve this.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>Node.js Email Tutorial</title>
+</head>
+<body>
+   <!--Navigation-->
+   <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="navs">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+  
+    </div>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+         <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+        <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+        <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+        <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+  
+      </ul>
+    </div>
+  </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>Node.js Email with Notes and Examples</h1>
+<p>Using email in a Node.js application involves sending and receiving emails.</p>
+<p>In this tutorial, you will learn working with Emails using Node.js</p>
+
+<h2>Sending Email</h2>
+<ol>
+    <li>Sending email involves sending messages from your Node.js application to recipients. You can use an SMTP server or email service to achieve this.
+    </li>
+    <li>Sending email with Node.js can be done with the nodemailer library.</li>
+</ol>
+ 
+<pre><code class="language-js">const nodemailer = require('nodemailer');
+
+    const transporter = nodemailer.createTransport({
+      service: 'Gmail',
+      auth: {
+        user: 'youremail@gmail.com',
+        pass: 'yourpassword',
+      },
+    });
+    
+    const mailOptions = {
+      from: 'youremail@gmail.com',
+      to: 'recipient@example.com',
+      subject: 'Hello, from Node.js!',
+      text: 'This is a plain text email sent from Node.js.',
+    };
+    
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.log('Error:', error);
+      } else {
+        console.log('Email sent:', info.response);
+      }
+    });
+    </code></pre>
+
+<h2>Receiving Email</h2>
+<ol>
+    <li>Receiving email in Node.js generally involves accessing email from a mailbox using protocols like IMAP or POP3.
+    </li>
+    <pre><code class="language-js">const Imap = require('imap');
+
+const imap = new Imap({
+    user: 'youremail@gmail.com',
+    password: 'yourpassword',
+    host: 'imap.gmail.com',
+    port: 993,
+    tls: true,
+});
+
+imap.once('ready', () => {
+    imap.openBox('INBOX', true, (err, box) => {
+    if (err) throw err;
+    const fetch = imap.seq.fetch('1:5', { bodies: '' });
+    fetch.on('message', (msg, seqno) => {
+        msg.on('body', (stream, info) => {
+        let buffer = '';
+        stream.on('data', (chunk) => {
+            buffer += chunk.toString('utf8');
+        });
+        stream.on('end', () => {
+            console.log(buffer);
+        });
+        });
+    });
+    });
+});
+
+imap.connect();
+        </code></pre>
+</ol>
+ 
+
+
+<h2>Email Libraries</h2>
+<ol>
+    <li>To work with email in Node.js, you can use libraries like <strong>nodemailer</strong> for sending emails and <strong>imap</strong> or <strong>pop3</strong> for receiving them.
+    </li>
+</ol>
+ 
+
+
+<h2>Handling Attachments</h2>
+<ol>
+    <li>You can send email attachments, such as files or images, using email libraries like <strong>nodemailer</strong>.
+    </li>
+</ol>
+ 
+
+
+
+
+        <div class="next-prev">
+          <a href="./nodejs-url-module.html" id="prev">Previous</a>
+          <a href="./nodejs-event-loop.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
