@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+<url>
+  <loc>https://webstacknotes.com/</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/html/html-main-page.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/java-script/javascript-main-page.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/react-js/react-main-page.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/nodejs/nodejs-main-page.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/mongodb/mongodb-main-page.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/index.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/about/privacy-policy.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/about/terms-of-use.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/html/what-is-html.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/html/how-does-html-works.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/html/html-elements.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/html/heading.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/html/htaml-paragraphs.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/html/html-links.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/html/html-images.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/html/html-lists.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/html/html-tables.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/html/html-forms.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/html/html-favicon.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/html/html-entities.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/html/html-layout.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/html/html-media.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/html/html-geolocation.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/html/html-drag-and-drop.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/html/html-webstorage.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/mongodb/mongodb-introduction.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/java-script/javascript-introductionl.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/java-script/javascript-variables-and-expressions.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/java-script/javascript-operators.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/java-script/javascript-datatypes.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/java-script/javascript-strings.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/java-script/javascript-arrays.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/java-script/javascript-objects.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/java-script/javascript-maps.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/java-script/javascript-if-else.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/java-script/javascript-while-loops.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/java-script/javascript-for-loops.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/java-script/what-are-javascript-functions.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/java-script/javascript-arrow-functions.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/java-script/javascript-higher-order.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/java-script/javascript-dom-introduction.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/java-script/javascript-dom-methods.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/java-script/document-methods.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/java-script/element-methods.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/java-script/node-methods.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/java-script/javascript-event-listeners.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/java-script/dom-practical-exmaples.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/java-script/javascript-classes.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/java-script/javascript-classes-practical-examples.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/react-js/what-is-react.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/react-js/react-es6-revision.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/react-js/react-jsx.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/react-js/react-components.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/react-js/react-events.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/react-js/react-lists.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/react-js/react-conditionals.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/react-js/react-forms.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/react-js/react-routers.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/react-js/react-css-styling.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/react-js/react-bootstrap.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/react-js/react-table.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/react-js/react-hooks.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/react-js/react-redux-tuotrial.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/nodejs/nodejs-introduction.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/nodejs/nodejs-modules.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/nodejs/nodejs-filesystem.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/nodejs/nodejs-events.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/nodejs/nodejs-http-module.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/nodejs/nodejs-streams.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/nodejs/nodejs-buffers.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/nodejs/nodejs-url-module.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/nodejs/nodejs-email.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/nodejs/nodejs-event-loop.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/nodejs/nodejs-error-handling.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/nodejs/nodejs-mongodb.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/nodejs/nodejs-mysql.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/nodejs/nodejs-firebase.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/nodejs/expressjs-introduction.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/nodejs/express-routers.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/nodejs/express-handling-http-requests.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/nodejs/express-sending-responses.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/nodejs/express-middleware.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/nodejs/express-templates-views.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/mongodb/mongodb-create-database.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/mongodb/mongodb-create-collection.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/mongodb/mongodb-insert.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/mongodb/mongodb-find.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/mongodb/mongodb-delete.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/mongodb/mongodb-update.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/mongodb/mongodb-query-operators.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/mongodb/mongodb-mongoose.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://webstacknotes.com/mongodb/mongodb-aggregations.html</loc>
+  <lastmod>2023-11-30T12:01:44+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
+</urlset>
