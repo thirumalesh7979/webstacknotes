@@ -220,7 +220,10 @@ footer ul a, .footer-brand{
    align-items: center;
   }
   pre{
-    width:100%
-  };
+    width:100%;
+  }
+    .navbar-toggler{
+    background-color: white;border-color:white ;
+  }
  
 }
