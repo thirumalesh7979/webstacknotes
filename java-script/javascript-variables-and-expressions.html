@@ -17,7 +17,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/style.css">
     <link rel="stylesheet" href="../assets/prism.css">
-    <title>JavaScript Variables and Expressions</title>
+    <title>JavaScript Variables and Expressions Tutorial</title>
 </head>
 <body>
     <!--Navigation-->
@@ -58,6 +58,7 @@
     </li>
     <li>They act as containers for values, and their contents can change during program execution.
     </li>
+    <li>These data values can be numbers, text, booleans, or more complex data types such as objects, arrays, etc.</li>
    
 </ol>
  
@@ -66,20 +67,40 @@
 
 <h2>Declaring Variables in JavaScript</h2>
 <ol>
-    <li>Declare variables using <strong>var</strong>, <strong>let</strong>, or <strong>const</strong>.
-    </li>
-   <li><strong>var</strong> variables are function-scoped, which means that they can be accessed from anywhere within the function in which they are declared.
+<li>Declare variables using <strong>var</strong>, <strong>let</strong>, or <strong>const</strong>.
 </li>
-   
-<li><strong>let and const</strong> variables are block-scoped, which means that they can only be accessed from within the block in which they are declared.
+<li><strong>var</strong> variables are function-scoped, which means that they can be accessed from anywhere within the function in which they are declared.
 </li>
-</ol>
-<pre><code class="language-js">var name = "John";
-let age = 30;
-const PI = 3.14;
+<li>Historically, this was the primary way to declare variables, but it has some issues (like hoisting and global scope). We recommend avoiding it.</li>
 
-console.log(age,name, PI); //Output: 30 John 3.14
-    </code></pre>
+<li><strong>let: </strong> Introduced later, let is the preferred way to declare variables. It provides block-level scoping and avoids the pitfalls of var.</li>
+<li><strong>const: </strong> Used for constants, const declares a variable that cannot be changed after its initial assignment.</li>
+</ol>
+
+<p>Let's declare a variable using <strong>let</strong></p>
+<pre><code class="language-js">let message; // Declaring a variable without assigning a value
+</code></pre>
+<p>In the above example, <strong>message</strong> is a variable, and its default value is <strong>undefined</strong>.</p>
+<p>Once declared, we can assign a value to a variable using the <strong>=</strong> operator.</p>
+<pre><code class="language-js">let greeting;
+greeting = "Hello, JavaScript!"; // Assigning a string value
+</code></pre>
+<p>Alternatively, we can declare and initialize a variable in a single line</p>
+<pre><code class="language-js">let name = "John"; // Assigned a string value
+let age = 30; // Assigned a numeric value
+let isStudent = true; // Assigned a boolean value
+</code></pre>
+<p>You can declare multiple variables in a single line.</p>
+<pre><code class="language-js">let firstName = "John", lastName = "Doe", score = 85;
+</code></pre>
+<p>You can copy the value of one variable to another.</p>
+<pre><code class="language-js">let originalValue = 100;
+let copiedValue = originalValue;
+</code></pre>
+<p>JavaScript allows multiple spaces and line breaks when declaring variables.</p>
+<pre><code class="language-js">let   city   =   "New York",
+population = 8_500_000;
+</code></pre>
 <!--***********************************************-->
 
 
@@ -87,9 +108,10 @@ console.log(age,name, PI); //Output: 30 John 3.14
 <ol>
     <li>Variable names must begin with a letter, underscore (_), or dollar sign ($).
     </li>
-    <li>They can also include digits, but not start with one.
+   <li>They cannot start with a digit (0-9).
     </li>
-    
+    <li>Variable names are case-sensitive (e.g., msg, MSG, Msg, and mSg are different variables).</li>
+    <li>Avoid using reserved keywords like var, function, or return.</li>
 </ol>
 <h3>Valid Variable Names</h3>
 <pre><code class="language-js">myVariable
@@ -106,23 +128,16 @@ const
 function
 var</code></pre>
 <!--***********************************************-->
-
-
-<h2>Assigning Values</h2>
-<ol>
-    <li>Variables can be assigned values of various data types, including numbers, strings, booleans, and objects.
-    </li>
-    <li>We can also assign the value of the variable after declaring it.</li>
-</ol>
-<pre><code class="language-js">let score = 95;
-let message = "Hello, World!";
-let isLogged = true;
-    </code></pre>
-<pre><code class="language-js">let age; // Declaring the variable
-age = 19;  // Initializing the value to the variable
-console.log(age) //Output: 19
+<h2>Dynamic Typing
+</h2>
+<p>JavaScript is loosely typed, meaning you don't need to specify a variable's data type explicitly. It adapts based on the assigned value. That means it can  hold different types of values.
+</p>
+<pre><code class="language-js">let numberVar = 42;       // Number
+let stringVar = "Hello"; // String
+let boolVar = true;      // Boolean
+let arrayVar = [1, 2, 3]; // Array
+let objVar = { key: "value" }; // Object
 </code></pre>
-<!--***********************************************-->
 
 
 <h2>Updating Variables</h2>
