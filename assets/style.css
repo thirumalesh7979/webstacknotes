@@ -28,8 +28,11 @@ main{
 }
 .navbar-brand{
   color:white;
+  font-size: 25px;
 }
- 
+.navbar-toggler{
+  font-size: 17px;
+}
 /*** CARDS ***/
 .heading{
   height: 300px;
