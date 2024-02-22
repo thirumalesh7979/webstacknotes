@@ -49,13 +49,13 @@ main{
   display: flex;
   flex-wrap: wrap;
   gap:50px;
-  margin-left:0 15%;
+  margin:0 15%;
 }
 
 .card{
   width: 450px;
   height: 250px;
-   display: flex;
+  display: flex;
   flex-direction: column;
   gap:10px;
   padding: 10px;
@@ -78,8 +78,11 @@ main{
   color:white;
   border-radius: 18px;
   text-align: center;
-  padding: 7px;
+  padding: 10px;
   width:250px;
+ color: #e14177;
+  background-color:white;
+  border: 1px solid  #e14177;
 }
 
 .link:hover{
