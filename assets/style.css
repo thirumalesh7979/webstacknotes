@@ -80,14 +80,15 @@ main{
   text-align: center;
   padding: 10px;
   width:250px;
- color: #e14177;
-  background-color:white;
-  border: 1px solid  #e14177;
+
 }
 
 .link:hover{
   padding-top: 15px 0px;
   transition: all 0.3s ease-in-out;
+     color: #e14177;
+  background-color:white;
+  border: 1px solid  #e14177;
 }
  
 
