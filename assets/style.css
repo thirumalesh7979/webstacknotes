@@ -226,7 +226,7 @@ footer ul a, .footer-brand{
   .cards{
     justify-content: center;
     align-items: center;
-    margin-left:0px;
+    width:100%;
 
   }
 
