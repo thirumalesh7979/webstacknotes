@@ -49,14 +49,13 @@ main{
   display: flex;
   flex-wrap: wrap;
   gap:50px;
-
   width: 80%;
   margin:auto;
 }
 
 .card{
   width: 450px;
-  height: 250px;
+  height: 220px;
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -217,7 +216,7 @@ footer ul a, .footer-brand{
     
   } 
   .card{
-  height:300px;
+  height:230px;
   }
   .matter{
     display: -webkit-box;
@@ -243,7 +242,7 @@ footer ul a, .footer-brand{
     justify-content: center;
     align-items: center;
     margin-left:0px;
-
+    width: 100%;
   }
 
   .navbar-nav li {
