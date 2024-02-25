@@ -49,6 +49,7 @@ main{
   display: flex;
   flex-wrap: wrap;
   gap:50px;
+
   width: 80%;
   margin:auto;
 }
@@ -58,7 +59,6 @@ main{
   height: 250px;
   display: flex;
   flex-direction: column;
-  gap:10px;
   padding: 10px;
   justify-content: space-between;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0), 0 3px 6px rgba(0,0,0,0.23);
@@ -81,13 +81,12 @@ main{
   text-align: center;
   padding: 10px;
   width:250px;
-
 }
 
 .link:hover{
   padding-top: 15px 0px;
   transition: all 0.3s ease-in-out;
-     color: #e14177;
+  color: #e14177;
   background-color:white;
   border: 1px solid  #e14177;
 }
@@ -139,6 +138,13 @@ main{
   color:white;
   padding: 10px;
   border-radius: 18px;
+  width: 100px;
+  text-align: center;
+}
+.next-prev a:hover{
+  color: #e14177;
+  background-color: white;
+  border: 1px solid #e14177;
 }
 
 /*** HEADINGS ***/
@@ -165,8 +171,12 @@ pre{
   width:78%;
   overflow-x: auto;
 }
-
-
+.matter{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 /*** FOOTER ***/
 footer{
   display: flex;
@@ -209,6 +219,12 @@ footer ul a, .footer-brand{
   .card{
   height:300px;
   }
+  .matter{
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
   #content-img{
     height: 250px;
     padding: 9px;
@@ -226,7 +242,7 @@ footer ul a, .footer-brand{
   .cards{
     justify-content: center;
     align-items: center;
-    width:100%;
+    margin-left:0px;
 
   }
 
