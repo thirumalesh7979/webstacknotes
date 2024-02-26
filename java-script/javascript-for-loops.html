@@ -51,14 +51,13 @@
 
 <h1>JavaScript for Loops Tutorial</h1>
  
-
-
-
 <h2>What is JavaScript for Loop</h2>
 <ol>
-    <li>A for loop is a control flow statement that allows you to execute a block of code a certain number of times.</li>
-    <li>It is one of the most commonly used loops in JavaScript.</li>
- 
+<li>A JavaScript <strong>for</strong> loop is a way to make a certain piece of code run repeatedly for a specific number of times.
+</li>
+<li>We typically use this loop when we already know how many times the code needs to run.</li>
+ <li>It is one of the most commonly used loops in JavaScript.</li>
+
 </ol>
 <h3>Syntax: </h3>
 <pre><code class="language-js">for (initialExpression; condition; incrementExpression) {
@@ -82,6 +81,8 @@ Count: 3
 Count: 4
 Count: 5
     </code></pre>
+<p>Here, we want to run the code exactly 5 times, from Count: 1 to Count: 5. So, instead of using a while loop, the "for" loop is simpler to manage in such clear-cut scenarios.
+</p>
 <!--***********************************************-->
 
 
@@ -110,12 +111,12 @@ console.log(pattern);
 <h2>Break and continue statements
 </h2>
 <ol>
-    <li>The break and continue statements can be used to control the flow of a for loop.
-    </li>
-    <li>The break statement terminates the loop immediately.
-    </li>
-    <li>The continue statement skips the rest of the current iteration of the loop and moves on to the next iteration.
-    </li>
+<li>The break and continue statements can be used to control the flow of a for loop.
+</li>
+<li>The break statement terminates the loop immediately.
+</li>
+<li>The continue statement skips the rest of the current iteration of the loop and moves on to the next iteration.
+</li>
 </ol>
 <pre><code class="language-js">for (let i = 1; i <= 10; i++) {
 if (i === 5) {
@@ -138,9 +139,9 @@ console.log(i);
 
 <h2>for...in Loop</h2>
 <ol>
-    <li>The <strong>for...in</strong> loop is primarily used for iterating over the properties of objects.</li>
-    <li>It iterates through the enumerable properties of an object, including those inherited from its prototype chain. </li>
- 
+<li>The JavaScript <strong>for...of</strong> loop is mostly used to go through the properties of objects.</li>
+<li>It goes over the properties we can count in an object, even the ones it got from its family line.</li>
+
 </ol>
 <h3>Syntax: </h3>
 <pre><code class="language-js">for (variable in object) {
@@ -172,9 +173,8 @@ occupation: Engineer
 
 <h2>for...of Loop</h2>
 <ol>
-    <li>The <strong>for...of</strong> loop, on the other hand, is used for iterating over iterable objects, such as arrays, strings, maps, sets, and more.</li>
-    <li>t allows you to access the values directly, rather than the keys or indices.</li>
- 
+<li>The for...of statement runs a loop that works on a series of values taken from an iterable object.</li>
+<li>Iterable objects cover built-in things like Array, String, TypedArray, Map, Set, NodeList (and other DOM collections), also the arguments object, generators made by generator functions, and iterable things we make ourselves.</li>
 </ol>
 <h3>Syntax: </h3>
 <pre><code class="language-js">for (variable of iterable) {
@@ -202,10 +202,10 @@ Fruit: date
 
 <h2>When to user for loops over while loops</h2>
 <ol>
-    <li>Definite Number of Iterations. That means when we know how many times the loop will execute.</li>
-    <li>Iterating Over Arrays or Collections:</li>
-    <li>Complex Loop Control</li>
-    <li>Initialization and Update Logic</li>
+<li>Definite Number of Iterations. That means when we know how many times the loop will execute.</li>
+<li>Iterating Over Arrays or Collections:</li>
+<li>Complex Loop Control</li>
+<li>Initialization and Update Logic</li>
 </ol>
 
 
@@ -213,13 +213,13 @@ Fruit: date
 
 
 
-        <div class="next-prev">
-          <a href="./javascript-while-loops.html" id="prev">Previous</a>
-          <a href="./what-are-javascript-functions.html" id="next">Next</a>
-       </div>
+<div class="next-prev">
+<a href="./javascript-while-loops.html" id="prev">Previous</a>
+<a href="./what-are-javascript-functions.html" id="next">Next</a>
+</div>
 
 
-       </div>
+</div>
 
     
 

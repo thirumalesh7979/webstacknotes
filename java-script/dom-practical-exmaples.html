@@ -24,15 +24,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+ 
 }
+ 
 
 button {
   margin: 10px;
   padding: 10px;
   font-size: 16px;
-  background-color: #ccc;
+  background-color: #000000;
   border: none;
   cursor: pointer;
+  color: white;
 }
 
 #result {
@@ -40,7 +43,7 @@ button {
   text-align: center;
 }
 
-p {
+.p {
   font-size: 20px;
 }
 
@@ -78,6 +81,19 @@ p {
 
 <h1>JavaScript Rock Paper Scissors Game</h1>
 <p>In this tutorial, you will make  Rock Paper Scissors game with you previous HTML, CSS and JavaScript knowledge.</p>
+ 
+ 
+<h2>Rock Paper Scissors</h2>
+<div id="game">
+<h3>Choose your weapon:</h3>
+<button id="rock">Rock</button>
+<button id="paper">Paper</button>
+<button id="scissors">Scissors</button>
+</div>
+<div id="result">
+<h3>Result:</h3>
+<p id="winner" class="p"></p>
+</div> 
 
 
 <h2>Concepts that can be covered by this project</h2>
@@ -104,7 +120,7 @@ p {
         &lt;/div>
     &lt;div id="result">
         &lt;h3>Result:&lt;/h3>
-        &lt;p id="winner">&lt;/p>
+        &lt;p id="winner" class="p">&lt;/p>
     &lt;/div>
     &lt;script src="script.js">&lt;/script>
     &lt;/body>
@@ -124,33 +140,33 @@ p {
 </ol>
 
 <h2>CSS (style.css)</h2>
-<pre><code class="language-css">body {
-    font-family: sans-serif;
-  }
-  
-  #game {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  button {
-    margin: 10px;
-    padding: 10px;
-    font-size: 16px;
-    background-color: #ccc;
-    border: none;
-    cursor: pointer;
-  }
-  
-  #result {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  p {
-    font-size: 20px;
-  }
+<pre><code class="language-css">
+#game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+ 
+
+button {
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #000000;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+#result {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.p {
+  font-size: 20px;
+}
   </code></pre>
 
 
@@ -199,19 +215,7 @@ scissorsButton.addEventListener('click', () => playGame('scissors'));
 </ol>
 
 
- 
-  <h2>Rock Paper Scissors</h2>
-  <div id="game">
-    <h3>Choose your weapon:</h3>
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
-  </div>
-  <div id="result">
-    <h3>Result:</h3>
-    <p id="winner"></p>
-  </div>
- 
+
 
 
         <div class="next-prev">

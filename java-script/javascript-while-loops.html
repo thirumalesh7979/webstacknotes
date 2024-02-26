@@ -53,12 +53,23 @@
 
 <h2>What is a while Loop?</h2>
 <ol>
-    <li>A while loop is a control flow statement in JavaScript that allows you to repeatedly execute a block of code as long as a specified condition is true.</li>
-    <li>It's used for situations where you want to continue running a piece of code until a certain condition is no longer met.</li>
- </ol>
+<li>The JavaScript "while" statement makes a loop that runs a block of code as long as a certain condition stays true.</li>
+<li>It's handy when you need to keep running a piece of code until a specific condition is no longer true.
+</li>
+<li>Let's see how <strong>while</strong> loop works</li>
+<li>The "while" statement checks the expression before every loop iteration.
+</li>
+<li>If the expression is true, the "while" statement runs the  code inside it curly braces. If it's false, the loop ends.
+</li>
+<li>This type of loop is called a pretest loop as it checks the expression before each iteration.
+</li>
+<li>If the expression is false from the start, the "while" loop won't run at all.
+</li>
+<li>Imagine you are developing a temperature monitoring system, and you want to continuously read and display the current temperature until a certain threshold is reached. This is where <strong>while</strong> loops comes in.</li>
+</ol>
  <h3>Syntax: </h3>
-<pre><code class="language-js">while (condition) {
-    // Code to be executed
+<pre><code class="language-js">while (condition/truthy or falsy value) {
+    // code block to run
     update;
 }
 </code></pre>
@@ -97,14 +108,22 @@ while (chargePercent <= 100){
 99 %
 100 %
 </code></pre>
+<p>The program initializes a variable <strong>chargePercent</strong> with an initial value of 90.
+</p>
+<p>The while loop is used to iterate as long as the condition <strong>chargePercent</strong> <= 100 is true.</p>
+<p>Inside the loop, It logs the current value of <strong>chargePercent</strong> to the console using <strong>console.log()</strong>, indicating the battery charge percentage.
+.</p>
+<p>The <strong>chargePercent</strong> is then incremented by 1 with the <strong>chargePercent</strong>++ statement.
+</p>
+<p>The loop continues to run until <strong>chargePercent</strong> is no longer less than or equal to 100.</p>
+<p>When you run this program, it will output the battery charge percentage from 90% to 100% in the console. The loop increments the charge percentage in each iteration and stops when it reaches or exceeds 100%.</p>
 <!--***********************************************-->
 
 
 <h2>Infinite while Loop</h2>
 <ol>
-    <li>We said that while loop will always run the code as long as the condition is true.</li>
-    <li>This means the loop can execute repeatedly if the condition is always true</li>
- 
+    <li>We mentioned that the while loop keeps running the code as long as the condition remains true. </li>
+    <li>This means that the loop can repeat itself multiple times if the condition stays true throughout.</li>
 </ol>
 <pre><code class="language-js">while(true){
     console.log("This loop always executes, To stop this you might turn off the computer close the editor");    
@@ -115,6 +134,9 @@ while(number == 9){
     console.log("This loop always executes");
 }
 </code></pre>
+<p>The first while loop with while (true) creates an infinite loop, as the condition is always true. It continuously logs the specified message to the console. To stop this loop, you would need to interrupt the execution, for example, by manually stopping the program, closing the editor, or turning off the computer.</p>
+<p>The second while loop with while (number == 9) also creates an infinite loop, given that the initial value of number is set to 9 and the condition remains true. It will repeatedly log the specified message to the console. To stop this loop, you would need to change the value of number or introduce a condition inside the loop that eventually evaluates to false.
+</p>
 <!--***********************************************-->
 
 
@@ -145,10 +167,10 @@ Fruit: date
 
 <h2>Controlling while Loops with Break and Continue</h2>
 <ol>
-    <li>In some cases, you may want to exit a while loop prematurely or skip a specific iteration. You can do this using the <strong>break</strong> and <strong>continue</strong> statements.
-    </li>
-    
+<li>In some cases, you may want to exit a while loop prematurely or skip a specific iteration. You can do this using the <strong>break</strong> and <strong>continue</strong> statements.
+</li>
 </ol>
+
 <h3>Break</h3>
 <p>Exits the loop before it actually exits.</p>
 <pre><code class="language-js">let count = 1;
@@ -189,8 +211,7 @@ Count: 5
 <ol>
     <li>A <strong>do...while</strong>e loop is a control flow statement in JavaScript that executes a block of code at least once, and then repeatedly as long as a specified condition remains true. </li>
     <li>Unlike the while loop, which checks the condition before the first iteration, the <strong>do...while</strong>e loop guarantees at least one execution of the code.</li>
- 
-</ol>
+ </ol>
 <h3>Syntax</h3>
 <pre><code class="language-js">do {
     // Code to be executed

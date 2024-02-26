@@ -86,10 +86,9 @@
 
 <h2>createElement() </h2>
 <ol>
-    <li>Creates a new element with the given tag name.</li>
-    
+<li>Creates a new element with the given tag name.</li> 
 </ol>
-<pre><code class="language-js">// Create a new `<div>` element.
+<pre><code class="language-js">// Create a new &lt;div> element.
 const newDiv = document.createElement('div');
 
 // Add some text content to the element.
@@ -98,7 +97,11 @@ newDiv.textContent = 'This is a new div element.';
 // Append the element to the body of the document.
 document.body.appendChild(newDiv);
 </code></pre>
-
+<p>It creates a new HTML <strong>&lt;div></strong> element using the <strong>document.createElement('div')</strong> method and assigns it to the variable <strong>newDiv</strong>.
+</p>
+<p>It sets the text content of the newly created <strong>&lt;div></strong> element to <strong>'This is a new div element.'</strong> using <strong>newDiv.textContent</strong>.
+</p>
+<p>Finally, it appends the newly created &lt;div> element to the body of the HTML document using <strong>document.body.appendChild(newDiv)</strong>.</p>
  <!--Image-->
 <!--***********************************************-->
 
@@ -114,6 +117,10 @@ const helloWorldTextNode = document.createTextNode('Hello, world!');
 // Append the text node to the body of the document.
 document.body.appendChild(helloWorldTextNode);
 </code></pre>
+<p>It creates a new text node containing the text "Hello, world!" using the document.createTextNode('Hello, world!') method and assigns it to the variable helloWorldTextNode.
+</p>
+<p>It appends the created text node to the body of the HTML document using document.body.appendChild(helloWorldTextNode).
+</p>
 
  <!--Image-->
 <!--***********************************************-->
@@ -131,7 +138,12 @@ console.log(articleHeadingElement)
 // Change the text content of the element.
 articleHeadingElement.textContent = 'New heading text';
 </code></pre>
-
+<p>It grabs the element on the page with the ID "article-heading" using document.getElementById('article-heading') and stores it in the variable articleHeadingElement.
+</p>
+<p>It shows the articleHeadingElement in the console.
+</p>
+<p>It changes the displayed text of that element to 'New heading text'.
+</p>
  <!--Image-->
 <!--***********************************************-->
 
@@ -150,7 +162,12 @@ for (const listElement of listElements) {
     listElement.textContent = 'New list item text';
 }
 </code></pre>
-
+<p>It retrieves a collection of all elements in the document with the class name "lists" using document.getElementsByClassName('lists') and stores it in the variable listElements.
+</p>
+<p>It logs the listElements to the console.
+</p>
+<p>It goes through each element in the collection using a loop and updates the displayed text of each element to 'New list item text' with listElement.textContent = 'New list item text'.
+</p>
  <!--Image-->
 <!--***********************************************-->
 
@@ -168,7 +185,10 @@ for (const nameElement of nameElements) {
     nameElement.textContent = 'New name text';
 }
 </code></pre>
-
+<p>It gathers a collection of all elements in the document with the name attribute set to "name" using document.getElementsByName('name') and stores it in the variable nameElements.
+</p>
+<p>It iterates through each element in the collection using a loop and updates the displayed text of each element to 'New name text' with nameElement.textContent = 'New name text'.
+</p>
  <!--Image-->
 <!--***********************************************-->
 
@@ -184,6 +204,10 @@ const contentElement = document.querySelector('.content');
 // Change the background color of the element.
 contentElement.style.backgroundColor = 'red';
 </code></pre>
+<p>It fetches the initial element in the document that corresponds to the CSS selector .content using document.querySelector('.content') and assigns it to the variable contentElement.
+</p>
+<p>It modifies the background color of the selected element to 'red' by using contentElement.style.backgroundColor = 'red'.
+</p>
 <!--Image-->
 <!--***********************************************-->
 
@@ -202,7 +226,10 @@ for (const listItemElement of listItemElements) {
 }
 </code></pre>
 <!--***********************************************-->
-
+<p>It retrieves a collection of all elements in the document that match the CSS selector ul.lists > li using document.querySelectorAll('ul.lists > li') and stores it in the variable listItemElements.
+</p>
+<p>It iterates through each element in the collection using a loop and modifies the text color of each element to 'blue' with listItemElement.style.color = 'blue'.
+</p>
  <!--Image-->
 
 
