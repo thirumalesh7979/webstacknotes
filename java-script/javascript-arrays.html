@@ -55,9 +55,8 @@
 
 <h2>Introduction to JavaScript Arrays</h2>
 <ol>
-    <li>An array is a collection of values, stored as a list, which can be of mixed data types. </li>
-    <li>Arrays are zero-indexed, meaning the first element is at index 0, the second at index 1, and so on.</li>
- 
+<li>An array is a collection of values stored as a list, and it can contain different data types.</li>
+<li>Arrays are zero-indexed, meaning the first element is at index 0, the second at index 1, and so forth.</li>
 </ol>
 <pre><code class="language-js">let namesArray = ["Alex", "Jack", "Stefan"];
 console.log(namesArray); // Output: [ 'Alex', 'Jack', 'Stefan' ]
@@ -122,7 +121,7 @@ console.log(fruits); // Output: [ 'apple', 'grape', 'cherry' ]
 
 <h2>Iterating Over Arrays</h2>
 <ol>
-    <li>You can use loops, such as <strong>for</strong> and <strong>forEach</strong>, to iterate over arrays.</li>
+    <li>You can use loops, such as <strong>for</strong>, <strong>for of</strong> and <strong>forEach</strong>, to iterate over arrays.</li>
     
 </ol>
 <pre><code class="language-js">let fruits = ['apple', 'banana', 'cherry'];
@@ -143,7 +142,24 @@ apple
 banana
 cherry
 */
+
+for (let i of fruits) {
+    console.log(i);
+}
+/* Output:
+apple
+banana
+cherry
+*/
     </code></pre>
+<p>The <strong>forEach</strong> method is called on the array, and a callback function is provided to execute for each element.</p> 
+<p>The callback function receives each element as a parameter and logs it.
+</p>
+<p><strong>for...of</strong> loop iterates over the values of the array directly, providing a simpler syntax.
+</p>
+<p>It logs each element of the array.
+</p>
+
 <p>If you not understand how loops works, don't worry we will talk about them later.</p>
 <!--***********************************************-->
 

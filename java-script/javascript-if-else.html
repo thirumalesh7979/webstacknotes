@@ -55,7 +55,7 @@
 <h2>What are Conditional Statements?</h2>
 <ol>
     <li>Conditional statements are used in programming to make decisions. </li>
-    <li>They allow your code to execute different blocks of code based on whether a specified condition is true or false. </li>
+    <li>They execute different blocks of code based on whether a specified condition is <strong>true</strong> or <strong>false</strong>. </li>
     <li>JavaScript provides several types of conditional statements, including <strong>if</strong>, <strong>if-else</strong>, <strong>if-else if-else</strong>, and <strong>switch</strong>.</li>
 </ol>
 
@@ -65,23 +65,30 @@
 
 <h2>if statement</h2>
 <ol>
-    <li>The JavaScript if statement is a conditional statement that allows you to execute different code blocks based on the evaluation of a condition.</li>
-    <li>So it executes when the condition is true.</li>
-     
+<li>The "if" statement runs a block of code only if a specified condition is true.
+</li>
 </ol>
 <p>Let's see some examples</p>
 <pre><code class="language-js">let age = 19;
 if(age === 19){
     console.log("Hey, You can Vote Now");
 }
+
+//Output: Hey, You can Vote Now
 </code></pre>
-<p>The above code will executes</p>
-<pre><code class="language-js">const evenNum;
+<p>The above code runs successfully because the variable "age" has a value of 19. We check if the "age" value is equal to 19. If this condition is true, we execute the code within the if block. The code within the block can be as simple as logging a message to the console or more complex tasks like user login to the system and so on.
+</p>
+<pre><code class="language-js">let evenNum;
 let num = 10;
 if(num%2 === 0){
     evenNum = num;
     console.log("If this true it will executes")
 }
+console.log(evenNum)
+
+// Output
+// If this true it will executes
+// 10
 </code></pre>
 
 <!--***********************************************-->
@@ -89,10 +96,10 @@ if(num%2 === 0){
 
 <h2>if...else tutorial</h2>
 <ol>
-    <li>In this case the true condition is take care by <strong>if</strong> statement and false condition will take care by <strong>else</strong> statement</li>
-  
+<li>The "if" statement runs a block of code when a condition is true. If the condition is false, it doesn't do anything. </li>
+<li>But if you want to execute a statement when the condition is false, you can use an "if...else" statement.</li>
 </ol>
-<pre><code class="language-js">const num = 10;
+<pre><code class="language-js">const num = 9;
 
 if (num % 2 === 0) {
     console.log("The number is even.");
@@ -100,14 +107,13 @@ if (num % 2 === 0) {
     console.log("The number is odd.");
 }
     </code></pre>
-    <p>This code will print the following output to the console <strong>The number is even.</strong></p>
+<p>This code will print the following output to the console <strong>The number is odd.</strong></p>
 <!--***********************************************-->
 
 
 <h2>else if</h2>
 <ol>
     <li>You can also use the else if statement to check multiple conditions and execute different code blocks depending on the outcome of each condition. </li>
- 
 </ol>
 <h3>Syntax: </h3>
 <pre><code class="language-js">if (condition1) {
@@ -173,9 +179,8 @@ if (isLoggedIn) {
 
 <h2>Switch Statement</h2>
 <ol>
-    <li>The JavaScript switch statement is a control flow statement that allows you to execute different code blocks based on the value of an expression. </li>
-    <li>It is a more concise and efficient way to write multiple if/else statements, especially when there are many possible values for the expression.</li>
- 
+<li>The JavaScript switch statement is a control flow statement that allows you to execute different code blocks based on the value of an expression. </li>
+<li>It is an easiest to write multiple if/else statements, especially when there are many possible values for the expression.</li>
 </ol>
 <h3>Syntax: </h3>
 <pre><code class="language-js">switch (expression) {

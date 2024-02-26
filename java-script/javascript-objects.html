@@ -18,7 +18,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/style.css">
     <link rel="stylesheet" href="../assets/prism.css">
-    <title>Learn JavaScript Objects Tutorial</title>
+    <title>JavaScript Objects Tutorial</title>
 </head>
 <body>
     <!--Navigation-->
@@ -54,10 +54,10 @@
 
 <h2>What are the JavaScript Objects?</h2>
 <ol>
-    <li>JavaScript objects are collections of named values that are used to represent real-world entities such as users, products, or orders. </li>
-    <li>They can be used to store any type of data, such as strings, numbers, arrays, and other objects.</li>
-    <li>They can also be used to store complex data structures such as trees, graphs, and hash tables.</li>
-    <li>They are made up of key-value pairs, where the key is a string and the value can be anything, including other objects, arrays, or functions.</li>
+<li>JavaScript objects are collections of named values that are used to represent real-world entities such as users, products, or orders. </li>
+<li>They can be used to store any type of data, such as strings, numbers, arrays, and other objects.</li>
+<li>They can also be used to store complex data structures such as trees, graphs, and hash tables.</li>
+<li>They are made up of key-value pairs, where the key is a string and the value can be anything, including other objects, arrays, or functions.</li>
 </ol>
 <pre><code class="language-js">const variable_name = {
     key : value,
@@ -68,11 +68,10 @@
 <!--***********************************************-->
 
 
-<h2>Creating Arrays in JavaScript</h2>
+<h2>Creating Objects in JavaScript</h2>
 <ol>
-    <li>You can create objects in JavaScript using two methods</li>
+    <li>There are two ways to create objects in JavaScript. They are: </li>
     <li>Object literals and the <strong>Object</strong> constructor.</li>
- 
 </ol>
 <pre><code class="language-js">// Using object literals
 const user = {
@@ -87,14 +86,16 @@ car.make = "Toyota";
 car.model = "Camry";
 console.log(car); // Output: { make: 'Toyota', model: 'Camry' }
     </code></pre>
-<!--***********************************************-->
+<p>The <strong>user</strong> object is created using an object literal. Object literals are a easy way to create objects in JavaScript. The properties <strong>(firstName and lastName)</strong> and their values are defined directly within curly braces.</p>
 
+<p>The <strong>car</strong> object is created using the <strong>Object</strong> constructor. The <strong>make</strong> and <strong>model</strong> properties are then added to the object using dot notation. While this method is less common than object literals, it allows for dynamic property assignment.</p>
+
+<!--***********************************************-->
 
 <h2>Accessing Object Properties</h2>
 <ol>
-    <li>You can access object properties using dot notation or bracket notation.
-    </li>
-   
+<li>You can access object properties using dot notation or bracket notation.
+</li>
 </ol>
 <pre><code class="language-js">console.log(user.firstName); // Output: Jack
 console.log(car['make']);     // Output: Toyota
@@ -117,7 +118,7 @@ person.firstName = "Jane"; // Modify an existing property
 
 <h2>Deleting Properties</h2>
 <ol>
-    <li>You can delete object properties using the <strong>delete </strong>keyword.</li>
+<li>You can delete object properties if you want using the <strong>delete </strong>keyword.</li>
 </ol>
 <pre><code class="language-js">delete user.age;
 delete car['year'];
@@ -127,8 +128,8 @@ delete car['year'];
 
 <h2>Checking if a Property Exists</h2>
 <ol>
-    <li>You can check if an object has a specific property using the <strong>in</strong> operator.
-    </li>
+<li>You can check if an object has a specific property using the <strong>in</strong> operator.
+</li>
 </ol>
 <pre><code class="language-js">console.log('age' in user);  // Output: false (if 'age' is deleted)
 console.log('year' in car);    // Output: false (if 'year' is deleted)
@@ -138,10 +139,9 @@ console.log('year' in car);    // Output: false (if 'year' is deleted)
 
 <h2>Object Methods</h2>
 <ol>
-    <li>Objects can also have functions as properties, known as methods.
-    </li>
-    <li>We will teach you functions completely in later tutorial. But, for now take it as a warm up for that.</li>
-  
+<li>Objects can also have functions as properties, known as methods.
+</li>
+<li>We will teach you functions completely in later tutorial. But, for now take it as a warm up for that.</li>
 </ol>
 <pre><code class="language-js">const calculator = {
 add: function (a, b) {
@@ -160,8 +160,8 @@ console.log(calculator.subtract(10, 4)); // Output: 6
 
 <h2>Looping Through Object Properties</h2>
 <ol>
-    <li>You can loop through an object's properties using <strong>for...in</strong> loop.
-    </li>
+<li>You can loop through an object's properties using <strong>for...in</strong> loop.
+</li>
 </ol>
 <pre><code class="language-js">for (const key in user) {
     console.log(key + ': ' + user[key]);
@@ -172,13 +172,14 @@ firstName: Jack
 lastName: Salvatore
 */
   </code></pre>
+<p><strong>for (const key in user)</strong>: This initiates a <strong>for...in</strong> loop that iterates over the properties of the <strong>user</strong> object. In each iteration, <strong>key</strong> will be the name of a property.</p>
+<p><strong>console.log(key + ': ' + user[key]);</strong>: Inside the loop, it logs the concatenation of the current property name <strong>key</strong>, a colon <strong>:</strong>, and the corresponding value <strong>user[key]</strong>.
+</p>
 <!--***********************************************-->
 
 <h2>Object Shorthand</h2>
-<ol>
-    <li>You can use object shorthand to create objects with properties based on variable names.
-    </li>
- 
+<ol><li>You can use object shorthand to create objects with properties based on variable names.
+</li>
 </ol>
 <pre><code class="language-js">const name = "Alice";
 const age = 25;
@@ -191,14 +192,13 @@ console.log(person); // Output: { name: "Alice", age: 25 }
 
 <h2>Object Destructuring</h2>
 <ol>
-    <li>You can destructure objects to extract specific properties.
-    </li>
-   
-    
+<li>You can extract specific properties by destructuring the objects.
+</li>
 </ol>
 <pre><code class="language-js">const { firstName, lastName } = user;
 console.log(firstName, lastName); // Output: Jack Salvatore
     </code></pre>
+<p>Destructuring assignment is used here to create two variables <strong>firstName and lastName</strong> and assign them the values of the corresponding properties from the <strong>user</strong> object.</p>
 <!--***********************************************-->
 <h2>Object Cloning</h2>
 <ol>
@@ -209,44 +209,32 @@ console.log(firstName, lastName); // Output: Jack Salvatore
 console.log(user) /* Output:{ firstName: 'Jack', lastName: 'Salvatore' }
 </code></pre>
 
+<div class="next-prev">
+<a href="./javascript-arrays.html" id="prev">Previous</a>
+<a href="./javascript-maps.html" id="next">Next</a>
+</div>
+</div>
+</main>
+<footer>
+<h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
 
+<ul class="footer-links">
+<li><a href="../html/html-main-page.html">HTML</a></li>
 
+<li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+<li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+<li><a href="../react-js/react-main-page.html">React JS</a></li>
+<li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+</ul>
 
-
-
-
-
-        <div class="next-prev">
-          <a href="./javascript-arrays.html" id="prev">Previous</a>
-          <a href="./javascript-maps.html" id="next">Next</a>
-       </div>
-
-
-       </div>
-
-    
-
-      </main>
-      <footer>
-        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
-    
-        <ul class="footer-links">
-            <li><a href="../html/html-main-page.html">HTML</a></li>
-         
-            <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
-            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
-            <li><a href="../react-js/react-main-page.html">React JS</a></li>
-            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
-        </ul>
-    
-        <div class="about">
-            <ul>
-                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
-                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
-            </ul>
-        </div>
-        <p>Copyright © 2024 webstacknotes. All rights reserved</p>
-    </footer>
+<div class="about">
+<ul>
+<li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+<li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+</ul>
+</div>
+<p>Copyright © 2024 webstacknotes. All rights reserved</p>
+</footer>
 
 
 <script src="../assets/prism.js"></script>

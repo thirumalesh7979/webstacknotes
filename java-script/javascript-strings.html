@@ -26,7 +26,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/style.css">
     <link rel="stylesheet" href="../assets/prism.css">
-    <title>Learn JavaScript Strings and String Methods Tutorial</title>
+    <title>JavaScript Strings and String Methods Tutorial</title>
 </head>
 <body>
     <!--Navigation-->
@@ -62,9 +62,8 @@
 
 <h2>What are Strings?</h2>
 <ol>
-    <li>A string is a sequence of characters enclosed within single (' ') or double (" ") quotes. </li>
-    <li>JavaScript treats both single and double quotes equally, and you can use them interchangeably.</li>
-    
+<li>A string refers to a series of characters enclosed by either single (' ') or double (" ") quotes. </li>
+<li>In JavaScript, both single and double quotes are treated equivalently, you can  use either of them.</li>
 </ol>
 <pre><code class="language-js">let singleQuoted = 'This is a string.';
 let doubleQuoted = "This is another string.";
@@ -74,9 +73,8 @@ let doubleQuoted = "This is another string.";
 
 <h2>Creating Strings in JavaScript</h2>
 <ol>
-    <li>You can create strings using single or double quotes</li>
-    <li>You can also use backticks (` `) to create template strings, which support string interpolation</li>
- 
+<li>Strings can be made with either single or double quotes. </li>
+<li>You can also use backticks ( ) to create template strings, which allow for string interpolation.</li>
 </ol>
 <pre><code class="language-js">let singleQuoted = 'This is a string.';
 let doubleQuoted = "This is another string.";
@@ -88,8 +86,8 @@ let templateString = `This String created with Back Tics`
 
 <h2>String Concatenation</h2>
 <ol>
-    <li>You can concatenate strings using the <strong>+</strong> operator or by using template literals.
-    </li>
+<li>You can combine strings by using the <strong>+</strong> sign or by using template literals.
+</li>
 
 </ol>
 <pre><code class="language-js">let firstName = 'Jack';
@@ -110,10 +108,9 @@ console.log(userDescription) // Output: The Jack is 19 years old.
 
 <h2>String Manipulation</h2>
 <ol>
-    <li>JavaScript provides many methods for manipulating strings. You can trim, replace, and modify strings as needed.
-    </li>
-    <li>Just like Strings is also behaves like an array. So you can access specific characters like we can do for an array.</li>
-   
+<li>JavaScript has many methods for manipulating strings. You can trim, replace, and modify strings as needed.
+</li>
+<li>Similar to arrays, strings also behave like an array. This means you can access specific characters, much like you would with an array. However, it's important to note that unlike arrays, you can't directly change the characters in a string.</li>
 </ol>
 <pre><code class="language-js">let text = '   Trim me!   ';
 let trimmed = text.trim(); // Removes leading and trailing spaces
@@ -132,21 +129,21 @@ console.log(nameFirstCharacter); // Output: J
 
 <h2>String Interpolation</h2>
 <ol>
-    <li>Template literals allow for string interpolation. You can embed expressions within ${} inside template literals.
-    </li>
-    
+<li>Template literals <strong>(`${}`)</strong> for string interpolation. You can combine expressions within ${} inside template literals.
+</li>
 </ol>
 <pre><code class="language-js">let name = 'Alice';
+let age = 19;
 let greeting = `Hello, ${name}!`;
 console.log(greeting); // Output: Hello, Alice!
+console.log(`${name}` is ${age} years old`) // Output: Alice is 19 years old.
 </code></pre>
 <!--***********************************************-->
 
 
 <h2>String Comparison</h2>
 <ol>
-    <li>You can compare strings using comparison operators (==, ===, <, >, etc.) or string methods like localeCompare.</li>
- 
+<li>You can compare strings using comparison operators (==, ===, <, >, etc.) or string methods like localeCompare.</li>
 </ol>
 <pre><code class="language-js">let string1 = 'apple';
 let string2 = 'banana';
