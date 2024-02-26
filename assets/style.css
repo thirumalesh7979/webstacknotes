@@ -201,7 +201,10 @@ footer ul a, .footer-brand{
   color:white;
  
 }
- 
+ol{
+  padding: 0px;
+  margin-left: 20px;
+}
 
 @media screen and (max-width:1000px) {
   
@@ -220,7 +223,7 @@ footer ul a, .footer-brand{
   }
   .matter{
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp:3;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
@@ -259,5 +262,11 @@ footer ul a, .footer-brand{
   .navbar-toggler{
     background-color: white;border-color:white ;
   }
- 
+  main{
+    padding: 10px;
+  }
+  ol{
+    padding: 0px;
+    margin-left: 20px;
+  }
 }
