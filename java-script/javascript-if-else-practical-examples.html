@@ -58,7 +58,7 @@
 <p>Write a   JavaScript Program that takes a student's score as a variable and prints out the corresponding grade (A, B, C, D, or F).</p>
 
 <h3>Solution: </h3>
-<pre><code class="language-js">>var score = 85;
+<pre><code class="language-js">let score = 85;
 
 if (score >= 90) {
     console.log("A");
@@ -73,14 +73,14 @@ if (score >= 90) {
 }
 
 // Output: B
-  </code>
+</code>
 </pre>
 
 
 <h2>Exercise 2</h2>
 <p>Write a   JavaScript Program that determines whether a user's post is popular based on the number of likes. If a post has more than 100 likes, print "Popular," otherwise print "Not Popular."</p>
 <h3>Solution:</h3>
-<pre><code class="language-js">var likes = 120;
+<pre><code class="language-js">let likes = 120;
 
 if (likes > 100) {
     console.log("Popular");
@@ -96,7 +96,7 @@ if (likes > 100) {
 <p>3. Write a JavaScript Program that checks if a product is in stock based on its inventory quantity. If the quantity is greater than 0, print "In stock," otherwise print "Out of stock." (use ternay operator)
 </p>
 <h3>Solution:</h3>
-<pre><code class="language-js">var inventoryQuantity = 5;
+<pre><code class="language-js">let inventoryQuantity = 5;
 inventoryQuantity > 0 ?  console.log("In stock") :  console.log("Out of stock")
 
 // Output: In stock
@@ -106,9 +106,9 @@ inventoryQuantity > 0 ?  console.log("In stock") :  console.log("Out of stock")
 <h2>Exercise 4</h2>
 <p>Write a JavaScript Program that applies a discount to a product based on the user's loyalty. If the user is loyal, apply a 10% discount; otherwise, apply a 5% discount.</p>
 <h3>Solution:</h3>
-<pre><code class="language-js">var isLoyalCustomer = true;
-var originalPrice = 50;
-var discount;
+<pre><code class="language-js">let isLoyalCustomer = true;
+let originalPrice = 50;
+let discount;
 
 if (isLoyalCustomer) {
     discount = 0.1;
@@ -116,7 +116,7 @@ if (isLoyalCustomer) {
     discount = 0.05;
 }
 
-var discountedPrice = originalPrice - originalPrice * discount;
+let discountedPrice = originalPrice - originalPrice * discount;
 console.log("Discounted Price: $" + discountedPrice);
 
 // Output: Discounted Price: $45
@@ -126,8 +126,8 @@ console.log("Discounted Price: $" + discountedPrice);
 <h2>Exercise 5</h2>
 <p>Write a JavaScript Program that checks the status of a user's account. If the account is active, check if the user has completed their profile. If the profile is complete, print "Account is active and profile is complete"; otherwise, print "Account is active, but profile is incomplete."</p>
 <h3>Solution:</h3>
-<pre><code class="language-js"> var isAccountActive = true;
-var isProfileComplete = false;
+<pre><code class="language-js">let isAccountActive = true;
+let isProfileComplete = false;
 
 if (isAccountActive) {
     if (isProfileComplete) {
@@ -140,16 +140,16 @@ if (isAccountActive) {
 }
 
 // Output: Account is active, but profile is incomplete
-  </code>
+</code>
 </pre>
 
 
 <h2>Exercise 6</h2>
 <p>Create a JavaScript Program that classifies a person into age groups and genders. If the person is under 18, check their gender and print "Child" or "Teenager." If the person is 18 or older, check their gender and print "Adult Male" or "Adult Female."</p>
 <h3>Solution:</h3>
-<pre><code class="language-js">var age = 25;
-var gender = "female";
-var classification;
+<pre><code class="language-js">let age = 25;
+let gender = "female";
+let classification;
 
 if (age < 18) {
     if (gender === "male") {
@@ -174,8 +174,8 @@ console.log("Classification: " + classification);
 <h2>Exercise 7</h2>
 <p>Create a JavaScript Program that simulates a bank account. Check the account balance, and if there are sufficient funds, allow a withdrawal. If the withdrawal amount is greater than the account balance, print an appropriate message.</p>
 <h3>Solution:</h3>
-<pre><code class="language-js">var accountBalance = 1000;
-var withdrawalAmount = 500;
+<pre><code class="language-js">let accountBalance = 1000;
+let withdrawalAmount = 500;
 
 if (withdrawalAmount <= accountBalance) {
     accountBalance -= withdrawalAmount;
@@ -191,16 +191,16 @@ if (withdrawalAmount <= accountBalance) {
 <p>Extend the previous JavaScript Program to include overdraft protection. If the withdrawal amount exceeds the account balance but is within the overdraft limit (set to $200), allow the withdrawal with a warning. If it exceeds the overdraft limit, deny the withdrawal.
 </p>
 <h3>Solution:</h3>
-<pre><code class="language-js">var accountBalance = 1000;
-var overdraftLimit = 200;
-var withdrawalAmount = 1200;
+<pre><code class="language-js">let accountBalance = 1000;
+let overdraftLimit = 200;
+let withdrawalAmount = 1200;
 
 if (withdrawalAmount <= accountBalance + overdraftLimit) {
     if (withdrawalAmount <= accountBalance) {
     accountBalance -= withdrawalAmount;
     console.log("Withdrawal successful. Remaining balance: $" + accountBalance);
     } else {
-    var overdraftUsed = withdrawalAmount - accountBalance;
+    let overdraftUsed = withdrawalAmount - accountBalance;
     console.log("Withdrawal with overdraft. Overdraft used: $" + overdraftUsed);
     accountBalance = 0;
     }
@@ -215,9 +215,9 @@ if (withdrawalAmount <= accountBalance + overdraftLimit) {
 <p>Write a JavaScript Program that determines whether a customer is eligible for a loan based on their credit score. If the credit score is above 700, check their income. If the income is sufficient, approve the loan; otherwise, deny the loan.
 </p>
 <h3>Solution:</h3>
-<pre><code class="language-js">var creditScore = 750;
-var income = 30000;
-var loanAmount = 5000;
+<pre><code class="language-js">let creditScore = 750;
+let income = 30000;
+let loanAmount = 5000;
 
 if (creditScore > 700) {
     if (income >= loanAmount * 0.2) {
