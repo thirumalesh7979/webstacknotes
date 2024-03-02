@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-24NDPV43R1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-24NDPV43R1');
+  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="We've gathered a set of practical JavaScript exercises focusing on if-else conditional statements, complete with solutions.">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/prism.css">
+    <title>JavaScript  if...else practical exercises with solutions</title>
+</head>
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg   fixed-top" id="navs">
+        <div class="container">
+          <a href="../index.html" class="navbar-brand">Webstack Notes</a>
+      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span> </button>
+      
+        </div>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="../html/html-main-page.html" class="nav-link">HTML</a></li>
+             <li class="nav-item"><a href="../java-script/javascript-main-page.html" class="nav-link">JavaScript</a></li>
+            <li class="nav-item"><a href="../react-js/react-main-page.html" class="nav-link">React</a></li>
+            <li class="nav-item"><a href="../nodejs/nodejs-main-page.html" class="nav-link">Node</a></li>
+            <li class="nav-item"><a href="../mongodb/mongodb-main-page.html" class="nav-link">MongoDB</a></li>
+      
+          </ul>
+        </div>
+      </nav>
+
+      
+    <!--Main Content-->
+
+
+      <main>
+
+       <div class="content">
+
+<h1>JavaScript  if...else practical excercises with solutions</h1>
+<p>Hey Everyone, We've gathered a set of practical JavaScript exercises focusing on if-else conditional statements, complete with solutions.</p>
+<p>Check out these exercises to get a better handle on how to use conditional logic in your JavaScript programming.
+</p>
+
+<h2>Exercise 1</h2>
+<p>Write a   JavaScript Program that takes a student's score as a variable and prints out the corresponding grade (A, B, C, D, or F).</p>
+
+<h3>Solution: </h3>
+<pre><code class="language-js"></code>var score = 85;
+
+if (score >= 90) {
+    console.log("A");
+} else if (score >= 80) {
+    console.log("B");
+} else if (score >= 70) {
+    console.log("C");
+} else if (score >= 60) {
+    console.log("D");
+} else {
+    console.log("F");
+}
+
+// Output: B
+</pre>
+
+
+<h2>Exercise 2</h2>
+<p>Write a   JavaScript Program that determines whether a user's post is popular based on the number of likes. If a post has more than 100 likes, print "Popular," otherwise print "Not Popular."</p>
+<h3>Solution:</h3>
+<pre><code class="language-js">var likes = 120;
+
+if (likes > 100) {
+    console.log("Popular");
+} else {
+    console.log("Not Popular");
+}
+
+// Output: Popular
+</code></pre>
+
+
+<h2>Exercise 3</h2>
+<p>3. Write a JavaScript Program that checks if a product is in stock based on its inventory quantity. If the quantity is greater than 0, print "In stock," otherwise print "Out of stock." (use ternay operator)
+</p>
+<h3>Solution:</h3>
+<pre><code class="language-js">var inventoryQuantity = 5;
+inventoryQuantity > 0 ?  console.log("In stock") :  console.log("Out of stock")
+
+// Output: In stock
+</code></pre>
+
+
+<h2>Exercise 4</h2>
+<p>Write a JavaScript Program that applies a discount to a product based on the user's loyalty. If the user is loyal, apply a 10% discount; otherwise, apply a 5% discount.</p>
+<h3>Solution:</h3>
+<pre><code class="language-js">var isLoyalCustomer = true;
+var originalPrice = 50;
+var discount;
+
+if (isLoyalCustomer) {
+    discount = 0.1;
+} else {
+    discount = 0.05;
+}
+
+var discountedPrice = originalPrice - originalPrice * discount;
+console.log("Discounted Price: $" + discountedPrice);
+
+// Output: Discounted Price: $45
+</code></pre>
+
+
+<h2>Exercise 5</h2>
+<p>Write a JavaScript Program that checks the status of a user's account. If the account is active, check if the user has completed their profile. If the profile is complete, print "Account is active and profile is complete"; otherwise, print "Account is active, but profile is incomplete."</p>
+<h3>Solution:</h3>
+<pre><code class="language-js"></code>var isAccountActive = true;
+var isProfileComplete = false;
+
+if (isAccountActive) {
+    if (isProfileComplete) {
+    console.log("Account is active and profile is complete");
+    } else {
+    console.log("Account is active, but profile is incomplete");
+    }
+} else {
+    console.log("Account is inactive");
+}
+
+// Output: Account is active, but profile is incomplete
+</pre>
+
+
+<h2>Exercise 6</h2>
+<p>Create a JavaScript Program that classifies a person into age groups and genders. If the person is under 18, check their gender and print "Child" or "Teenager." If the person is 18 or older, check their gender and print "Adult Male" or "Adult Female."</p>
+<h3>Solution:</h3>
+<pre><code class="language-js">var age = 25;
+var gender = "female";
+var classification;
+
+if (age < 18) {
+    if (gender === "male") {
+    classification = "Child (Boy)";
+    } else {
+    classification = "Child (Girl)";
+    }
+} else {
+    if (gender === "male") {
+    classification = "Adult Male";
+    } else {
+    classification = "Adult Female";
+    }
+}
+
+console.log("Classification: " + classification);
+
+// Output: Classification: Adult Female
+</code>
+</pre>
+
+<h2>Exercise 7</h2>
+<p>Create a JavaScript Program that simulates a bank account. Check the account balance, and if there are sufficient funds, allow a withdrawal. If the withdrawal amount is greater than the account balance, print an appropriate message.</p>
+<h3>Solution:</h3>
+<pre><code class="language-js">var accountBalance = 1000;
+var withdrawalAmount = 500;
+
+if (withdrawalAmount <= accountBalance) {
+    accountBalance -= withdrawalAmount;
+    console.log("Withdrawal successful. Remaining balance: $" + accountBalance);
+} else {
+    console.log("Insufficient funds. Cannot complete the withdrawal.");
+}
+
+// Output: Withdrawal successful. Remaining balance: $500
+</code></pre>
+
+<h2>Exercise 8</h2>
+<p>Extend the previous JavaScript Program to include overdraft protection. If the withdrawal amount exceeds the account balance but is within the overdraft limit (set to $200), allow the withdrawal with a warning. If it exceeds the overdraft limit, deny the withdrawal.
+</p>
+<h3>Solution:</h3>
+<pre><code class="language-js">var accountBalance = 1000;
+var overdraftLimit = 200;
+var withdrawalAmount = 1200;
+
+if (withdrawalAmount <= accountBalance + overdraftLimit) {
+    if (withdrawalAmount <= accountBalance) {
+    accountBalance -= withdrawalAmount;
+    console.log("Withdrawal successful. Remaining balance: $" + accountBalance);
+    } else {
+    var overdraftUsed = withdrawalAmount - accountBalance;
+    console.log("Withdrawal with overdraft. Overdraft used: $" + overdraftUsed);
+    accountBalance = 0;
+    }
+} else {
+    console.log("Withdrawal denied. Exceeds overdraft limit.");
+}
+
+// Output: Withdrawal with overdraft. Overdraft used: $200. Remaining balance: $0
+</code></pre>
+
+<h2>Exercise 9</h2>
+<p>Write a JavaScript Program that determines whether a customer is eligible for a loan based on their credit score. If the credit score is above 700, check their income. If the income is sufficient, approve the loan; otherwise, deny the loan.
+</p>
+<h3>Solution:</h3>
+<pre><code class="language-js">var creditScore = 750;
+var income = 30000;
+var loanAmount = 5000;
+
+if (creditScore > 700) {
+    if (income >= loanAmount * 0.2) {
+    console.log("Loan approved.");
+    } else {
+    console.log("Insufficient income. Loan denied.");
+    }
+} else {
+    console.log("Low credit score. Loan denied.");
+}
+
+// Output: Loan approved.
+</code></pre>
+
+ 
+
+
+
+<!--***********************************************-->
+ 
+        <div class="next-prev">
+          <a href="./javascript-if-else.html" id="prev">Previous</a>
+          <a href="./javascript-while-loops.html" id="next">Next</a>
+       </div>
+
+
+       </div>
+
+    
+
+      </main>
+      <footer>
+        <h2><a href="../index.html" class="footer-brand">Webstack Notes</a></h2>
+    
+        <ul class="footer-links">
+            <li><a href="../html/html-main-page.html">HTML</a></li>
+             <li><a href="../java-script/javascript-main-page.html">JavaScript</a></li>
+            <li><a href="../nodejs/nodejs-main-page.html">Node.js</a></li>
+            <li><a href="../react-js/react-main-page.html">React JS</a></li>
+            <li><a href="../mongodb/mongodb-main-page.html">Mongo DB</a></li>
+        </ul>
+    
+        <div class="about">
+            <ul>
+                <li><a href="../about/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="../about/terms-of-use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+        <p>Copyright © 2024 webstacknotes. All rights reserved</p>
+    </footer>
+
+
+<script src="../assets/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
